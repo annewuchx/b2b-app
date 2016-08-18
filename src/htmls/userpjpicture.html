@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>票据详情</title>
+
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/loadding.css" />
+		<link rel="stylesheet" href="../styles/userpjpiture.css" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav verify_header">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title">票据详情</h1>
+		</header>
+		<div class="mui-content picure-detail" id='pjpicure-detail' v-cloak>
+			<template v-for='item in pjdata'>
+				<template v-if='item'>
+					<template v-if="item.billImage!=''">
+						<div class='mui-zoom-wrapper pj-pic' id="pj-pic">
+
+							<div class="mui-zoom-scroller img-scroll">
+								<img class="mui-zoom" src='{{item.billImage}}' onload="loadImg();" id='pjImg' />
+							</div>
+
+						</div>
+					</template>
+					<!--总高度90px是固定 其它用的是100%-->
+					<div class='pjpicure-detail' style="">
+						<div class="mui-row">
+							<div class="mui-left-column">票面金额：{{item.billMoney | currency '￥'}}
+								<div class="hrline"></div>
+							</div>
+							<div class="mui-right-column">调整价：{{item.adjustment | currency '￥'}}</div>
+							<div class="vtline"></div>
+						</div>
+						<div class="mui-row">
+							<div class="mui-left-column" v-if='item.bankType==1'>承兑行类型：国股银行
+								<div class="hrline"></div>
+							</div>
+							<div class="mui-left-column" v-if='item.bankType==2'>承兑行类型：城商银行
+								<div class="hrline"></div>
+							</div>
+							<div class="mui-left-column" v-if='item.bankType==3'>承兑行类型：农商外资
+								<div class="hrline"></div>
+							</div>
+							<div class="mui-left-column" v-if='item.bankType==4'>承兑行类型：农合农信
+								<div class="hrline"></div>
+							</div>
+							<div class="mui-left-column" v-if='item.bankType==5'>承兑行类型：村镇银行
+								<div class="hrline"></div>
+							</div>
+							<div class="mui-left-column" v-if='item.bankType==0'>承兑行类型：
+								<div class="hrline"></div>
+							</div>
+							<div class="mui-right-column">到期日：{{item.endDate}}</div>
+							<div class="vtline"></div>
+						</div>
+						<div class="mui-row">
+							<div class="mui-colum">票号：{{item.billcode}}</div>
+						</div>
+					</div>
+				</template>
+
+			</template>
+
+		</div>
+
+		<div class="mui-loader" id="loadding">
+			<div class="load" id='load'>
+				<div class="loader" id='loader'>Loading...</div>
+				<div class="loaderWord" id='loaderWord'>正在加载</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../mui/mui.zoom.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="userpjpicture.js"></script>
+		<script type="text/javascript">
+			/**
+			 * 图片缩放
+			 */
+			function loadImg() {
+
+				var containerHeight = document.body.clientHeight - 44 - 90 - 20;
+				var containerWidth = document.body.clientWidth;
+
+				var imgHeight = gel('pjImg').clientHeight;
+				var imgWidth = gel('pjImg').clientWidth;
+
+				gel('pj-pic').style.height = containerHeight + 'px';
+				//				gel('pj-pic').style.paddingBottom = '10px';
+				//				gel('pj-pic').style.paddingTop = '10px';
+				var widthratio = containerWidth / imgWidth;
+				var heightration = containerHeight / imgHeight;
+				if(widthratio < heightration) { //以
+					gel('pjImg').style.width = parseInt(imgWidth * widthratio) + 'px';
+					gel('pjImg').style.height = parseInt(imgHeight * widthratio) + 'px';
+
+					gel('pjImg').style.marginTop = parseInt(containerHeight - parseInt(imgHeight * widthratio)) / 2 + 'px';
+
+				} else { //
+					gel('pjImg').style.width = parseInt(imgWidth * heightration) + 'px';
+					gel('pjImg').style.height = parseInt(imgHeight * heightration) + 'px';
+
+					gel('pjImg').style.marginTop = parseInt(containerHeight - parseInt(imgHeight * heightration)) / 2 + 'px';
+				}
+			}
+		</script>
+	</body>
+
+</html>

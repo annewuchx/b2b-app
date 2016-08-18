@@ -1,0 +1,260 @@
+@charset "utf-8";
+*{margin:0;padding:0;}
+html,body{
+	width:100%;
+	height:100%;
+	font-size:62.5%;
+	min-width:320px;
+	background: #fff;
+}
+img{display: block;}
+ul, li{list-style: none;}
+/*头部*/
+.mui-bar{
+	background-color: #00418F;
+}
+header .h-right ,header .h-left{
+	font-zize:2.6rem;
+}
+header .h-right{
+	float:right;
+	color:#fff;
+}
+header .mui-title{
+	color:#fff;
+	font-size:1.5rem;
+}
+header .h-left{
+	color:#fff;
+}
+
+/*mui-content*/
+.mui-content{
+	background: #fff;
+}
+/*所在地区*/
+.location{
+	padding-left:7%;
+	color:#000;
+}
+/*融资模式*/
+ .financing-mode{
+	clear: both;
+	margin:0;
+	height:4.3rem;
+	border-bottom:1px solid #797979;
+	line-height:4.3rem;
+	font-size:1.2rem;
+	color:#333;
+	
+}
+ .financing-mode .financing-mode-img{
+	float:left;
+	margin-right:8%;
+	margin-left:7%;
+}
+
+.financing-mode ul li{
+	float:left;
+	width:20.3%;
+	height:2.8rem;
+	border:1px solid #797979;
+	text-align:center;
+	line-height:2.8rem;
+	margin-left:2.8%;
+	margin-top:0.65rem;
+	border-radius:5px;
+}
+.financing-mode ul li span:hover{
+	cursor:text;
+}
+.financing-mode ul li.active{
+	background:#01FFFF;
+}
+
+/*quote-center*/
+.quote-center {
+	margin-bottom:8.6rem;
+}
+.quote-center .quote-center-area-sum{
+	height:4.3rem;
+	line-height:4.3rem;
+	border-bottom:1px solid #797979;
+}
+.quote-center .quote-center-area-sum li{
+	float:left;
+	font-size:1.2rem;
+	width:48%;
+	padding-left:7%;
+}
+.quote-center .quote-center-area-sum li:nth-child(1){
+	border-right:1px solid #797979;
+}
+.quote-center .quote-center-area-sum li span:nth-child(1){
+	color:#6EB8E9;
+}
+.quote-center .quote-center-area-sum li span:nth-child(2){
+	font-size:1.3rem;
+}
+/*quoute-area*/
+.quote-area{
+	height:4.3rem;
+	line-height:4.3rem;
+	border-bottom:1px solid #797979;
+}
+#output{
+	font-size:1.2rem;
+	color:#333333;
+	margin-left:10%;
+	margin-right:3.4%；
+}
+
+/*列表*/
+.mui-card {
+    border: 1px solid #797979;
+    margin-top: 0.7rem;
+    margin-bottom:1rem;
+}
+.today-quote{
+	height:7.3rem;
+	/*background:#ff0;*/
+	position:relative;
+	text-align:center;
+}
+.today-quote ul:hover{
+	cursor: pointer;
+}
+.stock{
+	height:2.3rem;
+	line-height: 2.3rem;
+	width:95%;
+	margin:0 auto;
+	border-top:1px solid #797979;
+}
+.mui-table-view-cell{
+	padding:0;
+}
+.today-quote-num{
+	display:inline-block;
+	width:35px;
+	height:35px;
+	text-align:center;
+	line-height:35px;
+	font-size:1.4rem;
+	font-weight:bold;
+	color:#0066FF;
+	position:absolute;
+	left:2%;
+	top:0.3rem;
+	border:1px solid #080808;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.today-quote img{
+	position:absolute;
+}
+.today-quote .u143{
+	width:2.8rem;
+	height:3rem;
+	line-height:3rem;
+	font-size:1rem;
+	position:absolute;
+	right:5%;
+	top:0;
+	background: url(../images/u143.png) no-repeat;
+	background-size: 100% 100%;
+}
+.today-quote img:nth-of-type(1){
+	width:2.1rem;
+	right:2%;
+	bottom:0;
+}
+.today-quote ul li:nth-child(1){
+	font-size:1.2rem;
+	line-height: 2.3rem;
+}
+.today-quote ul li:nth-child(2){
+	font-size:1.4rem;
+	line-height: 2.7rem;
+	color:#f00;
+}
+.today-quote ul li:nth-child(3){
+	font-size:1rem;
+	color:#F4C600;
+}
+.stock ul{
+	margin-left:5%;
+}
+.stock ul li{
+	float:left;
+	margin-right:16%;
+}
+.stock ul li:last-child{
+	margin: 0;
+}
+/*quote-btn*/
+.quote-btn-contact {
+	margin-top:1.5rem;
+}
+.quote-btn-contact ul{
+	width:88%;
+	margin:0 auto;
+}
+.quote-btn-contact ul li{
+	float:left;
+	width:45%;
+	height:4.5rem;
+	font-size:1.6rem;
+	line-height: 4.5rem;
+	text-align:center;
+	color:#fff;
+	background:#285D9C;
+	border:1px solid #797979;
+	border-radius:5px;
+}
+.quote-btn-contact ul li:nth-child(1){
+	margin-right:10%;
+}
+/*footer*/
+footer{
+	position:fixed;
+	background: #fff;
+	bottom:0;
+	width:100%;
+	padding-bottom:2rem;
+	z-index:3;
+	border-top:1px solid #797979;
+}
+
+footer .footer-top{
+	height:2rem;
+	padding:0 2.5%;
+	line-height:2rem;
+	border-bottom:1px solid #797979;
+}
+footer .footer-top p{
+	font-size:1.1rem;
+	color:#333333;
+	margin: 0;
+}
+footer .footer-top p:nth-child(1){
+	float:right;
+}
+footer .footer-top p:nth-child(2){
+	float:left;
+}
+
+footer .footer-center{
+	height:3.1rem;
+	border-bottom:1px solid #797979;
+	line-height:3.1rem;
+	padding: 0 2.5%;
+}
+footer .footer-center p{
+	font-size:1.4rem;
+	color:#333333;
+}
+footer .footer-center span{
+	color:#f00;
+}

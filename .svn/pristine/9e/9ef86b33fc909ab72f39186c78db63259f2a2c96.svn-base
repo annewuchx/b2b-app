@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>联系我们</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../styles/contactus.css" />
+		<style>
+
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav b2b-header">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">联系我们</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<form class="mui-input-group form-contact">
+
+				<div class="mui-input-row" id="selectCity1">
+
+					<label>所在地区</label>
+
+					<input id="selectCity" type="text" readonly="readonly" class="mui-input" autocapitalize="off" autocorrect="off" placeholder="正在定位中...">
+					<a class="mui-navigate-right" style="color:#06f">
+					</a>
+					<input type="hidden" id="selectCityId" />
+				</div>
+				<div class="mui-input-row">
+					<label>手机号码</label>
+					<input id="mobile1" type="tel" class="mui-input-clear mui-input" autocapitalize="off" autocorrect="off">
+
+				</div>
+
+				<div class="mui-input-row yzm_phone" id="yzm">
+					<label>验证码</label>
+					<input id='yzmCode' type="number" pattern="[0-9]*" class="mui-input checkcode-input">
+					<button type="button" id="yzm_btn" class="mui-btn mui-btn-blue btn-check-code">获取验证码</button>
+				</div>
+			</form>
+			<div class="contact-description fw300">
+				<p id="ph_text1">* 确认后，我们将安排专人联系您。</p>
+				<p id="ph_text2">* 留下您的电话号码后，我们将安排专人联系您。</p>
+			</div>
+			<div class="lxwm_form_div btn-confirm">
+				<button type="button" id="sub" class="mui-btn mui-btn-blue mui-btn-block">确认</button>
+			</div>
+			<div class="lxwm_form_div btn-call">
+				<button type="button" id="getCall" class="mui-btn mui-btn-blue mui-btn-block mui-btn-outlined"><span class='yckfont yf-phone mui-phone'></span>致电客服：400-006-8808</button>
+			</div>
+		</div>
+
+		<!--<div class="desp-loader" id='desp-loader' style="display: none;">
+			<div class="desp">
+				<div class="hintWord" id='hintWord' >
+					<h3>提交成功!</h3>
+					<p style="margin-top: 30px;">我们会尽快安排专人联系您，</p>
+					<p>请耐心等待。</p>
+				</div>
+			</div>
+		</div>
+		<div class="desp-backdrop" id='desp-backdrop' style="display: none;"></div>-->
+
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../libs/vue.min.js"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script type="text/javascript" src="contactus.js"></script>
+	</body>
+
+</html>

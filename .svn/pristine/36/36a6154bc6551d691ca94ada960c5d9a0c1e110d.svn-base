@@ -1,0 +1,209 @@
+.body_header_div {
+  height: 4.4rem;
+  width: 100%;
+  margin: 0.266667rem 0;
+  background: #FFFFFF;
+  padding: 0.4rem;
+  position: relative;
+}
+
+.money-left-title {
+  margin-bottom: 0;
+}
+
+[data-dpr="1"] .money-left-title {
+  font-size: 15px;
+}
+
+[data-dpr="2"] .money-left-title {
+  font-size: 30px;
+}
+
+[data-dpr="3"] .money-left-title {
+  font-size: 45px;
+}
+
+.money-left {
+  padding: 0.533333rem 0;
+  color: #0066ff;
+  margin-bottom: 0;
+}
+
+[data-dpr="1"] .money-left {
+  font-size: 40px;
+}
+
+[data-dpr="2"] .money-left {
+  font-size: 80px;
+}
+
+[data-dpr="3"] .money-left {
+  font-size: 120px;
+}
+
+.money-btn {
+  margin-bottom: 0;
+}
+
+.bank-acount {
+  padding: 0 0.4rem;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.duli-account-href {
+  float: right;
+}
+
+[data-dpr="1"] .duli-account-href {
+  font-size: 14px;
+}
+
+[data-dpr="2"] .duli-account-href {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .duli-account-href {
+  font-size: 42px;
+}
+
+.duli-account {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  color: rgb(51, 51, 51);
+}
+
+[data-dpr="1"] .duli-account {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .duli-account {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .duli-account {
+  font-size: 48px;
+}
+
+.money_bank_msg {
+  padding: 0.4rem 0;
+  position: relative;
+  font-weight: 300;
+  width: 100%;
+}
+
+.mui-input-row label {
+  padding: 0.293333rem 0;
+  width: 20%;
+  color: rgb(119, 119, 119);
+}
+
+[data-dpr="1"] .mui-input-row label {
+  font-size: 14px;
+}
+
+[data-dpr="2"] .mui-input-row label {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .mui-input-row label {
+  font-size: 42px;
+}
+
+@media only screen and (max-width:380px) {
+  .mui-input-row label {
+    width: 25%;
+  }
+
+  .money_bank_msg .mui-input-row span {
+    width: 75% !important;
+  }
+}
+
+.money_bank_msg .mui-input-row span {
+  padding: 0.293333rem 0;
+  display: inline-block;
+  text-align: left;
+  /*			padding-right: 15px;*/
+  float: left;
+  line-height: 1.1;
+  width: 80%;
+  text-overflow: ellipsis;
+  color: rgb(51, 51, 51);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+[data-dpr="1"] .money_bank_msg .mui-input-row span {
+  font-size: 14px;
+}
+
+[data-dpr="2"] .money_bank_msg .mui-input-row span {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .money_bank_msg .mui-input-row span {
+  font-size: 42px;
+}
+
+.usermoney_page_msg {
+  margin-top: 0.266667rem;
+  text-align: center;
+  font-weight: 300;
+  color: rgb(119, 119, 119);
+}
+
+[data-dpr="1"] .usermoney_page_msg {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .usermoney_page_msg {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .usermoney_page_msg {
+  font-size: 36px;
+}
+
+.usermoney_page_msg p {
+  color: rgb(119, 119, 119);
+}
+
+[data-dpr="1"] .usermoney_page_msg p {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .usermoney_page_msg p {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .usermoney_page_msg p {
+  font-size: 36px;
+}
+
+.body_header_div:before,
+.bank-acount:before,
+.money_bank_msg:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 0.026667rem;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #cccccc;
+}
+
+.body_header_div:after,
+.bank-acount:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.026667rem;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #cccccc;
+}

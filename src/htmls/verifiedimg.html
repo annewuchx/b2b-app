@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>查看图片</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<style>
+			html,
+			body,
+			.mui-content {
+				height: 100%;
+				background: #000000;
+			}
+			
+			.verify_header {
+				background: rgb(29, 29, 29);
+				box-shadow: none;
+			}
+			
+			.verify_header a,
+			.verify_header h1 {
+				color: #ffffff !important;
+			}
+			
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+			
+			.verify_header .selectagain {
+				float: right;
+				display: inline-block;
+				line-height: 44px;
+				width: 200px;
+				text-align: right;
+				height: 100%;
+				
+			}
+			
+			.mui-backdrop {
+				top: 44px;
+			}
+			
+			.pj-pic {
+				text-align: center;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav verify_header">
+			<a class="mui-icon mui-icon-arrowleft mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<span class='selectagain mui-btn mui-btn-link'>
+				<a href="#picture" id="selectAgain" class="mui-btn mui-btn-link">重选</a>
+			</span>
+			<h1 class="mui-title">图片</h1>
+		</header>
+		<div class="mui-content">
+			<div class='mui-zoom-wrapper pj-pic' id="pj-pic">
+				<div class="mui-zoom-scroller">
+					<img id="pjImg" class="mui-zoom" onload="imgLoaded();" onerror="imgError();" />
+				</div>
+			</div>
+
+		</div>
+
+		<!--actionsheet-->
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#" data-index='1'>拍照</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#" data-index='2'>从相册选择</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture" data-index='0'><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+		<!--loading-->
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../mui/mui.zoom.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="./verifiedimg.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

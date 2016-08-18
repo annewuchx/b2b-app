@@ -1,0 +1,169 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/*承兑行*/
+
+.mui-indexed-list {
+  height: 1.333333rem;
+  background: #0066FF;
+}
+
+.mui-table-view-cell {
+  position: relative;
+  overflow: hidden;
+  padding: 0.293333rem 0.4rem;
+  -webkit-touch-callout: none;
+  text-align: center;
+}
+
+.mui-table-view-cell .bank {
+  color: rgb(51, 51, 51);
+}
+
+[data-dpr="1"] .mui-table-view-cell .bank {
+  font-size: 18px;
+}
+
+[data-dpr="2"] .mui-table-view-cell .bank {
+  font-size: 36px;
+}
+
+[data-dpr="3"] .mui-table-view-cell .bank {
+  font-size: 54px;
+}
+
+.mui-table-view-cell .bank1 {
+  text-align: left;
+  color: rgb(51, 51, 51);
+}
+
+[data-dpr="1"] .mui-table-view-cell .bank1 {
+  font-size: 14px;
+}
+
+[data-dpr="2"] .mui-table-view-cell .bank1 {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .mui-table-view-cell .bank1 {
+  font-size: 42px;
+}
+
+.toggle {
+  display: none;
+}
+
+.mui-bar-nav {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/*搜索区域*/
+
+.mui-table-view-cell:after {
+  left: 0;
+}
+
+@media only screen and  (max-width: 320px) {
+  .mui-search .mui-placeholder {
+    height: 0.8rem;
+    left: -1.066667rem;
+    color: rgb(170, 170, 170);
+    margin: 0.266667rem 0;
+  }
+
+  [data-dpr="1"] .mui-search .mui-placeholder {
+    font-size: 14px;
+  }
+
+  [data-dpr="2"] .mui-search .mui-placeholder {
+    font-size: 28px;
+  }
+
+  [data-dpr="3"] .mui-search .mui-placeholder {
+    font-size: 42px;
+  }
+}
+
+@media only screen and  (min-width: 330px) and (max-width:375px) {
+  .mui-search .mui-placeholder {
+    height: 0.8rem;
+    left: -2.133333rem;
+    color: rgb(170, 170, 170);
+    margin: 0.266667rem 0;
+  }
+
+  [data-dpr="1"] .mui-search .mui-placeholder {
+    font-size: 14px;
+  }
+
+  [data-dpr="2"] .mui-search .mui-placeholder {
+    font-size: 28px;
+  }
+
+  [data-dpr="3"] .mui-search .mui-placeholder {
+    font-size: 42px;
+  }
+}
+
+@media only screen and  (min-width: 376px) {
+  .mui-search .mui-placeholder {
+    height: 0.8rem;
+    left: -3.12rem;
+    color: rgb(170, 170, 170);
+    margin: 0.266667rem 0;
+  }
+
+  [data-dpr="1"] .mui-search .mui-placeholder {
+    font-size: 14px;
+  }
+
+  [data-dpr="2"] .mui-search .mui-placeholder {
+    font-size: 28px;
+  }
+
+  [data-dpr="3"] .mui-search .mui-placeholder {
+    font-size: 42px;
+  }
+}
+
+.mui-search .mui-placeholder span:nth-child(2) {
+  margin-left: 0.266667rem;
+}
+
+.mui-search input[type=search] {
+  background: #fff;
+  margin-top: 0.213333rem;
+}
+
+#searchcontainer {
+  width: 83%;
+  margin-left: 2%;
+}
+
+.mui-search.mui-active:before {
+  margin-top: -0.346667rem;
+}
+
+.mui-input-row.mui-search .mui-icon-clear {
+  top: 0.426667rem;
+}
+
+#list {
+  position: relative;
+}
+
+.cancel {
+  width: 15%;
+  height: 1.333333rem;
+  line-height: 1.333333rem;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+}

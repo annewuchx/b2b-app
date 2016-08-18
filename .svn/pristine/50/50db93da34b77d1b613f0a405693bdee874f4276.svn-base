@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>添加票据</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/addnotes.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">添加报价信息</h1>
+			<input type="button" value="确认添加" class="h-right mui-btn mui-btn-link" disabled id="add-notes">
+		</header>
+		<!--头部-->
+
+		<script src="../js/mui.min.js"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script src="../libs/sea.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/seajs-text.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="addnotes.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

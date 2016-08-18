@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>融资订单详情页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../styles/financingordersdetail.css" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<style type="text/css">
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+			
+			.mui-backdrop {
+				top: 44px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">融资订单详情</h1>
+		</header>
+		<!--头部结束-->
+
+		<!--content-->
+		<div class="mui-content" v-cloak>
+			<!--上部详细内容-->
+			<div class="order">
+				<div class="order-number">
+					<span>订单号：{{items[0].raiseOrderNo}}</span>
+					<span v-if="items[0].status==1 || items[0].status==2 || items[0].status==5" class="finacing-pro-color state">融资中</span>
+					<span v-if="items[0].status==3 ||　items[0].status==6" class="reject-color state">驳回</span>
+					<span v-if="items[0].status==4" class="revocation-color state">已撤销</span>
+					<span v-if="items[0].status==7 || items[0].status==10" class="finacing-color state1">已融资</span>
+					<span v-if="items[0].status==8" class="refund-color state">退票中</span>
+					<span v-cloak v-if="items[0].status==9" class="revocation-color state">已退票</span>
+				</div>
+
+				<div class="order-con">
+					<ul>
+						<li><span>订单时间</span><span>{{items[0].createTime}}</span></li>
+						<li><span>融资模式</span>
+							<span>
+								<a href="javascript:void(0)" v-if="items[0].paymentType==0">实时融资</a>
+								<a href="javascript:void(0)" v-if="items[0].paymentType==1">T+0融资</a>
+								<a href="javascript:void(0)" v-if="items[0].paymentType==2">T+1融资</a>
+								<a href="javascript:void(0)" v-if="items[0].paymentType==3">T+2融资</a>
+							</span>
+						</li>
+						<li><span>票据张数</span><span>{{pjtotalnum}}张</span></li>
+						<li>
+							<span>收款账户</span>
+							<span v-if="items[0].caseAccountFlag == 1">现金余额</span>
+							<span v-else>{{items[0].payeeBankType}}({{items[0].payeeAccount.substr(items[0].payeeAccount.length-4)}})</span>
+							<a href="javascript:void(0)" id="withdraw" v-show="items[0].status==7 && items[0].caseAccountFlag == 1" v-on:tap="handle_withdraw">提现</a>
+						</li>
+						<li><span>最终到账金额</span><span class="paymentMoney">{{items[0].paymentMoney | currency '￥' }}</span></li>
+						<li><span>票面总额</span><span>{{items[0].totalMoney | currency '￥' }}</span></li>
+					</ul>
+				</div>
+			</div>
+
+			<!--list列表-->
+			
+			
+			
+			<div class="mui-card" data-index="{{$index}}" id="card-{{$index}}">
+				
+				
+				<!--******************主体****************************-->
+				<ul class="mui-table-view" v-for="item in items">
+					<li class="mui-table-view-cell">
+						<div class="mui-collapse-content pj-con" >
+							<div class="mui-collapse-content-right" v-on:tap="openPjList($index)">
+								<ul class="con-right-top">
+									<li>票面金额：{{item.billAmount | currency '￥'}}</li>
+									<li>计息天数：{{item.dayAmount}}天</li>
+								</ul>
+								<div class="dz-money">
+									<ul v-on:tap="openPjList($index,$event)" data-index="{{$parent.$index}}">
+										<li>
+											<a href="javascript:void(0)" class="rz-mode1" v-if="items[0].paymentType==0">实时融资金额</a>
+											<a href="javascript:void(0)" class="rz-mode1" v-if="items[0].paymentType==1">T+0融资金额</a>
+											<a href="javascript:void(0)" class="rz-mode1" v-if="items[0].paymentType==2">T+1融资金额</a>
+											<a href="javascript:void(0)" class="rz-mode1" v-if="items[0].paymentType==3">T+2融资金额</a>
+											
+										</li>
+										
+										<li style="color:rgb(255, 180, 0);">¥&nbsp;&nbsp;<span>{{item.disscountMoney | paymentMoneyInteger | rmb}}</span>.{{item.disscountMoney | paymentMoneyDecimals}}</li>
+
+										<li><span class="mui-icon mui-icon-arrowright"></span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="mui-clearfix"></div>
+						</div>
+
+					</li>
+				</ul>
+				<!--******************主体****************************-->
+				
+			
+			</div>
+			
+				
+				
+				
+			<!--list列表-->
+		</div>
+		<!--content-->
+		<!--loading-->
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<!-- build:js ../js/root.js -->
+	<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+	<!-- endbuild -->
+	<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="financingordersdetail.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

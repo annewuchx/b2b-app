@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的账户——子页面</title>
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/flexible/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../styleflex/mui.min.css" rel="stylesheet" />
+		<!--<link href="../css/mui.min.css" rel="stylesheet" />-->
+		<link rel="stylesheet" href="../css/iconfont.css" />
+
+		<link rel="stylesheet" type="text/css" href="../styleflex/userindex.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../styles/userindex.css" />-->
+	</head>
+
+	<body>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+
+			<div class="mui-scroll">
+				<header class="mui-bar mui-bar-nav user-header">
+					<h1 class="mui-title">我的账户</h1>
+					<a class="mui-pull-right head_btn mui-btn mui-btn-link" id='getMore'>更多</a>
+				</header>
+				<div class="body_div_head body_div_head_bg">
+					<div>
+						<template v-if="indexList.ownerCash.useState == 0">
+							<p class='company-name' v-cloak>{{indexList.ownerCash.companyName}}
+								<span class='yckfont yf-certification userindex-font'></span>
+							</p>
+						</template>
+
+						<p class='company-name' v-else v-cloak>{{indexList.ownerCash.name}}</p>
+
+					</div>
+					<div id="rzBnt" class='verified-btn'>
+						<button type="button" id="rzBtn1" v-if="indexList.ownerCash.useState==1" class="mui-btn mui-btn-outlined">未认证</button>
+						<button type="button" id="rzBtn2" v-if="indexList.ownerCash.useState==2" class="mui-btn mui-btn-outlined">重新认证</button>
+						<button type="button" id="rzBtn3" v-if="indexList.ownerCash.useState==3" disabled="disabled" class="mui-btn mui-btn-outlined">认证中</button>
+					</div>
+					<p class='total-bill-desp'>总资产</p>
+					<p class='total-bill' v-cloak><span>￥</span>{{indexList.ownerCash.totalFinance | financeInteger | rmb}}<span>.{{indexList.ownerCash.totalFinance | financeDecimals}}</span></p>
+				</div>
+
+				<div class="body_div_content">
+					<!--<div class="hline"></div>-->
+					<ul class="mui-table-view">
+						<template v-if="indexList.ownerCash.zxUser=='0'">
+							<li class="mui-table-view-cell" v-on:tap="getMoneyLeft">
+								<a id="billBalance" class='mui-navigate-right'>
+									<label>现金账户</label>
+									<span id="cashAmount" class="account-user" v-cloak>{{indexList.ownerCash.cashAcconut|currency'￥'}}</span>
+								</a>
+							</li>
+						</template>
+						<li class="mui-table-view-cell" v-on:tap="getUserPj">
+							<a id="billAssets" class='mui-navigate-right'>
+								<label>票据资产</label>
+								<span id="billAmount" class="account-user" v-cloak>{{indexList.ownerCash.billTotal|currency'￥'}}</span>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href='javascript:;'>
+								<label>正在交易</label>
+								<span class="account-user" v-cloak>{{indexList.ownerCash.transFinance|currency'￥'}}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="body_div_content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell" v-on:tap="getBank">
+							<a id="bank" class='mui-navigate-right'>
+								<label>银行账户</label>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="body_div_content">
+					<template v-if="indexList.ownerCash.useState == 0 && indexList.ownerCash.manager != '' ">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell" id='manageCall' v-on:tap='getCall'>
+								<a id="manage" class='manage-info'>
+									<label>业务经理</label>
+									<span class="salesman salename account-user" id="yPhone" data-mobile="{{indexList.ownerCash.mobile}}" v-cloak>{{indexList.ownerCash.manager}}&nbsp;{{indexList.ownerCash.mobile}}</span>
+
+									<span class='yckfont yf-phone mui-phone' style="float: right;"></span>
+
+								</a>
+							</li>
+						</ul>
+					</template>
+
+				</div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="../libs/vue.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="./userindex.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

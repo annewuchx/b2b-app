@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>更多</title>
+		<link rel="stylesheet" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<link rel="stylesheet" href="../css/iconfont.css">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../styles/userotherinfo.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">更多</h1>
+		</header>
+
+		<div class="mui-content">
+			<!--<div class="body_header_div" style="">
+				<h3 id="uCompany"></h3>
+				<div class="img" id="utype"></div>
+				<button type="button" id="rzBtn1" v-if=" uType == 1 " class="mui-btn mui-btn-blue rz_btn">未认证</button>
+				<button type="button" id="rzBtn2" v-if=" uType == 2 " class="mui-btn mui-btn-blue rz_btn">重新认证</button>
+			</div>-->
+			<div class="hearbackground">
+				<div class="company">
+					<span id="uCompany">
+					</span>
+					<span class="yckfont yf-certification" id="myimg">
+					</span>
+
+				</div>
+				<div id="rzbtn" class="rzdiv">
+					<button class="mui-btn-outlined rzbtn" id="rzhtml"></button>
+				</div>
+			</div>
+
+			<div class="mui-input-group">
+				<div class="mui-input-row">
+					<label class="yck-kefu">邮箱</label>
+					<span class="row_span" id="uemail"></span>
+				</div>
+				<div class="mui-input-row">
+					<label class="yck-kefu">手机</label>
+					<span class="row_span" id="uphone"></span>
+					<input type="hidden" id="hPhone" />
+				</div>
+				<!--<div class="mui-input-row">
+					<label>微信号</label>
+					<span class="row_span" id="uWx"></span>
+				</div>-->
+			</div>
+
+			<div class="mui-input-group mui-input-row" id="jymm">
+				<a class="mui-navigate-right" style="color: rgb(51,51,51);">
+					忘记交易密码
+				</a>
+			</div>
+
+			<div class="mui-input-group">
+				<div class="mui-input-row" id="fwzx">
+					<a class="mui-navigate-right yck-kefu" data-url="morecustomer.html">
+						客服中心
+					</a>
+				</div>
+				<div class="mui-input-row" id="gywm">
+					<a class="mui-navigate-right yck-kefu" data-url="moreaboutus.html">关于我们</a>
+				</div>
+				<!--<div class="mui-input-row">
+					<a class="mui-navigate-right" data-url="setting.html">设置</a>
+				</div>-->
+			</div>
+
+			<div class="lxwm_form_div text_center_span">
+				<button type="button" id="escLongin" class="mui-btn login-out">退出登录</button>
+			</div>
+
+		</div>
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script src="../js/mui.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="./userotherinfo.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

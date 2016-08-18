@@ -1,0 +1,393 @@
+@charset "UTF-8";
+
+/*
+ * 
+ */
+
+a:hover {
+  text-decoration: none;
+}
+
+div.header {
+  height: 1.17333rem;
+}
+
+.mui-bar {
+  height: 1.17333rem;
+}
+
+.mui-title {
+  line-height: 1.17333rem;
+}
+
+.mui-bar .mui-title {
+  right: 1.06667rem;
+  left: 1.06667rem;
+  display: inline-block;
+  overflow: hidden;
+  width: auto;
+  margin: 0;
+  text-overflow: ellipsis;
+}
+
+.mui-bar-nav h1 {
+  font-size: 0.426667rem;
+  color: #ffffff;
+}
+
+[data-dpr="2"] .mui-bar-nav h1 {
+  font-size: 0.853333rem;
+}
+
+[data-dpr="3"] .mui-bar-nav h1 {
+  font-size: 1.28rem;
+}
+
+/*
+ * 
+ */
+
+.mui-content {
+  width: 100%;
+  height: 100%;
+}
+
+.github-line-chart {
+  margin: 0.533333rem 0;
+  width: 100%;
+  height: 5.09333rem;
+  border-bottom: solid 0.026667rem #e0e0e0;
+  border-top: solid 0.026667rem #e0e0e0;
+  -webkit-box-shadow: 0.026667rem 0.026667rem 0.133333rem #CCCCCC inset;
+  box-shadow: 0.026667rem 0.026667rem 0.133333rem #CCCCCC inset;
+}
+
+.mui-bar {
+  background: rgba(255, 255, 255, 0);
+}
+
+.mui-segmented-control .mui-control-item {
+  line-height: 1.01333rem;
+}
+
+/**
+     * 
+ */
+
+.mui-bar .mui-icon {
+  right: 0.4rem;
+  color: #ffffff;
+  font-size: 0.64rem;
+  float: right;
+}
+
+[data-dpr="2"] .mui-bar .mui-icon {
+  font-size: 1.28rem;
+}
+
+[data-dpr="3"] .mui-bar .mui-icon {
+  font-size: 1.92rem;
+}
+
+/**
+             * span
+         */
+
+.mui-bar .mui-icon span {
+  position: absolute;
+  display: inline-block;
+  background: #ffb400;
+  width: 0.213333rem;
+  height: 0.213333rem;
+  top: 0.266667rem;
+  right: 0.026667rem;
+  border-radius: 0.666667rem;
+  border: 0.026667rem solid #ffffff;
+  opacity: 0;
+}
+
+.mui-bar-nav {
+  padding: 0;
+  box-shadow: 0 0;
+}
+
+.mui-bar-nav ~ .mui-content {
+  padding-top: 0;
+}
+
+/*
+ * 
+ */
+
+.chart-addon {
+  height: 0.53333rem;
+  line-height: 0.53333rem;
+  padding-left: 0.4rem;
+  font-size: 0.266667rem;
+  margin: 0;
+  color: #555555;
+  background: white;
+}
+
+[data-dpr="2"] .chart-addon {
+  font-size: 0.533333rem;
+}
+
+[data-dpr="3"] .chart-addon {
+  font-size: 0.8rem;
+}
+
+.networkuseless {
+  width: 100%;
+  height: 1.33333rem;
+  background-color: #ffeeee;
+  color: #998f8e;
+  font-size: 0.426667rem;
+  line-height: 1.33333rem;
+}
+
+[data-dpr="2"] .networkuseless {
+  font-size: 0.853333rem;
+}
+
+[data-dpr="3"] .networkuseless {
+  font-size: 1.28rem;
+}
+
+.networkuseless span.mui-icon {
+  color: #febf00;
+  margin: 0 0.266667rem;
+}
+
+/*
+ * 
+ */
+
+#slider,
+.mui-slider-item img {
+  height: 5.84rem;
+}
+
+/**
+    导航栏
+ */
+
+#mycard {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+  margin-top: 0.26667rem;
+  margin-bottom: 0.26667rem;
+  background: white;
+}
+
+ul#nav:after {
+  clear: both;
+  content: "";
+}
+
+ul#nav {
+  width: 100%;
+  margin: 0.24rem 0 0.13333rem;
+  padding: 0 0.4rem;
+}
+
+/*
+     * li
+     */
+
+ul#nav li {
+  width: 25%;
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+
+/*
+ * a
+ */
+
+ul#nav li a {
+  display: block;
+}
+
+/*
+ * 
+ */
+
+ul#nav li div.hexagon {
+  position: relative;
+  display: inline-block;
+  width: 1.38667rem;
+  height: 1.28rem;
+  background-size: 1.38667rem 1.28rem;
+  background-repeat: no-repeat;
+}
+
+/*
+         * 
+         */
+
+ul#nav li div.hexagon1 {
+  background-image: url("../images/index/icon_home_bg1.svg");
+}
+
+ul#nav li div.hexagon2 {
+  background-image: url("../images/index/icon_home_bg2.svg");
+}
+
+ul#nav li div.hexagon3 {
+  background-image: url("../images/index/icon_home_bg3.svg");
+}
+
+ul#nav li div.hexagon4 {
+  background-image: url("../images/index/icon_home_bg4.svg");
+}
+
+/*
+         * 
+         */
+
+ul#nav li div.hexagon > i.yckfont {
+  display: block;
+  color: white;
+  font-size: 0.64rem;
+  width: 0.64rem;
+  height: 0.64rem;
+  line-height: 100%;
+  position: absolute;
+  top: 0.34667rem;
+  left: 0.37333rem;
+}
+
+[data-dpr="2"] ul#nav li div.hexagon > i.yckfont {
+  font-size: 1.28rem;
+}
+
+[data-dpr="3"] ul#nav li div.hexagon > i.yckfont {
+  font-size: 1.92rem;
+}
+
+ul#nav > li > a > span {
+  font-size: 0.32rem;
+  line-height: 100%;
+  display: block;
+  color: #333333;
+  height: 0.32rem;
+  margin: 0.133333rem 0;
+  text-align: center;
+}
+
+[data-dpr="2"] ul#nav > li > a > span {
+  font-size: 0.64rem;
+}
+
+[data-dpr="3"] ul#nav > li > a > span {
+  font-size: 0.96rem;
+}
+
+/*
+ * 今日指数－本周指数－本月指数
+ */
+
+.mui-segmented-control {
+  height: 1.30667rem;
+  border: 0;
+  font-size: 0.426667rem;
+  box-shadow: 0 0.026667rem 0.16rem #ccc;
+  border-radius: 0;
+}
+
+[data-dpr="2"] .mui-segmented-control {
+  font-size: 0.853333rem;
+}
+
+[data-dpr="3"] .mui-segmented-control {
+  font-size: 1.28rem;
+}
+
+/*
+ * 
+ */
+
+.mui-segmented-control .mui-control-item {
+  color: #7ba3f6;
+  background: #ffffff;
+  padding-top: 0.133333rem;
+  border-left: 0;
+}
+
+/*
+ * 
+ */
+
+.mui-segmented-control .mui-control-item.mui-active {
+  background: #ffffff;
+  font-weight: 20;
+  color: #0066ff;
+  border-bottom: 0.106667rem solid #0066ff;
+}
+
+/*
+ * 
+ */
+
+.ct-chart {
+  height: 5.09333rem;
+  /* android browser 4.4+*/
+  border-bottom: solid 0.026667rem #e0e0e0;
+}
+
+.ct-chart svg {
+  background-image: -moz-linear-gradient(top, #2c52e9, #5639d8);
+  /* FF3.6 */
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #000000), color-stop(1, #5639d8));
+  /* Safari 4+, Chrome 2+ */
+  background-image: -webkit-linear-gradient(top, #2c52e9, #5639d8);
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -o-linear-gradient(top, #2c52e9, #5639d8);
+  /* Opera 11.1+ */
+  background-image: linear-gradient(to bottom, #2c52e9, #5639d8);
+}
+
+.ct-chart .ct-label {
+  color: white;
+}
+
+.ct-chart .ct-line {
+  stroke: #23cefe;
+}
+
+.ct-chart .ct-series-a .ct-point {
+  stroke: white;
+  stroke-width: 0.133333rem;
+}
+
+.chart-bottom {
+  height: 0.26667rem;
+  background-color: #F2F2F2;
+}
+
+#emailMsg {
+  position: absolute;
+  top: 0.26667rem;
+  right: 0;
+  border: 0.026667rem solid #ffffff;
+  background-color: #ffb400;
+  width: 0.21333rem;
+  height: 0.21333rem;
+  border-radius: 0.106667rem;
+  display: none;
+}
+
+.testfontsize {
+  font-size: 0.426667rem;
+}
+
+[data-dpr="2"] .testfontsize {
+  font-size: 0.853333rem;
+}
+
+[data-dpr="3"] .testfontsize {
+  font-size: 1.28rem;
+}

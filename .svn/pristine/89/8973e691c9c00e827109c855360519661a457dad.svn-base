@@ -1,0 +1,466 @@
+.ui-page-login,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.mui-bar .mui-icon {
+  position: relative;
+  z-index: 20;
+}
+
+[data-dpr="1"] .mui-bar .mui-icon {
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+[data-dpr="2"] .mui-bar .mui-icon {
+  font-size: 48px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+[data-dpr="3"] .mui-bar .mui-icon {
+  font-size: 72px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/*header*/
+
+header.mui-bar {
+  background: rgba(255, 255, 255, 0);
+}
+
+.mui-bar-nav {
+  box-shadow: none;
+}
+
+.mui-bar-nav a {
+  color: #fff;
+}
+
+[data-dpr="1"] .mui-bar-nav a span {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .mui-bar-nav a span {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .mui-bar-nav a span {
+  font-size: 48px;
+}
+
+/*mui-content*/
+
+.backImg {
+  width: 100%;
+  height: 3.84rem;
+  background: url(../images/pic_login.png) no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  margin-bottom: 1.6rem;
+}
+
+.pic-logo img {
+  position: absolute;
+  display: block;
+  width: 30%;
+  top: 1.466667rem;
+  left: 35%;
+}
+
+/**/
+
+.mui-input-group:first-child {
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+
+[data-dpr="1"] .mui-segmented-control {
+  font-size: 17px;
+}
+
+[data-dpr="2"] .mui-segmented-control {
+  font-size: 34px;
+}
+
+[data-dpr="3"] .mui-segmented-control {
+  font-size: 51px;
+}
+
+.mui-slider-progress-bar {
+  height: 0.106667rem;
+}
+
+.hline {
+  box-sizing: border-box;
+  line-height: 0;
+  background-color: #06f;
+  width: 100%;
+  height: 0.106667rem;
+}
+
+.hline_2 {
+  box-sizing: border-box;
+  line-height: 0;
+  background-color: rgb(204, 204, 204);
+  width: 100%;
+  height: 0.026667rem;
+}
+
+.horizontal-view {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.login-tap a {
+  padding-bottom: 0.346667rem;
+}
+
+.login-active {
+  color: #06f !important;
+}
+
+/*.mui-content*/
+
+.mui-bar-nav~.mui-content {
+  padding-top: 0;
+  height: 100%;
+  background: #FFFFFF;
+}
+
+.area {
+  margin: 0.533333rem auto 0;
+}
+
+.mui-input-group {
+  background: #FFFFFF;
+}
+
+.mui-input-group:before {
+  height: 0;
+}
+
+.mui-input-group label {
+  width: 23%;
+  padding: 0.666667rem 0.4rem;
+  color: #06f;
+}
+
+[data-dpr="1"] .mui-input-group label {
+  font-size: 20px;
+}
+
+[data-dpr="2"] .mui-input-group label {
+  font-size: 40px;
+}
+
+[data-dpr="3"] .mui-input-group label {
+  font-size: 60px;
+}
+
+.mui-input-row label~ input {
+  width: 77%;
+}
+
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+  height: 1.733333rem;
+}
+
+.mui-input-row .mui-input-clear~.mui-icon-clear,
+.mui-input-row .mui-input-password~.mui-icon-eye,
+.mui-input-row .mui-input-speech~.mui-icon-speech {
+  top: 0.666667rem;
+}
+
+.mui-input-group .mui-input-row {
+  height: 1.733333rem;
+}
+
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+  top: 0.16rem;
+}
+
+.mui-content-padded {
+  margin-top: 0.666667rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+
+.mui-btn {
+  padding: 0.266667rem;
+}
+
+.link-area {
+  display: block;
+  margin-top: 0.666667rem;
+  text-align: center;
+}
+
+.spliter {
+  color: #bbb;
+  padding: 0 0.213333rem;
+}
+
+.oauth-area {
+  position: absolute;
+  bottom: 0.533333rem;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.oauth-area .oauth-btn {
+  display: inline-block;
+  width: 1.333333rem;
+  height: 1.333333rem;
+  background-size: 0.8rem 0.8rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0 0.533333rem;
+  border: solid 1px #ddd;
+  border-radius: 0.666667rem;
+}
+
+.oauth-area .oauth-btn:active {
+  border: solid 1px #aaa;
+}
+
+.oauth-area .oauth-btn.disabled {
+  background-color: #ddd;
+}
+
+.btn-check-code {
+  width: 30% !important;
+  height: 0.906667rem;
+  line-height: 0.213333rem !important;
+  margin-top: 0.4rem !important;
+  padding: 0.266667rem 0.133333rem !important;
+  color: #fff !important;
+  background: #06f;
+  font-size: 0.373333rem;
+}
+
+.mui-active {
+  color: #0066FF;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.346667rem;
+}
+
+[data-dpr="1"] .mui-active {
+  font-size: 17px;
+}
+
+[data-dpr="2"] .mui-active {
+  font-size: 34px;
+}
+
+[data-dpr="3"] .mui-active {
+  font-size: 51px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+  color: rgb(123, 163, 246);
+  border: 0;
+}
+
+[data-dpr="1"] .mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+  font-size: 17px;
+}
+
+[data-dpr="2"] .mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+  font-size: 34px;
+}
+
+[data-dpr="3"] .mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+  font-size: 51px;
+}
+
+.mui-segmented-control .mui-control-item {
+  line-height: normal;
+  display: table-cell;
+  overflow: hidden;
+  width: 1%;
+  -webkit-transition: background-color .1s linear;
+  transition: background-color .1s linear;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgb(123, 163, 246);
+  border-color: #06f;
+  border-left: 1px solid #06f;
+}
+
+[data-dpr="1"] .mui-segmented-control .mui-control-item {
+  font-size: 17px;
+}
+
+[data-dpr="2"] .mui-segmented-control .mui-control-item {
+  font-size: 34px;
+}
+
+[data-dpr="3"] .mui-segmented-control .mui-control-item {
+  font-size: 51px;
+}
+
+.yf-eyeclose {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  width: 1.013333rem;
+  height: 1.2rem;
+  top: 0.746667rem;
+  text-align: center;
+  color: rgb(204, 204, 204);
+}
+
+[data-dpr="1"] .yf-eyeclose {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .yf-eyeclose {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .yf-eyeclose {
+  font-size: 48px;
+}
+
+.yf-eyeopen {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  width: 1.013333rem;
+  height: 1.2rem;
+  top: 0.746667rem;
+  text-align: center;
+  color: rgb(204, 204, 204);
+}
+
+[data-dpr="1"] .yf-eyeopen {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .yf-eyeopen {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .yf-eyeopen {
+  font-size: 48px;
+}
+
+.mui-input-group label {
+  width: auto;
+  padding: 0;
+  color: #06f;
+  font-size: 0.533333rem;
+  height: 100%;
+  line-height: 1.733333rem;
+  margin-right: 0.533333rem;
+  margin-left: 0.266667rem;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+  float: left;
+  width: 65%;
+}
+
+[data-dpr="1"] .mui-input-row label~input,
+[data-dpr="1"] .mui-input-row label~select,
+[data-dpr="1"] .mui-input-row label~textarea {
+  font-size: 15px;
+}
+
+[data-dpr="2"] .mui-input-row label~input,
+[data-dpr="2"] .mui-input-row label~select,
+[data-dpr="2"] .mui-input-row label~textarea {
+  font-size: 30px;
+}
+
+[data-dpr="3"] .mui-input-row label~input,
+[data-dpr="3"] .mui-input-row label~select,
+[data-dpr="3"] .mui-input-row label~textarea {
+  font-size: 45px;
+}
+
+.mui-input-group .mui-input-row:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #c8c7cc;
+}
+
+.yck-btn {
+  margin-top: 1.333333rem;
+  margin-bottom: 0.4rem;
+}
+
+.login-form {
+  margin: 0 0.4rem;
+  padding-top: 0.346667rem;
+}
+
+.login-checkcode {
+  width: 50% !important;
+}
+
+/**
+ * mui
+ */
+
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  border-radius: 0.08rem;
+  border-top-left-radius: 0.08rem;
+  border-top-right-radius: 0.08rem;
+  border-bottom-right-radius: 0.08rem;
+  border-bottom-left-radius: 0.08rem;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+  border-bottom: 0;
+}

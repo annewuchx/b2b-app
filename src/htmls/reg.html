@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<title>免费注册</title>
+		<script src="../libs/flexible/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../styleflex/mui.min.css" rel="stylesheet" />
+		<!--<link href="../css/mui.min.css" rel="stylesheet" />-->
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../styles/reg.css" />-->
+		<link rel="stylesheet" type="text/css" href="../styleflex/reg.css" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft mui-action-back"><span>返回</span></a>
+
+		</header>
+		<div class="mui-content regInfor">
+			<div class="backImg"></div>
+			<div class="pic-logo"><img src="../images/pic_logo.png" /></div>
+			<p class='reg-title'>免费注册</p>
+
+			<div class='hline'></div>
+
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label class="yckfont yf-mobile"></label>
+					<input type="tel" id='regMobile' placeholder="请输入您的常用手机号" class="mui-input-clear reg-mobile">
+				</div>
+				<div class="mui-input-row">
+					<label class="yckfont yf-shield"></label>
+					<input type="number" id='regCheckcode' pattern="[0-9]*" placeholder="请输入验证码" class="reg-code">
+					<button type="button" id="btnCheckCode" class="mui-btn mui-btn-blue btn-check-code">获取验证码</button>
+				</div>
+				<div class="mui-input-row mui-password">
+					<label class="yckfont yf-unlock"></label>
+					<input type="password" id='regPassword' class="mui-input-password reg-pw" data-input-password="3" placeholder="密码请输入至少6位字符">
+					<span statu="0" id="yck-eye" class="yckfont yf-eyeclose yck-eye"></span>
+				</div>
+			</form>
+
+			<div class="mui-content-padded">
+				<button id='regFrom' type="button" class="mui-btn mui-btn-block mui-btn-primary reg-btn" disabled="disabled">免费注册</button>
+			</div>
+			<p class='assist'><span style="color: rgb(51,51,51);">注册即同意</span><span id="assistBtn" style="color: rgb(0,102,255);">银承库平台服务协议</span></p>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script src="./reg.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

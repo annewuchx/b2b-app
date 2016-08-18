@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>现金账户子页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<link rel="stylesheet" href="../styles/usermoney.css" />
+	</head>
+
+	<body>
+
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+
+				<div class="body_header_div" v-cloak>
+					<p class='money-left-title'>账户余额(元)</p>
+					<p class='money-left' v-if="billLeft.accountBalance">￥{{ billLeft.accountBalance| financeInteger | rmb }}<span style="font-size: 28px;">.{{billLeft.accountBalance| financeDecimals }}</span></p>
+					<p class='money-left' v-else>￥00<span style="font-size: 28px;">.00</span></p>
+					<button type="button" id="txBnt" class="mui-btn mui-btn-blue mui-btn-block money-btn" style="padding-bottom: 10px;padding-top: 10px;">提现</button>
+				</div>
+
+				<div class="bank-acount" v-cloak>
+					<div class="duli-account">
+						<span>中信银行独立资金账户</span>
+						<span class="duli-account-href">
+							<a href="javascript:;" data-url="zijinaccount.html">了解详情</a>
+						</span>
+					</div>
+					<div class="money_bank_msg">
+						<div class="mui-input-row">
+							<label>账户名称：</label>
+							<span>{{billLeft.accountName}}</span>
+						</div>
+						<div class="mui-input-row">
+							<label>银行账户：</label>
+							<span>{{billLeft.bankNumber}}</span>
+						</div>
+						<div class="mui-input-row">
+							<label>开户银行：</label>
+							<span>{{billLeft.bankName}}</span>
+						</div>
+						<div class="mui-input-row">
+							<label>联行号：</label>
+							<span>{{billLeft.bankCnps}}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="usermoney_page_msg" v-cloak>
+					<p>您的每笔交易资金，都将受到银行的全程记录</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../libs/vue.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script type="text/javascript" charset="utf-8" src='usermoney.js'></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../styles/reserverecords.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content mui-scroll-wrapper content" id="refreshContainer" style="margin-bottom: 10px;">
+			<div class="mui-scroll">
+				<div id="list" style="border:none;" class="refreshUl">
+					<template v-for="item in reserveList">
+						<ul style="margin-top: 10px;border:none;padding-left: 0;">
+							<li class="mui-table-view-cell  mui-card">
+								<div class="title1">
+									<span>预约编号：{{item.bespeakNo}}</span>
+								</div>
+								<div class="listcenter">
+									<div id="" style="float: left;">
+										<div>
+											<span>保价时间：{{item.protectionBeginTime.substring(0,16)}}-{{item.protectionEndTime.substring(10,16)}}</span>
+										</div>
+										<div>
+											<span>预约额度：{{item.bespeakAmount | currency ''}}元</span>
+										</div>
+										<div v-if="item.billAmount!=0">
+											<span>票面总额：{{item.billAmount | currency ''}}元</span>
+										</div>
+									</div>
+									<div id="" style="float: right;">
+										<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" v-if="item.status==0">
+									待确认
+								</button>
+										<button type="button" class="mui-btn mui-btn-success mui-btn-outlined" v-if="item.status==1">
+									已确认
+								</button>
+
+										<button type="button" id="test" class="mui-btn mui-btn-warning mui-btn-outlined" v-if="item.status==2">
+									{{ item.time }}
+								</button>
+										<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined" v-if="item.status==3">
+									已关闭
+								</button>
+
+										<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined" v-if="item.status==4">
+									已结束
+								</button>
+									</div>
+								</div>
+								<div style="clear: both;"></div>
+								<div style="font-size: 14px;text-align: center;border-top: 1px #EFEFF4 solid;">
+									<span>
+							门店地址：
+						</span>
+									<span>
+							{{item.storeAddress}}
+						</span>
+								</div>
+								<div class="listbottom" style="padding-top: 5px;height: 40px;" v-if="item.status!=3">
+									<div style="display: inline;float: left;width: 50px;height: 30px;">
+										<div><span><img src="../images/u65.png" style="width: 100%;height: 30px;"></span></div>
+										<span>客户经理</span>
+									</div>
+									<div style="display: inline;float: right;margin-top: 10px;">
+										<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" v-on:click="close(item.id)" style="background-color: #285D9C;border-color: #285D9C;color: #FFFFFF;" v-if="item.status==0">
+								取消
+							</button>
+										<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="background-color: #CCCCCC;border-color: #CCCCCC;color: #999999;" v-if="item.status!=0">
+								取消
+							</button>
+
+									</div>
+								</div>
+								<div class="listbottom" style="padding-top: 5px;" v-if="item.status==3">
+									<span>
+							关闭原因：预约额度有误
+						</span>
+								</div>
+							</li>
+						</ul>
+					</template>
+				</div>
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="reserverecords.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

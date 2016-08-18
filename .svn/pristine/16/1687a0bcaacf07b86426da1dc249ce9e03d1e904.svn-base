@@ -1,0 +1,223 @@
+.bank_list {
+  border: 0.026667rem solid rgb(204, 204, 204);
+  border-right: 0px;
+  height: 3.466667rem;
+  margin: 2.67% 2.67% 0 2.67%;
+  position: relative;
+  padding: 0;
+  background: white;
+  transition: 0.3s;
+}
+
+.mui-ios .bank_list {
+  border: 0.013333rem solid rgb(204, 204, 204);
+  border-right: 0;
+}
+
+.bank_list_delete {
+  opacity: 0;
+}
+
+.bank_list .bank_list_left {
+  background-color: #F3742B;
+  width: 1.333333rem;
+  height: 2.666667rem;
+  float: left;
+}
+
+.bank_list .bank_list_right {
+  height: 100%;
+}
+
+.span_bottom {
+  letter-spacing: 0.026667rem;
+  color: rgb(119, 119, 119);
+  margin-top: 0.4rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+
+[data-dpr="1"] .span_bottom {
+  font-size: 15px;
+}
+
+[data-dpr="2"] .span_bottom {
+  font-size: 30px;
+}
+
+[data-dpr="3"] .span_bottom {
+  font-size: 45px;
+}
+
+.bank_delete_div {
+  position: absolute;
+  right: 0.133333rem;
+  display: none;
+}
+
+[data-dpr="1"] .bank_delete_div a {
+  font-size: 40px;
+}
+
+[data-dpr="2"] .bank_delete_div a {
+  font-size: 80px;
+}
+
+[data-dpr="3"] .bank_delete_div a {
+  font-size: 120px;
+}
+
+.mui-table-view-cell:after {
+  height: 0;
+}
+
+.mui-btn {
+  width: 2.4rem;
+}
+
+.mui-loader {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: 60%;
+  color: #888;
+  text-align: center;
+}
+
+[data-dpr="1"] .mui-loader {
+  font-size: 14px;
+}
+
+[data-dpr="2"] .mui-loader {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .mui-loader {
+  font-size: 42px;
+}
+
+.account-default {
+  top: 1.093333rem;
+  width: 1.733333rem;
+  height: 0.506667rem;
+  position: absolute;
+  right: 0.666667rem;
+  text-align: center;
+  color: rgb(124, 163, 246);
+  border: 1px solid rgb(124, 163, 246);
+  border-radius: 0.266667rem;
+  line-height: 0.506667rem;
+}
+
+[data-dpr="1"] .account-default {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .account-default {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .account-default {
+  font-size: 36px;
+}
+
+.mui-backdrop {
+  top: 1.173333rem;
+}
+
+.bank-back {
+  background: #0066ff;
+}
+
+.bank-back a,
+.bank-back h1,
+.bank-back span {
+  color: #FFFFFF;
+}
+
+.bank-new {
+  float: right;
+  font-size: 0.373333rem;
+  display: inline-block;
+}
+
+.bank-right-container,
+.bank-left-container {
+  float: left;
+}
+
+.bank-right-container {
+  width: 0.106667rem;
+  height: 100%;
+  float: right;
+}
+
+.bank-left-container {
+  /*border-top: 1px solid rgb(204, 204, 204);
+	border-left: 1px solid rgb(204, 204, 204);
+	border-bottom: 1px solid rgb(204, 204, 204);*/
+  width: 95%;
+  height: 100%;
+  padding: 0.533333rem 0;
+  padding-left: 7.12%;
+}
+
+.mui-android .bank-blue {
+  border-right: 0.053333rem solid rgb(111, 168, 255);
+  /*background: rgb(111, 168, 255);*/
+}
+
+.mui-android .bank-gray {
+  /*background: rgb(204, 204, 204);*/
+  border-right: 0.053333rem solid rgb(204, 204, 204);
+}
+
+.mui-ios .bank-blue {
+  border-right: 0.053333rem solid rgb(111, 168, 255);
+  /*background: rgb(111, 168, 255);*/
+}
+
+.mui-ios .bank-gray {
+  /*background: rgb(204, 204, 204);*/
+  border-right: 0.053333rem solid rgb(204, 204, 204);
+}
+
+.bank-name {
+  color: rgb(51, 51, 51);
+  height: 0.48rem;
+  line-height: 0.48rem;
+  margin-bottom: 0.133333rem !important;
+}
+
+[data-dpr="1"] .bank-name {
+  font-size: 18px;
+}
+
+[data-dpr="2"] .bank-name {
+  font-size: 36px;
+}
+
+[data-dpr="3"] .bank-name {
+  font-size: 54px;
+}
+
+.bank-subname {
+  font-size: 0.373333rem;
+  height: 0.8rem;
+  line-height: 0.373333rem;
+  width: 67%;
+}
+
+.bank-delete {
+  font-size: 0.426667rem;
+  width: 2.666667rem;
+  background: rgb(111, 168, 255);
+  display: inline-block;
+  line-height: 3.093333rem;
+  text-align: center;
+  padding-left: 0.56rem !important;
+}
+
+.bank_list:last-child {
+  margin-bottom: 0.266667rem;
+}

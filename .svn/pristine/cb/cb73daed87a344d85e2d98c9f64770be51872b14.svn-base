@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>企业理财</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../styles/financeindex.css" />
+		<style type="text/css">
+			html,
+			body,
+			.yck-content {
+				height: 100%;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">企业理财</h1>
+		</header>
+		<div class="mui-content yck-content">
+			<div class="mui-loader" id="yck-loader">
+				加载中...<!--<img id="loadingPic" align="center" src="../images/loading.gif" alt="loading" style="width: 100%; max-width: 658px; max-height: 370px; display: inline-block;" />-->
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			var subpages = [{
+				url: "financeindex-sub.html",
+				id: "financeindex-sub.html",
+				styles: {
+					top: '45px',
+					bottom: "0px"
+				}
+			}];
+
+			var timerId = null;
+			var subPage = null;
+
+			mui.init();
+			mui.plusReady(function() {
+				preload_subpages();
+
+				if(timerId != null) {
+					clearTimeout(timerId);
+				}
+
+				timerId = setTimeout(function() {
+					subPage.show();
+					//
+				}, 600);
+
+				//
+				function preload_subpages() {
+
+					var self = plus.webview.currentWebview();
+
+					var i = 0;
+
+					if(plus.webview.getWebviewById(subpages[i]) == null) {
+
+						var sub = plus.webview.create(subpages[i].url, subpages[i].id, subpages[i].styles);
+
+						subPage = sub;
+
+						sub.hide();
+
+						self.append(sub);
+
+					}
+				}
+
+			});
+		</script>
+	</body>
+
+</html>

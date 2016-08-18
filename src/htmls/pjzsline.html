@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			html,
+			body,
+			.mui-content {
+				height: 100%;
+				background-color:transparent !important;
+			}
+			
+			#maps1,
+			#mapsline1 {
+				width: 100%;
+				height: 100%;
+			}
+			.github-line-chart {
+				height: 30px;
+				width: 100%;
+				border-top: solid 1px #1B60A5;/*no*/
+				border-bottom: solid 1px #1B60A5;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="chart" style="height: 100%;margin:0;font-weight: normal;">
+				<div class="github-line-chart">
+				</div>
+				<div id="mapsline1">
+				</div>
+			</div>
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/echart2/echarts.line.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="pjzsline.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

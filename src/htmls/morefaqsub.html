@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-content, body, html {
+			    background-color: #FFFFFF;
+			    padding: 0;
+			    padding:0;
+			}
+			.content-title{
+				margin-top: 25px;
+				margin-left: 15px;
+				margin-right: 15px;
+				padding: 0;
+				padding:0 0 10px 0;
+				font-size: 17px;
+				font-weight: bold;
+				color: rgb(51,51,51);
+				border-bottom: 1px solid #CCCCCC;
+			}
+			.content-text{
+				padding: 0;
+				margin: 0;
+				padding-left: 15px;
+				padding-right: 15px;
+				margin-top: 15px;
+				font-size: 15px;
+				color: #333333;
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+			textarea {
+			    line-height: 21px;
+			    width: 100%;
+			    height: 100%;
+			    -webkit-user-select: text;
+			    outline: 0;
+			    background-color: #fff;
+			    -webkit-appearance: none;
+			}
+			html,body #text{
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #0066FF">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back" style="color: #fff;"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title" style="color: #fff;font-size: 16px;">帮助中心</h1>
+		</header>
+		<div class="mui-content">
+			<div class="content-title"></div>
+			<div class="content-text" id="text"></div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.ready(function(){
+				var offsetheight  = document.getElementsByClassName('content-text')[0].scrollHeight;
+				var bodyheight  = document.body.scrollHeight;
+				var heighthelp = bodyheight-offsetheight-100;
+				document.getElementsByClassName('content-text')[0].setAttribute('style','height:'+heighthelp+'px')
+			});
+			mui.plusReady(function(){
+				var cwv = plus.webview.currentWebview();
+				var textcontenthtml = cwv.webtext;
+				var texttitlehtml = cwv.webtitle;
+				texttitlehtml = texttitlehtml.substring(texttitlehtml.indexOf("、")+1,texttitlehtml.length);
+				textcontenthtml = textcontenthtml.replace(/\s+/g, "");
+				document.getElementsByClassName('content-title')[0].innerHTML=texttitlehtml;
+				document.getElementsByClassName('content-text')[0].innerHTML=textcontenthtml;
+			})
+		</script>
+	</body>
+
+</html>

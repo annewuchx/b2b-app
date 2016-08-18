@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>融资订单页-子页面</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../styles/financingorderssubpage.css" />
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper content" >
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul id="datalistcontainer" class="mui-table-view" v-cloak>
+					<li class="mui-table-view-cell1" v-for="item in pjdata">
+						<!--data-time-->
+						<div class="data-time">
+							<h5 v-if="group(time(item.createTime))" v-cloak>{{time(item.createTime)}}</h5>
+							<div class="order-form" v-on:tap="state(item.raiseOrderNo, item.id)">
+								<div class="order-form-tit">
+									<span v-cloak>订单号	<i>：{{item.raiseOrderNo}}</i></span>
+									<span v-cloak v-if="item.status==1 || item.status==2 || item.status==5" class="u18-img finacing-pro-color">融资中</span>
+									<span v-cloak v-if="item.status==3 ||　item.status==6" class="u18-img reject-color">驳回</span>
+									<span v-cloak v-if="item.status==4" class="u18-img revocation-color">已撤销</span>
+									<span v-cloak v-if="item.status==7 || item.status==10" class="u18-img finacing-color">已融资</span>
+									<span v-cloak v-if="item.status==8" class="u18-img refund-color">退票中</span>
+									<span v-cloak v-if="item.status==9" class="u18-img revocation-color">已退票</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="order-form-con">
+									<ul>
+										<li>
+											<a href="javascript:void(0)" v-if="item.paymentType==0">实时&nbsp;最终到账金额</a>
+											<a href="javascript:void(0)" v-if="item.paymentType==1">T+0&nbsp;最终到账金额</a>
+											<a href="javascript:void(0)" v-if="item.paymentType==2">T+1&nbsp;最终到账金额</a>
+											<a href="javascript:void(0)" v-if="item.paymentType==3">T+2&nbsp;最终到账金额</a>
+										</li>
+										
+										<li>¥&nbsp;<span>{{item.paymentMoney | paymentMoneyInteger | rmb}}</span>.{{item.paymentMoney | paymentMoneyDecimals}}</li>
+										
+										<li><span class="mui-icon mui-icon-arrowright"></span></li>
+									</ul>
+									<div class="order-sum">
+										<span>票面金额 ：{{item.totalMoney | currency '￥'}}</span>
+										<em>11111</em>
+										<span>张数：{{item.totalBillCount}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--data-time-->
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="financingorderssubpage.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

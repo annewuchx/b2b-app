@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>融资确认页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css"/>
+		<link rel="stylesheet" type="text/css" href="../styles/financingbasket.css" />
+		<style type="text/css">
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">确认融资订单</h1>
+		</header>
+		<!--头部结束-->
+
+		<!--footer-->
+		<footer v-cloak>
+			<div class="immediate-financing" id="openSelector">确认融资</div>
+		</footer>
+		<!--footer-->
+
+		<!--mui-content-->
+		<div class="mui-content" v-cloak>
+			<div class="order-detail">
+				<ul>
+					<li>
+						<p>融资模式</p>
+						<p v-if="raiseType == 0">实时融资</p>
+						<p v-if="raiseType == 1">T+0融资</p>
+						<p v-if="raiseType == 2">T+1融资</p>
+						<p v-if="raiseType == 3">T+2融资</p>
+					</li>
+					
+					<li><p>票据张数</p><p>{{pjtotalnum}}张</p></li>
+					
+					<li v-on:tap="bankZH" v-if="bank_data.zxUser == '1'" class='bank-info'>
+						<p>收款账户</p>
+						<p class="bank-name">{{bank_data.banks[0].bankName}}</p>
+						<p style="color: rgb(51, 51,51);">
+							(<span class="bank-cardId">{{bank_data.banks[0].bankNumber.substr(bank_data.banks[0].bankNumber.length-4)}}</span>)
+						</p>
+						<p class="mui-icon mui-icon-arrowright"></p>
+					</li>
+					<li v-if="bank_data.zxUser == '0'">
+						<p>收款账户</p>
+						<p>现金余额</p>
+					</li>
+					<li class="money"><p>最终到账金额</p><p>{{rjtotal | currency '￥' }}</p></li>
+					<li><p>票面总额</p><p>{{pmtotal | currency '￥' }}</p></li>
+					<li v-if="yhMoney > 0"><p>优惠总额</p><p class="money">{{yhMoney | currency "￥"}}</p></li>  <!--v-if="yhMoney > 0"-->
+				</ul>
+			</div>
+			<div class="bg-pos">
+				<p></p>
+				<p v-if="yhMoney > 0"></p>
+			</div>
+			<!--mui-card-->
+			<div class="mui-card" v-for="item in items">
+				<ul class="mui-table-view">
+					<!--******************主体****************************-->
+					<li class="mui-table-view-cell" v-bind:class="{'bgColor': item.isbook}">
+						<!--头部-->
+						<div class="pj-tit" v-if="item.bespeakNo !== ''">
+							<ul>
+								<li></li>
+								<li class="pj-tit-order">
+									<p>
+										<span v-if="item.mdDiscountTotalAmount == 0">承信预约 (价格保护中)</span>
+										<span v-else>承信预约(优惠:<!--¥111,111.11-->{{item.mdDiscountTotalAmount | currency '￥'}})</span>
+									</p>
+								</li>
+								<li class="no">
+									<p>编号:<span>{{item.bespeakNo}}</span></p>
+								</li>
+							</ul>
+						</div>
+
+						<!--下部内容-->
+						<div class="pj-con" v-for="i in item.billDetail">
+							<div class="mui-collapse-content-right">
+								<ul class="con-right-top">
+									<li>票面金额：{{i.billMoney | currency '￥'}}</li>
+									<li v-if="item.raiseType == '0'">计息天数：{{i.mdDayCount}}天</li>
+									<li v-if="item.raiseType == '1'">计息天数：{{i.t0DayCount}}天</li>
+									<li v-if="item.raiseType == '2'">计息天数：{{i.t1DayCount}}天</li>
+									<li v-if="item.raiseType == '3'">计息天数：{{i.t2DayCount}}天</li>
+								</ul>
+								<!--dz-money-->
+								<div class="dz-money">
+									<ul v-on:tap="openPjList($index)" data-index="{{$parent.$index}}">
+
+										<template v-if="item.raiseType == '0'">
+											<li><span class="rz-mode1">实时</span>融资金额</li>
+
+											<li v-if="item.bespeakNo == ''" style="color:rgb(255, 180, 0);">¥&nbsp;&nbsp;<span>{{i.mdPrice | priceInteger | rmb}}</span>.{{i.mdPrice | priceDecimals}}</li>
+											<li v-else style="color:rgb(255, 114, 0);">¥&nbsp;&nbsp;<span>{{i.mdPrice | priceInteger | rmb}}</span>.{{i.mdPrice | priceDecimals}}</li>
+										</template>
+
+										<template v-if="item.raiseType == '1'">
+											<li><span class="rz-mode1">T+0</span>融资金额</li>
+											<li v-if="item.bespeakNo == ''" style="color:rgb(255, 180, 0);">¥&nbsp;&nbsp;<span>{{i.t0Price | priceInteger | rmb}}</span>.{{i.t0Price | priceDecimals}}</li>
+											<li v-else style="color:rgb(255, 114, 0);">¥&nbsp;&nbsp;<span>{{i.t0Price | priceInteger | rmb}}</span>.{{i.t0Price | priceDecimals}}</li>
+										</template>
+
+										<template v-if="item.raiseType == '2'">
+											<li><span class="rz-mode1">T+1</span>融资金额</li>
+											<li v-if="item.bespeakNo == ''" style="color:rgb(255, 180, 0);">¥&nbsp;&nbsp;<span>{{i.t1Price | priceInteger | rmb}}</span>.{{i.t1Price | priceDecimals}}</li>
+											<li v-else style="color:rgb(255, 114, 0);">¥&nbsp;&nbsp;<span>{{i.t1Price | priceInteger | rmb}}</span>.{{i.t1Price | priceDecimals}}</li>
+										</template>
+
+										<template v-if="item.raiseType == '3'">
+											<li><span class="rz-mode1">T+2</span>融资金额</li>
+											<li v-if="item.bespeakNo == ''" style="color:rgb(255, 180, 0);">¥&nbsp;&nbsp;<span>{{i.t2Price | priceInteger | rmb}}</span>.{{i.t2Price | priceDecimals}}</li>
+											<li v-else style="color:rgb(255, 114, 0);">¥&nbsp;&nbsp;<span>{{i.t2Price | priceInteger | rmb}}</span>.{{i.t2Price | priceDecimals}}</li>
+										</template>
+
+										<li><span class="mui-icon mui-icon-arrowright"></span></li>
+									</ul>
+
+								</div>
+								<!--dz-money-->
+							</div>
+							<div class="mui-clearfix"></div>
+
+						</div>
+
+					</li>
+					<!--******************主体****************************-->
+				</ul>
+			</div>
+		</div>
+		<!--mui-content-->
+
+		<div class="mui-loader" id="loadding" style="display: none;">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop" style="display: none;"></div>
+		<script src="../js/mui.min.js"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script type="text/javascript" src="../libs/vue.min.js"></script>
+		<script src="../libs/sea-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/seajs-text-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="financingbasket.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

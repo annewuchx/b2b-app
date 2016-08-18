@@ -1,0 +1,492 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+	line-height: 0;
+}
+
+img {
+	display: block;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+
+
+/*content*/
+
+.mui-bar-nav~.mui-content {
+	padding-top: 0px;
+}
+
+.mui-content {
+	padding-bottom: 80px;
+}
+
+.mui-ios .mui-pull-top-pocket{
+	top:47.5px;
+}
+/*footer*/
+
+footer {
+	height: 79px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 99;
+	background: #fff;
+}
+
+footer .footer-top {
+	height: 31px;
+	padding: 0 2.5%;
+	line-height: 30px;
+	background: rgb(223, 223, 223);
+	border-bottom: 1px solid rgb(205, 205, 205);
+	/*no*/
+}
+
+footer .footer-top p {
+	float: right;
+	color: rgb(119, 119, 119);
+	margin: 0;
+}
+
+
+/*check-all*/
+
+#check-all {
+	left: 15px;
+	top: 4px;
+}
+
+footer .footer-top .check-all {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	margin-left: -5.5%;
+}
+
+footer .footer-top .check-all label {
+	font-size: 14px;
+	/*px*/
+	color: rgb(51, 51, 51);
+	padding: 0;
+	margin-left: 40px;
+}
+
+footer .footer-top p span {
+	color: rgb(51, 51, 51);
+	font-size: 12px;
+	/*px*/
+}
+
+
+/*footer-bottom*/
+
+footer .footer-bottom {
+	clear: both;
+	height: 49px;
+	position: relative;
+}
+
+
+/*money*/
+
+footer .footer-bottom .money {
+	width: 70%;
+	margin-left: 4%;
+}
+
+footer .footer-bottom .money ul li span {
+	display: inline-block;
+}
+
+footer .footer-bottom .money li:nth-child(1) {
+	font-size: 12px;
+	/*px*/
+	line-height: 26px;
+}
+
+footer .footer-bottom .money li:nth-child(1) span:nth-child(1) {
+	color: rgb(51, 51, 51);
+}
+
+footer .footer-bottom .money li:nth-child(1) span:nth-child(2) {
+	color: rgb(255, 114, 0);
+}
+
+footer .footer-bottom .money li:nth-child(1) span:nth-child(3) {
+	color: rgb(51, 51, 51);
+}
+
+footer .footer-bottom .money i {
+	font-style: normal;
+}
+
+footer .footer-bottom .money li:hover {
+	cursor: text;
+}
+
+footer .footer-bottom .money li:nth-child(2) {
+	font-size: 15px;
+	/*px*/
+	color: rgb(242, 35, 35);
+	padding-bottom: 9px;
+	line-height: 16px;
+}
+
+footer .footer-bottom .money li:nth-child(2) span {
+	font-size: 21px;
+	/*px*/
+}
+
+footer .immediate-financing {
+	position: absolute;
+	width: 30%;
+	height: 50px;
+	text-align: center;
+	background: rgb(0, 102, 255);
+	font-weight: bold;
+	font-size: 16px;
+	/*px*/
+	line-height: 49px;
+	color: #fff;
+	right: 0;
+	top: 0;
+}
+
+footer .immediate-financing:hover {
+	cursor: pointer;
+}
+
+
+/*下拉显示的内容*/
+
+
+/*financing-mode*/
+
+.financing-mode {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 47.5px;
+	line-height: 28px;
+	color: #565551;
+	background: #fff;
+}
+
+.financing-mode p {
+	height: 7.5px;
+	width: 100%;
+	margin: 0;
+}
+
+.financing-mode ul {
+	height: 30px;
+	width: 95.2%;
+	margin: 0 auto;
+	border: 1px solid rgb(0, 102, 255);
+	/*no*/
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.financing-mode ul li {
+	float: left;
+	width: 25%;
+	text-align: center;
+	color: rgb(0, 102, 255);
+	font-size: 12px;
+	/*px*/
+	border-right: 1px solid rgb(0, 102, 255);
+	/*no*/
+	/*border-left: 1px solid rgb(0, 102, 255);*/
+	/*no*/
+}
+.financing-mode ul li:last-child, li:first-child {
+	border:none
+}
+
+
+.financing-mode ul li span:hover {
+	cursor: text;
+}
+
+.financing-mode ul li.active {
+	background: rgb(0, 102, 255);
+	color: #fff;
+}
+.financing-mode ul li:first-child.active {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.financing-mode ul li:last-child.active {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+/*头部*/
+
+.mui-card {
+	box-shadow: none;
+	background: #efeff4;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	margin-top: 50px;
+}
+
+.mui-card1 {}
+
+.mui-table-view {
+	background: #efeff4;
+}
+
+.mui-table-view-cell {
+	padding: 0;
+	background: #efeff4;
+}
+
+li.bgColor {
+	background-color: #fff;
+}
+
+.mui-table-view-cell>div.pj-tit {
+	padding: 0;
+	height: 28px;
+	position: relative;
+	background: rgb(255, 122, 21);
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.pj-tit ul {
+	width: 98%;
+	margin-left: 2%;
+	height: 100%;
+	position: relative;
+}
+
+.pj-tit ul li {
+	height: 15px;
+	line-height: 16px;
+	margin: 7px 0;
+	float: left;
+}
+
+.pj-tit ul li:nth-child(1) {
+	position: absolute;
+	left: -7px;
+	top: -7px;
+	width: 4px;
+	height: 100%;
+	z-index: 33;
+	background: rgb(255, 204, 0);
+}
+
+.pj-tit ul li p {
+	font-size: 12px;/*px*/
+	color: #fff;
+}
+
+.pj-tit .pj-tit-order {
+	width: 54%;
+	padding-left: 6%;
+	border-right: 1px solid #fff;
+	/*no*/
+}
+
+.pj-tit ul li.no {
+	position: absolute;
+	left: 55.5%;
+	color: #fff;
+	font-size: 12px;
+}
+
+.pj-tit .pj-tit-order1 {
+	margin-left: 8%;
+}
+
+.pj-check {
+	z-index: 10;
+}
+
+.mui-checkbox input[type=checkbox] {
+	top: 4px;
+	left: 5px;
+}
+
+
+/*融资内容整体部分*/
+
+.pj-con {
+	width: 95.2%;
+	height: 84px;
+	margin: 10px auto 10px auto;
+	border: 1px solid rgb(204, 204, 204);
+	/*no*/
+	border-top: none;
+	background: #fff;
+}
+.mui-ios .pj-con{
+	border: 0.5px solid rgb(204, 204, 204);
+}
+.mui-checkbox1 input[type=checkbox] {
+	top: 18px;
+	margin-top: -13px;
+}
+
+
+/*mui-collapse-content-right*/
+
+.mui-collapse-content-right {
+	float: left;
+	width: 100%;
+	height: 100%;
+	color: #646464;
+}
+
+
+/*.con-right-top*/
+
+.con-right-top {
+	height: 24px;
+}
+
+.con-right-top {
+	background: rgb(111, 168, 255);
+}
+
+.con-right-top li {
+	height: 14px;
+	font-size: 12px;
+	/*px*/
+	display: inline-block;
+	color: #fff;
+	margin: 5px auto;
+	line-height: 15px;
+}
+
+.con-right-top li:nth-child(1) {
+	width: 60%;
+	margin-left: 3.75%;
+	border-right: 1px solid #fff;
+	/*no*/
+}
+
+.con-right-top li:nth-child(2) {
+	margin-left: 15px;
+}
+
+
+/*.dz-money*/
+
+.dz-money {
+	text-align: center;
+	height: 60px;
+}
+
+.dz-money .mui-checkbox input.bill {
+	z-index: 999;
+	left: 0px;
+	top: 12px;
+	width: 79px;
+	height: 59px;
+	line-height: 59px;
+	text-indent: 6px;
+}
+
+.dz-money ul {
+	position: relative;
+}
+
+.dz-money ul li a {
+	color: rgb(51, 51, 51);
+	font-size: 12px;
+	/*px*/
+}
+
+.dz-money ul li:nth-child(1) {
+	color: rgb(51, 51, 51);
+	font-size: 12px;
+	/*px*/
+	line-height: 30px;
+}
+
+.dz-money ul li:nth-child(2) {
+	color: rgb(255, 180, 0);
+	font: 18px HelveticaNeue;
+}
+
+.dz-money ul li:nth-child(2) span {
+	font-size: 24px;
+	/*px*/
+}
+
+.dz-money ul li:nth-child(3) {
+	position: absolute;
+	width: 8px;
+	height: 16px;
+	right: 22px;
+	top: 30px;
+	margin-top: -8px;
+	color: rgb(111, 168, 255);
+}
+
+
+/*checkBox样式*/
+
+.mui-checkbox input[type=checkbox]:before {
+	font-size: 24px;
+	/*px*/
+	color: rgb(124, 163, 246);
+}
+
+.mui-checkbox input[type=checkbox]:checked:before,
+{
+	color: rgb(124, 163, 246);
+}
+
+
+/*全选的checkBox*/
+
+.mui-checkbox #check-all:before {
+	color: rgb(119, 119, 119);
+}
+
+
+.mui-checkbox #check-all:checked:before {
+	color: rgb(124, 163, 246);
+	content: '\e472';
+	background-color: #fff;
+	border: 0px solid #fff;
+	/*no*/
+	font-size: 22px;
+	/*px*/
+	border-radius: 22px;
+}
+
+
+/*头部checkBox*/
+
+.mui-checkbox input[type=checkbox].cx-header-checkBox:before {
+	font-size: 19px;
+	/*px*/
+	color: #fff;
+}
+
+.mui-checkbox input[type=checkbox].cx-header-checkBox:checked:before,
+{
+	color: #fff;
+}

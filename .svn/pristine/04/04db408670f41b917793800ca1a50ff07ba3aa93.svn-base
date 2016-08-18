@@ -1,0 +1,267 @@
+html,
+body,
+.mui-content {
+  width: 100%;
+  height: 100%;
+}
+
+.verify_header a,
+.verify_header h1 {
+  color: #FFFFFF;
+}
+
+.verify_header {
+  background: #06f;
+}
+
+[data-dpr="1"] .verify_header {
+  height: 44px;
+}
+
+[data-dpr="2"] .verify_header {
+  height: 88px;
+}
+
+[data-dpr="3"] .verify_header {
+  height: 132px;
+}
+
+[data-dpr="1"] .mui-bar-nav~.mui-content {
+  padding-top: 44px;
+}
+
+[data-dpr="2"] .mui-bar-nav~.mui-content {
+  padding-top: 88px;
+}
+
+[data-dpr="3"] .mui-bar-nav~.mui-content {
+  padding-top: 132px;
+}
+
+[data-dpr="1"] .verify_header h1 {
+  line-height: 44px;
+}
+
+[data-dpr="2"] .verify_header h1 {
+  line-height: 88px;
+}
+
+[data-dpr="3"] .verify_header h1 {
+  line-height: 132px;
+}
+
+[data-dpr="1"] .verify_header span,
+[data-dpr="1"] .verify_header h1 {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .verify_header span,
+[data-dpr="2"] .verify_header h1 {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .verify_header span,
+[data-dpr="3"] .verify_header h1 {
+  font-size: 48px;
+}
+
+.verified-company,
+.verified-manager,
+.verified-bank {
+  margin-top: 0.266667rem;
+}
+
+.mui-branch label {
+  line-height: 0.933333rem !important;
+}
+
+.mui-branch a {
+  padding: 0;
+}
+
+.mui-branch {
+  /*height: 60px !important;*/
+  height: auto !important;
+}
+
+.mui-manager label {
+  padding: 0.186667rem 0.4rem !important;
+}
+
+.btn-wraper button {
+  width: 50%;
+  border-right-width: 0;
+  height: 1.333333rem;
+  padding: 0;
+  border-radius: 0;
+  margin-top: 0.133333rem;
+  border-top: none;
+  border-bottom: none;
+}
+
+#notSubmit {
+  position: relative;
+}
+
+#notSubmit:before {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 0.026667rem;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #c8c7cc;
+  top: 0;
+}
+
+textarea::-webkit-input-placeholder {
+  line-height: 1.12rem;
+}
+
+textarea:-moz-placeholder {
+  line-height: 1.12rem;
+}
+
+textarea::-moz-placeholder {
+  line-height: 1.12rem;
+}
+
+textarea:-ms-input-placeholder {
+  line-height: 1.12rem;
+}
+
+.mui-input-group .mui-input-row {
+  position: relative;
+}
+
+.yck-eye {
+  font-size: 0.426667rem;
+  color: #cccccc;
+  display: inline-block;
+  width: 13%;
+  float: right;
+  height: 100%;
+  line-height: 1.2rem;
+  box-sizing: border-box;
+  padding-right: 4%;
+  text-align: right;
+}
+
+.assist-agree {
+  text-align: center;
+  font-size: 0.32rem !important;
+}
+
+.submit-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.assist-agree a {
+  color: rgb(0, 102, 255);
+}
+
+.bank-tip {
+  margin-top: 0.4rem;
+  font-size: 0.32rem !important;
+  padding-left: 0.32rem;
+  padding-right: 0.32rem;
+}
+
+.mui-input-row label {
+  width: 27%;
+  text-align: right;
+  padding: 0.36rem 0.4rem;
+  height: 1.2rem;
+  font-size: 0.426667rem;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+  width: 73%;
+  padding-left: 0.666667rem;
+}
+
+.mui-navigate-right:after,
+.mui-push-left:after,
+.mui-push-right:after {
+  color: #0066FF;
+  font-size: 0.426667rem;
+}
+
+/**
+ * yck-font
+ */
+
+.yckfont {
+  font-size: 0.426667rem;
+}
+
+/**
+ * mui
+ */
+
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  font-size: 0.373333rem;
+}
+
+.input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+  height: 1.2rem;
+  line-height: 0.56rem;
+  padding: 0.266667rem 0.4rem;
+}
+
+.mui-input-group .mui-input-row {
+  height: 1.2rem;
+}
+
+input,
+select,
+textarea {
+  font-size: 0.426667rem;
+}
+
+.mui-bar .mui-icon {
+  font-size: 24px;
+  position: relative;
+  z-index: 20;
+  padding-top: 0.266667rem;
+  padding-bottom: 0.266667rem;
+}
+
+[data-dpr="1"] .mui-navigate-right:after,
+[data-dpr="1"] .mui-push-right:after {
+  font-size: 26px;
+}
+
+[data-dpr="2"] .mui-navigate-right:after,
+[data-dpr="2"] .mui-push-right:after {
+  font-size: 52px;
+}
+
+[data-dpr="3"] .mui-navigate-right:after,
+[data-dpr="3"] .mui-push-right:after {
+  font-size: 78px;
+}

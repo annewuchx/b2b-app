@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="misapplication-tap-highlight" content="no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<title>主导航</title>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			html,
+			body,
+			a,
+			nav,
+			span,
+			div {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				-webkit-user-select: none;
+				outline: 0;
+				-webkit-tap-highlight-color: transparent;
+				-webkit-tap-highlight-color: transparent;
+			}
+			
+			html {
+				font-family: 'Helvetica Neue', Helvetica, sans-serif;
+				font-size: 17px;
+				-webkit-text-size-adjust: 100%;
+			}
+			
+			body {
+				line-height: 21px;
+				color: #000;
+				background-color: #efeff4;
+				-webkit-overflow-scrolling: touch;
+				margin: 0;
+			}
+			
+			a {
+				text-decoration: none;
+				color: #06f;
+			}
+			
+			a {
+				background: 0 0;
+			}
+			
+			.mui-bar {
+				position: fixed;
+				z-index: 10;
+				right: 0;
+				left: 0;
+				height: 44px;
+				padding-right: 10px;
+				padding-left: 10px;
+				border-bottom: 0;
+				background-color: #FFFFFF;
+				-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .85);
+				box-shadow: 0 0 1px rgba(0, 0, 0, .85);
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+			
+			.mui-bar-tab {
+				bottom: 0;
+				display: table;
+				width: 100%;
+				height: 50px;
+				padding: 0;
+				table-layout: fixed;
+				border-top: 0;
+				border-bottom: 0;
+				-webkit-touch-callout: none;
+			}
+			
+			.mui-bar-tab .mui-tab-item {
+				display: table-cell;
+				overflow: hidden;
+				width: 1%;
+				height: 50px;
+				text-align: center;
+				vertical-align: middle;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				color: #555;
+			}
+			
+			.mui-bar-tab .mui-tab-item.mui-active {
+				color: #06f;
+			}
+			
+			.mui-bar-tab .mui-tab-item .mui-icon {
+				top: 3px;
+				width: 24px;
+				height: 24px;
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+			
+			.mui-bar .mui-icon {
+				font-size: 24px;
+				position: relative;
+				z-index: 20;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			
+			.mui-icon {
+				font-size: 24px;
+				font-weight: 400;
+				font-style: normal;
+				line-height: 1;
+				display: inline-block;
+				text-decoration: none;
+				-webkit-font-smoothing: antialiased;
+			}
+			
+			.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label {
+				font-size: .625rem;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			.footer-bottom-border:before {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #c8c7cc;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+	</head>
+
+	<body>
+
+		<nav class="mui-bar mui-bar-tab" id="navigationmenu">
+			<div class="footer-bottom-border">
+				<a id="defaultTab" class="mui-tab-item mui-active" href="mainindex.html">
+					<span class="mui-icon yckfont yf-house"></span>
+					<span class="mui-tab-label">首页</span>
+				</a>
+				<a id="financeindexTab" class="mui-tab-item" href="financeindex.html">
+					<span class="mui-icon yckfont yf-pig"></span>
+					<span class="mui-tab-label">企业理财</span>
+				</a>
+				<a id="financeTab" class="mui-tab-item" href="#">
+					<span class="mui-icon yckfont yf-book"></span>
+					<span class="mui-tab-label">票据融资</span>
+				</a>
+				<a id="userindexTab" class="mui-tab-item" href="userindex.html">
+					<span class="mui-icon yckfont yf-contacts"></span>
+					<span class="mui-tab-label">我的帐户</span>
+				</a>
+			</div>
+		</nav>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript"></script>
+		<script src="../js/resources.js" type="text/javascript"></script>
+		<script src="../js/app.js" type="text/javascript"></script>
+		<script src="../js/servicebus.js" type="text/javascript"></script>
+		<!-- endbuild -->
+
+		<script src="./footer.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../js/updateauto.js" type="text/javascript" charset="utf-8" defer></script>-->
+	</body>
+
+</html>

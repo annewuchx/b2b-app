@@ -1,0 +1,621 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 8.533333rem;
+  line-height: 0;
+}
+
+img {
+  display: block;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+/*content*/
+
+.mui-bar-nav~.mui-content {
+  padding-top: 0;
+}
+
+.mui-content {
+  padding-bottom: 2.133333rem;
+}
+
+.mui-ios .mui-pull-top-pocket {
+  top: 1.266667rem;
+}
+
+/*footer*/
+
+footer {
+  height: 2.106667rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
+  background: #fff;
+}
+
+footer .footer-top {
+  height: 0.826667rem;
+  padding: 0 2.5%;
+  line-height: 0.8rem;
+  background: rgb(223, 223, 223);
+  border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+footer .footer-top p {
+  float: right;
+  color: rgb(119, 119, 119);
+  margin: 0;
+}
+
+/*check-all*/
+
+#check-all {
+  left: 0.4rem;
+  top: 0.106667rem;
+}
+
+footer .footer-top .check-all {
+  float: left;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  margin-left: -5.5%;
+}
+
+footer .footer-top .check-all label {
+  color: rgb(51, 51, 51);
+  padding: 0;
+  margin-left: 1.066667rem;
+}
+
+[data-dpr="1"] footer .footer-top .check-all label {
+  font-size: 14px;
+}
+
+[data-dpr="2"] footer .footer-top .check-all label {
+  font-size: 28px;
+}
+
+[data-dpr="3"] footer .footer-top .check-all label {
+  font-size: 42px;
+}
+
+footer .footer-top p span {
+  color: rgb(51, 51, 51);
+}
+
+[data-dpr="1"] footer .footer-top p span {
+  font-size: 12px;
+}
+
+[data-dpr="2"] footer .footer-top p span {
+  font-size: 24px;
+}
+
+[data-dpr="3"] footer .footer-top p span {
+  font-size: 36px;
+}
+
+/*footer-bottom*/
+
+footer .footer-bottom {
+  clear: both;
+  height: 1.306667rem;
+  position: relative;
+}
+
+/*money*/
+
+footer .footer-bottom .money {
+  width: 70%;
+  margin-left: 4%;
+}
+
+footer .footer-bottom .money ul li span {
+  display: inline-block;
+}
+
+footer .footer-bottom .money li:nth-child(1) {
+  line-height: 0.693333rem;
+}
+
+[data-dpr="1"] footer .footer-bottom .money li:nth-child(1) {
+  font-size: 12px;
+}
+
+[data-dpr="2"] footer .footer-bottom .money li:nth-child(1) {
+  font-size: 24px;
+}
+
+[data-dpr="3"] footer .footer-bottom .money li:nth-child(1) {
+  font-size: 36px;
+}
+
+footer .footer-bottom .money li:nth-child(1) span:nth-child(1) {
+  color: rgb(51, 51, 51);
+}
+
+footer .footer-bottom .money li:nth-child(1) span:nth-child(2) {
+  color: rgb(255, 114, 0);
+}
+
+footer .footer-bottom .money li:nth-child(1) span:nth-child(3) {
+  color: rgb(51, 51, 51);
+}
+
+footer .footer-bottom .money i {
+  font-style: normal;
+}
+
+footer .footer-bottom .money li:hover {
+  cursor: text;
+}
+
+footer .footer-bottom .money li:nth-child(2) {
+  color: rgb(242, 35, 35);
+  padding-bottom: 0.24rem;
+  line-height: 0.426667rem;
+}
+
+[data-dpr="1"] footer .footer-bottom .money li:nth-child(2) {
+  font-size: 15px;
+}
+
+[data-dpr="2"] footer .footer-bottom .money li:nth-child(2) {
+  font-size: 30px;
+}
+
+[data-dpr="3"] footer .footer-bottom .money li:nth-child(2) {
+  font-size: 45px;
+}
+
+[data-dpr="1"] footer .footer-bottom .money li:nth-child(2) span {
+  font-size: 21px;
+}
+
+[data-dpr="2"] footer .footer-bottom .money li:nth-child(2) span {
+  font-size: 42px;
+}
+
+[data-dpr="3"] footer .footer-bottom .money li:nth-child(2) span {
+  font-size: 63px;
+}
+
+footer .immediate-financing {
+  position: absolute;
+  width: 30%;
+  height: 1.333333rem;
+  text-align: center;
+  background: rgb(0, 102, 255);
+  font-weight: bold;
+  line-height: 1.306667rem;
+  color: #fff;
+  right: 0;
+  top: 0;
+}
+
+[data-dpr="1"] footer .immediate-financing {
+  font-size: 16px;
+}
+
+[data-dpr="2"] footer .immediate-financing {
+  font-size: 32px;
+}
+
+[data-dpr="3"] footer .immediate-financing {
+  font-size: 48px;
+}
+
+footer .immediate-financing:hover {
+  cursor: pointer;
+}
+
+/*下拉显示的内容*/
+
+/*financing-mode*/
+
+.financing-mode {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 1.266667rem;
+  line-height: 0.746667rem;
+  color: #565551;
+  background: #fff;
+}
+
+.financing-mode p {
+  height: 0.2rem;
+  width: 100%;
+  margin: 0;
+}
+
+.financing-mode ul {
+  height: 0.8rem;
+  width: 95.2%;
+  margin: 0 auto;
+  border: 1px solid rgb(0, 102, 255);
+  -webkit-border-radius: 0.133333rem;
+  -moz-border-radius: 0.133333rem;
+  border-radius: 0.133333rem;
+}
+
+.financing-mode ul li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: rgb(0, 102, 255);
+  border-right: 1px solid rgb(0, 102, 255);
+  /*border-left: 1px solid rgb(0, 102, 255);*/
+  /*no*/
+}
+
+[data-dpr="1"] .financing-mode ul li {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .financing-mode ul li {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .financing-mode ul li {
+  font-size: 36px;
+}
+
+.financing-mode ul li:last-child,
+li:first-child {
+  border: none;
+}
+
+.financing-mode ul li span:hover {
+  cursor: text;
+}
+
+.financing-mode ul li.active {
+  background: rgb(0, 102, 255);
+  color: #fff;
+}
+
+.financing-mode ul li:first-child.active {
+  border-top-left-radius: 0.08rem;
+  border-bottom-left-radius: 0.08rem;
+}
+
+.financing-mode ul li:last-child.active {
+  border-top-right-radius: 0.08rem;
+  border-bottom-right-radius: 0.08rem;
+}
+
+/*头部*/
+
+.mui-card {
+  box-shadow: none;
+  background: #efeff4;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  margin-top: 1.333333rem;
+}
+
+.mui-table-view {
+  background: #efeff4;
+}
+
+.mui-table-view-cell {
+  padding: 0;
+  background: #efeff4;
+}
+
+li.bgColor {
+  background-color: #fff;
+}
+
+.mui-table-view-cell>div.pj-tit {
+  padding: 0;
+  height: 0.746667rem;
+  position: relative;
+  background: rgb(255, 122, 21);
+  margin-bottom: 0.266667rem;
+  width: 100%;
+}
+
+.pj-tit ul {
+  width: 98%;
+  margin-left: 2%;
+  height: 100%;
+  position: relative;
+}
+
+.pj-tit ul li {
+  height: 0.4rem;
+  line-height: 0.426667rem;
+  margin: 0.186667rem 0;
+  float: left;
+}
+
+.pj-tit ul li:nth-child(1) {
+  position: absolute;
+  left: -0.186667rem;
+  top: -0.186667rem;
+  width: 0.106667rem;
+  height: 100%;
+  z-index: 33;
+  background: rgb(255, 204, 0);
+}
+
+.pj-tit ul li p {
+  color: #fff;
+}
+
+[data-dpr="1"] .pj-tit ul li p {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .pj-tit ul li p {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .pj-tit ul li p {
+  font-size: 36px;
+}
+
+.pj-tit .pj-tit-order {
+  width: 54%;
+  padding-left: 6%;
+  border-right: 1px solid #fff;
+}
+
+.pj-tit ul li.no {
+  position: absolute;
+  left: 55.5%;
+  color: #fff;
+  font-size: 0.32rem;
+}
+
+.pj-tit .pj-tit-order1 {
+  margin-left: 8%;
+}
+
+.pj-check {
+  z-index: 10;
+}
+
+.mui-checkbox input[type=checkbox] {
+  top: 0.106667rem;
+  left: 0.133333rem;
+}
+
+/*融资内容整体部分*/
+
+.pj-con {
+  width: 95.2%;
+  height: 2.24rem;
+  margin: 0.266667rem auto 0.266667rem auto;
+  border: 1px solid rgb(204, 204, 204);
+  border-top: none;
+  background: #fff;
+}
+
+.mui-ios .pj-con {
+  border: 0.013333rem solid rgb(204, 204, 204);
+}
+
+.mui-checkbox1 input[type=checkbox] {
+  top: 0.48rem;
+  margin-top: -0.346667rem;
+}
+
+/*mui-collapse-content-right*/
+
+.mui-collapse-content-right {
+  float: left;
+  width: 100%;
+  height: 100%;
+  color: #646464;
+}
+
+/*.con-right-top*/
+
+.con-right-top {
+  height: 0.64rem;
+}
+
+.con-right-top {
+  background: rgb(111, 168, 255);
+}
+
+.con-right-top li {
+  height: 0.373333rem;
+  display: inline-block;
+  color: #fff;
+  margin: 0.133333rem auto;
+  line-height: 0.4rem;
+}
+
+[data-dpr="1"] .con-right-top li {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .con-right-top li {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .con-right-top li {
+  font-size: 36px;
+}
+
+.con-right-top li:nth-child(1) {
+  width: 60%;
+  margin-left: 3.75%;
+  border-right: 1px solid #fff;
+}
+
+.con-right-top li:nth-child(2) {
+  margin-left: 0.4rem;
+}
+
+/*.dz-money*/
+
+.dz-money {
+  text-align: center;
+  height: 1.6rem;
+}
+
+.dz-money .mui-checkbox input.bill {
+  z-index: 999;
+  left: 0;
+  top: 0.32rem;
+  width: 2.106667rem;
+  height: 1.573333rem;
+  line-height: 1.573333rem;
+  text-indent: 0.16rem;
+}
+
+.dz-money ul {
+  position: relative;
+}
+
+.dz-money ul li a {
+  color: rgb(51, 51, 51);
+}
+
+[data-dpr="1"] .dz-money ul li a {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .dz-money ul li a {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .dz-money ul li a {
+  font-size: 36px;
+}
+
+.dz-money ul li:nth-child(1) {
+  color: rgb(51, 51, 51);
+  line-height: 0.8rem;
+}
+
+[data-dpr="1"] .dz-money ul li:nth-child(1) {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .dz-money ul li:nth-child(1) {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .dz-money ul li:nth-child(1) {
+  font-size: 36px;
+}
+
+.dz-money ul li:nth-child(2) {
+  color: rgb(255, 180, 0);
+  font: 0.48rem HelveticaNeue;
+}
+
+[data-dpr="1"] .dz-money ul li:nth-child(2) span {
+  font-size: 24px;
+}
+
+[data-dpr="2"] .dz-money ul li:nth-child(2) span {
+  font-size: 48px;
+}
+
+[data-dpr="3"] .dz-money ul li:nth-child(2) span {
+  font-size: 72px;
+}
+
+.dz-money ul li:nth-child(3) {
+  position: absolute;
+  width: 0.213333rem;
+  height: 0.426667rem;
+  right: 0.586667rem;
+  top: 0.8rem;
+  margin-top: -0.213333rem;
+  color: rgb(111, 168, 255);
+}
+
+/*checkBox样式*/
+
+.mui-checkbox input[type=checkbox]:before {
+  color: rgb(124, 163, 246);
+}
+
+[data-dpr="1"] .mui-checkbox input[type=checkbox]:before {
+  font-size: 24px;
+}
+
+[data-dpr="2"] .mui-checkbox input[type=checkbox]:before {
+  font-size: 48px;
+}
+
+[data-dpr="3"] .mui-checkbox input[type=checkbox]:before {
+  font-size: 72px;
+}
+
+.mui-checkbox input[type=checkbox]:checked:before,
+ {
+  color: rgb(124, 163, 246);
+}
+
+/*全选的checkBox*/
+
+.mui-checkbox #check-all:before {
+  color: rgb(119, 119, 119);
+}
+
+.mui-checkbox #check-all:checked:before {
+  color: rgb(124, 163, 246);
+  content: '\e472';
+  background-color: #fff;
+  border: 0px solid #fff;
+  border-radius: 0.586667rem;
+}
+
+[data-dpr="1"] .mui-checkbox #check-all:checked:before {
+  font-size: 22px;
+}
+
+[data-dpr="2"] .mui-checkbox #check-all:checked:before {
+  font-size: 44px;
+}
+
+[data-dpr="3"] .mui-checkbox #check-all:checked:before {
+  font-size: 66px;
+}
+
+/*头部checkBox*/
+
+.mui-checkbox input[type=checkbox].cx-header-checkBox:before {
+  color: #fff;
+}
+
+[data-dpr="1"] .mui-checkbox input[type=checkbox].cx-header-checkBox:before {
+  font-size: 19px;
+}
+
+[data-dpr="2"] .mui-checkbox input[type=checkbox].cx-header-checkBox:before {
+  font-size: 38px;
+}
+
+[data-dpr="3"] .mui-checkbox input[type=checkbox].cx-header-checkBox:before {
+  font-size: 57px;
+}
+
+.mui-checkbox input[type=checkbox].cx-header-checkBox:checked:before,
+ {
+  color: #fff;
+}

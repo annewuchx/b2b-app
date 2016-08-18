@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			html,
+			body,
+			div.mui-content {
+				background-color: #FFFFFF;
+				height: 100%;
+				width: 100%;
+			}
+			
+			.yck-pic-back {
+				padding: 0 75px;
+				width: 100%;
+			}
+			
+			.yck-pic-back div.yck-intro-pic {
+				margin-top: 110px;
+			}
+			
+			.yck-pic-back div.yck-intro-pic img {
+				display: block;
+		   		width:100%;
+		   	 	margin: 0 auto;
+			}
+			
+			.yck-reserve-pictitle {
+				text-align: center;
+				font-size: 21px;
+				margin-top: 55px;
+				color: rgb(0, 102, 255);
+				font-family: simhei;
+			}
+			
+			.yck-reserve-piccontent {
+				text-align: center;
+				margin-top: 24px;
+			}
+			
+			.yck-reserve-piccontent p {
+				color: #6B98FF;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #0066FF">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back" style="color: #fff;"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title" style="color: #fff;font-weight: bold;font-size: 16px">承信预约</h1>
+		</header>
+		<div class="mui-content">
+			<div class="yck-pic-back">
+				<div class="yck-intro-pic">
+					<img src="../images/reserve_introduce.png"/>
+				</div>
+			</div>
+			<div class="yck-reserve-pictitle"><span>利率最低</span><span style="border-left: 2px solid #6B98FF;margin:0 10px;"></span><span>预约融资</span></div>
+			<div class="yck-reserve-piccontent">
+				<p>预约vs融资时的利率</p>
+				<p>给予预约客户利率最低的报价</p>
+				<p>保证客户在预约的时间内可以快速融资</p>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

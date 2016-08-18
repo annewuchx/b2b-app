@@ -1,0 +1,360 @@
+/**
+ * 图片详情页
+ * @param {Object} $
+ * @param {Object} doc
+ * @param {Object} win
+ */
+
+(function($, doc, win) {
+
+	$.init();
+
+	/*
+	 * 
+	 */
+	$.ready(function() {
+		/*
+		 * loading
+		 * */
+		$.showLoading();
+
+		/*
+		 * 照片  zoom-in  zoom-out
+		 */
+		$(".mui-zoom-wrapper").zoom();
+	});
+
+	/*
+	 * 判断是否支持plus
+	 */
+	if(window.plus) {
+		plusReady();
+	} else {
+		document.addEventListener("plusready", plusReady, false);
+	}
+	/*
+	 * 重选 按钮点击
+	 * */
+	function plusReady() {
+
+		var imgSizeObj = {};
+
+		//actionsheet handle
+
+		$('body').on('tap', '.mui-popover-action li>a', function() {
+
+			var self = this;
+			var index = self.getAttribute('data-index');
+
+			handle_back(index);
+
+		})
+
+		/**
+		 * actionsheet callback
+		 * @param {Object} e
+		 */
+		function handle_back(index) {
+
+			//		var index = e.index;
+			switch(parseInt(index)) {
+				case 0:
+					break;
+				case 1:
+
+					$('#picture').popover('toggle'); //关闭actionsheet
+
+					if($.os.ios) {
+						var AVCaptureDevice = plus.ios.importClass("AVCaptureDevice");
+						var Status = AVCaptureDevice.authorizationStatusForMediaType("vide");
+						if(3 != Status) {
+							var btnArray = ['确定'];
+							$.confirm('您的相机权限未打开，请在当前应用设置-隐私-相机来打开权限', '', btnArray, function(e) {
+								plus.runtime.openURL('prefs:root=Privacy');
+							});
+
+						} else {
+							fn_captureImg();
+						}
+					}
+
+					if($.os.android) {
+						//						var main = plus.android.runtimeMainActivity();
+						//
+						//						var packageName = "com.yinchengku.b2b.lcz";
+						//						var pm = main.getPackageManager();
+						//						var PackageManager = plus.android.importClass(pm);
+						//						var permission = (PackageManager.PERMISSION_GRANTED ==
+						//							pm.checkPermission("android.permission.CAMERA", packageName));
+						//						if(permission) {
+						//							$.toast("有录音权限");
+						//						} else {
+						//							$.toast("没有录音权限");
+						//						}
+						fn_captureImg();
+					}
+
+					break;
+				case 2:
+
+					$('#picture').popover('toggle'); //关闭actionsheet
+
+					plus.gallery.pick(function(path) {
+						$.showLoading();
+
+						createUpload(path);
+
+					}, function(err) {
+						sys_permission(err);
+					}, null);
+					break;
+			}
+		}
+
+		/**
+		 * 相册权限控制
+		 * @param {Object} e
+		 */
+
+		function sys_permission(e) {
+			if(plus.os.name == "iOS") {
+				if(e.code == 8) {
+					mui.alert("您的相册权限未打开，请在当前应用设置-隐私-相册来打开权限", function() {
+						plus.runtime.openURL('prefs:root=Privacy');
+					})
+				}
+			} else if(plus.os.name == "Android") {
+				if(e.code != 12) {
+					mui.alert("您的相册权限未打开，请在应用列表中找到您的程序，将您的权限打开", function() {
+						var android = plus.android.importClass('com.android.settings');
+						var main = plus.android.runtimeMainActivity();
+						var Intent = plus.android.importClass("android.content.Intent");
+						var mIntent = new Intent('android.settings.APPLICATION_SETTINGS');
+						main.startActivity(mIntent);
+					});
+				}
+			}
+		};
+
+		/**
+		 * 相机拍摄
+		 */
+		function fn_captureImg() {
+			var cmr = plus.camera.getCamera();
+
+			cmr.captureImage(function(path) { //确定
+				plus.io.resolveLocalFileSystemURL(path, function(entry) {
+
+					plus.gallery.save(entry.toLocalURL(), function() {
+
+					});
+					$.showLoading();
+
+					createUpload(entry.toLocalURL());
+
+				}, function(e) {
+					$.toast("读取拍照文件失败");
+				});
+			}, function(err) { //取消
+			});
+		}
+
+		/**
+		 * 缩放图片
+		 * @param {String} path
+		 */
+		function zoomImage(path, uploadImgUrl) {
+
+			var cvw = plus.webview.currentWebview();
+
+			var containerSizeObj = JSON.parse(cvw.containerSizeObj);
+
+			var index = path.lastIndexOf('.');
+			var newPath = path.substr(0, index) + '_compress' + (new Date()).valueOf() + path.substr(index);
+
+			plus.zip.compressImage({
+					src: path,
+					dst: newPath,
+					quality: 100,
+					width: containerSizeObj.width + "px" // 
+				},
+				function(event) {
+
+					imgSizeObj = {
+						width: event.width,
+						height: event.height
+					};
+					clipImage(event.target, uploadImgUrl);
+
+				},
+				function(error) {
+					$.hideLoading();
+					$.toast('获取图片失败!');
+				});
+		}
+
+		/**
+		 * 裁剪图片
+		 * @param {String} path
+		 */
+		function clipImage(path, uploadPath) {
+			var cvw = plus.webview.currentWebview();
+
+			var containerSizeObj = JSON.parse(cvw.containerSizeObj);
+
+			var obj = {};
+
+			var index = path.lastIndexOf('.');
+			var newPath = path.substr(0, index) + '_clip' + (new Date()).valueOf() + path.substr(index);
+
+			if(imgSizeObj.height > containerSizeObj.height) {
+				var hh = parseFloat((containerSizeObj.height / imgSizeObj.height).toFixed(2));
+
+				var topRatio = parseFloat((1 - hh) / 2).toFixed(2) * 100 + '%';
+
+				obj = {
+
+					height: containerSizeObj.height + 'px',
+					width: imgSizeObj.width + 'px',
+
+					top: topRatio
+				}
+
+			} else {
+				obj = {
+					height: containerSizeObj.height + 'px',
+					width: imgSizeObj.width + 'px',
+				}
+			}
+			plus.zip.compressImage({
+					src: path,
+					dst: newPath,
+					clip: obj
+				},
+				function(event) {
+					$.hideLoading();
+					$.toast('重选图片成功');
+
+					var frontvw = plus.webview.currentWebview().opener();
+
+					$.fire(frontvw, 'changeImg', {
+						imgid: cvw.imgid,
+						uploadImgPath: uploadPath,
+						newImgPath: event.target,
+						trueNewImgPath: path
+
+					})
+
+					cvw.close();
+					frontvw.show();
+				},
+				function(error) {
+					$.hideLoading();
+					$.toast("获取图片失败!");
+				});
+		}
+
+		/**
+		 * 上传图片
+		 * @param {String} imgurl
+		 */
+		function createUpload(imgurl) {
+
+			var upStatus = false;
+
+			var task = window.servicebus.imgUpload(function(t, status) {
+
+				upStatus = true;
+
+				if(status == 200) { // H5上传 callback 
+
+					var data = t.responseText;
+
+					var uploadPath = '';
+
+					if(JSON.parse(data).returnCode == 100000) { // 后台上传成功则将图片地址返回
+
+						var uploadImgUrl = JSON.parse(JSON.parse(data).bodyData).path[0];
+
+						zoomImage(imgurl, uploadImgUrl);
+						//						compressImage(imgurl, uploadImgUrl)
+
+					} else { //后台上传失败   直接返回
+						$.toast("重选图片失败");
+					}
+
+				} else { //H5 上传失败
+					$.toast("重选图片失败");
+
+				}
+
+			});
+
+			task.addFile(imgurl, {
+				key: "verifiedImgUploading"
+			});
+			task.addData("string_key", "string_value");
+			task.start();
+
+			setTimeout(function() { //20s后接口没有反应 则关闭当前页，返回前一个页面
+
+				$.hideLoading();
+				if(!upStatus) {
+					task.pause();
+					$.toast('无法连接网络');
+					return;
+
+				}
+
+			}, 20000);
+		}
+
+	}
+
+})(mui, document, window);
+
+/*
+ * 无效图片资源
+ */
+
+function imgError() {
+	mui.hideLoading();
+	gel("pjImg").style.display = "none";
+	mui.alert("无效的图片资源");
+}
+
+//global function for evaljs
+
+function loadMedia(src) {
+
+	gel("pjImg").src = src;
+}
+
+/**
+ * 图片缩放
+ */
+function imgLoaded() {
+
+	mui.hideLoading();
+	var cheight = document.body.clientHeight;
+	var containerHeight = cheight - 44 - 0.1 * cheight;
+	var containerWidth = document.body.clientWidth;
+
+	var imgHeight = gel('pjImg').clientHeight;
+	var imgWidth = gel('pjImg').clientWidth;
+
+	var widthratio = containerWidth / imgWidth;
+	var heightration = containerHeight / imgHeight;
+	if(widthratio < heightration) { //以
+		gel('pjImg').style.width = parseInt(imgWidth * widthratio) + 'px';
+		gel('pjImg').style.height = parseInt(imgHeight * widthratio) + 'px';
+
+		gel('pjImg').style.marginTop = parseInt(cheight - 44 - parseInt(imgHeight * widthratio)) / 2 + 'px';
+
+	} else { //
+		gel('pjImg').style.width = parseInt(imgWidth * heightration) + 'px';
+		gel('pjImg').style.height = parseInt(imgHeight * heightration) + 'px';
+
+		gel('pjImg').style.marginTop = parseInt(cheight - 44 - parseInt(imgHeight * heightration)) / 2 + 'px';
+	}
+}

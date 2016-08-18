@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>现金余额</title>
+
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.money-flow {
+				float: right;
+				font-size: 14px;
+				display: inline-block;
+			}
+			
+			.money-account {
+				background: #0066ff;
+			}
+			
+			.money-account a,
+			.money-account h1,
+			.money-account span {
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav money-account">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title">现金账户</h1>
+
+			<span class='mui-btn mui-btn-link money-flow' id='getUserbill'><a href="javascript:;">资金流水</a></span>
+
+		</header>
+		<div class="mui-content">
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				gestureConfig: {
+					doubletap: true
+				},
+				subpages: [{
+					url: 'usermoney_sub.html',
+					id: 'usermoney_sub.html',
+					styles: {
+						top: '45px',
+						bottom: '0px',
+						background: 'transparent'
+					}
+				}]
+			});
+			mui.ready(function() {
+				document.getElementById('getUserbill').addEventListener('tap', function() {
+					mui.openWindow({
+						id: 'userbill.html',
+						url: 'userbill.html'
+					});
+				})
+			})
+		</script>
+	</body>
+
+</html>

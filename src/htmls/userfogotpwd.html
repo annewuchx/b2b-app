@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>找回交易密码</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+
+	</head>
+	<style>
+		.btn {
+			height: 40px;
+			padding-top: 6px;
+		}
+		
+		@media screen and (max-width: 319px) {
+			.mui-input-row label {
+				padding-left: 2px;
+			}
+		}
+		
+		.label {
+			line-height: 40px;
+			color: #333333;
+			padding-left: 15px;
+		}
+		
+		.zym-btn-blue {
+			height: 100%;
+			border-radius: 0px;
+			float: left;
+		}
+		
+		.mui-input-row label {
+			font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+			line-height: 1.1;
+			float: left;
+			padding: 15px 15px 0px 45px;
+			width: auto;
+			color: #777777;
+		}
+		
+		.pass-btn-div {
+			margin: 90px 15px 0 15px;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #0066FF">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back" style="color: #fff;"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title" style="color: #fff;font-weight: bold;font-size: 16px">找回交易密码</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row" style="height: 45px;background-color: #F2F2F2;">
+					<label>手机号</label>
+					<span class="label" id="phone"></span>
+				</div>
+				<div class="mui-input-row yck-input-checkcode">
+					<label>验证码</label>
+					<div style="height: 100%;margin-right: 0px;padding:0; ">
+						<input id='checkcode' style="width: 42%;color: #777777;" type="text" class="mui-input" placeholder="请输入验证码">
+						<button type="button" style="width: 23%;padding: 1px 1px;" class="mui-btn mui-btn-blue zym-btn-blue">获取验证码</button>
+					</div>
+				</div>
+				<div class="mui-input-row">
+					<label style="padding: 15px 25px 0 15px;">营业执照号</label>
+					<input id="certificatesCode" style="float:left;width: 60%;color: #777777;" type="text" class="mui-input" placeholder="请输入营业执照号码">
+				</div>
+			</form>
+
+			<div class="mui-content-padded pass-btn-div">
+				<button id='sendMail' class="mui-btn mui-btn-block mui-btn-primary btn">下一步</button>
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script>
+			mui.plusReady(function() {
+				var wv = plus.webview.currentWebview();
+				document.getElementById("phone").innerHTML = wv.phone.substring(0, 3) + "****" + wv.phone.substring(7, 11);
+			})
+			mui.ready(function() {
+				var userinfo = JSON.parse(localStorage.getItem(window.resources.keys.state));
+				var userId;
+				if(userinfo != null && userinfo.userId != null) {
+					userId = userinfo.userId;
+				} else {
+					userId = "";
+				}
+
+				//监听下一步
+				mui(".mui-content-padded").on('tap', '.btn', function() {
+
+					var code = document.getElementById("checkcode").value;
+					var certificatesCode = document.getElementById("certificatesCode").value;
+					if(code == null || code == "") {
+						mui.toast('请输入验证码');
+					} else if(certificatesCode == null || certificatesCode == ""){
+						mui.toast('请输入营业执照号');
+					}else{
+						plus.nativeUI.showWaiting("加载中...");
+						window.servicebus.forgetpwOne({
+							"userId": userId,
+							"virifyCode": code,
+							"certificatesCode": certificatesCode
+						}, function(data) {
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+							if(data.returnCode != "100000") {
+
+								mui.toast(data.returnMsg);
+
+							} else {
+								document.getElementById("checkcode").value="";
+								document.getElementById("certificatesCode").value="";
+								var webview = plus.webview.currentWebview();
+								mui.openWindow({
+									url: 'userresetpwd.html',
+									id: 'userresetpwd.html',
+									extras: {
+										userFogtPwdId: webview.id,
+										pageid:webview.pageid,
+										virifyCode: code
+									}
+								});
+							}
+							plus.nativeUI.closeWaiting();
+						})
+					}
+				})
+				var countdown = 60;
+
+				function settime(val) {
+					if(countdown == 60) {
+//						mui.toast('验证码已发送，请注意查看');
+						val.style.backgroundColor="#06f";
+						val.style.borderColor="#06f";
+					}
+					if(countdown == 0) {
+						val.removeAttribute("disabled");
+						countdown = 60;
+						val.innerText = "重新发送";
+						val.style.backgroundColor="#06f";
+						val.style.borderColor="#06f";
+					} else {
+						val.setAttribute("disabled", true);
+						val.innerText = countdown + "S";
+						val.style.backgroundColor="#ccc";
+						val.style.borderColor="#ccc";
+						countdown--;
+						setTimeout(function() {
+							settime(val)
+						}, 1000)
+					}
+				}
+
+				document.querySelector('.zym-btn-blue').addEventListener('tap', function(event) {
+					var phone = document.getElementById("phone").innerHTML;
+					window.servicebus.commonUserGetcode({
+						"userId": userId
+					}, function(data) {
+						if(data.returnCode != "100000") {
+							mui.toast(data.returnMsg);
+						} else {
+							var yzm = event.target;
+							settime(yzm);
+						}
+					}, function() {
+						mui.toast("系统异常");
+					});
+				})
+			});
+		</script>
+	</body>
+
+</html>

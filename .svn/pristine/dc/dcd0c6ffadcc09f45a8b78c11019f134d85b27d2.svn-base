@@ -1,0 +1,382 @@
+.mui-content {
+  width: 100%;
+  height: 100%;
+}
+
+.github-line-chart {
+  margin: 0.533333rem 0;
+  width: 100%;
+  height: 5.093333rem;
+  border-bottom: solid 1px #e0e0e0;
+  border-top: solid 1px #e0e0e0;
+  -webkit-box-shadow: 1px 1px 5px #CCCCCC inset;
+  box-shadow: 1px 1px 5px #CCCCCC inset;
+}
+
+.mui-bar {
+  background: rgba(255, 255, 255, 0);
+}
+
+/**
+         * 
+     */
+
+.mui-bar .mui-icon {
+  right: 0.4rem;
+  color: #ffffff;
+  float: right;
+  position: relative;
+  z-index: 20;
+}
+
+[data-dpr="1"] .mui-bar .mui-icon {
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+[data-dpr="2"] .mui-bar .mui-icon {
+  font-size: 48px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+[data-dpr="3"] .mui-bar .mui-icon {
+  font-size: 72px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/**
+             * span
+         */
+
+.mui-bar .mui-icon span {
+  position: absolute;
+  display: inline-block;
+  background: #ffb400;
+  width: 0.213333rem;
+  height: 0.213333rem;
+  top: 0.266667rem;
+  right: 0.026667rem;
+  border-radius: 0.666667rem;
+  border: 1px solid #ffffff;
+  opacity: 0;
+}
+
+.mui-bar-nav {
+  padding: 0;
+  box-shadow: 0 0;
+}
+
+/*
+     * 
+     */
+
+.mui-bar-nav h1 {
+  color: #ffffff;
+}
+
+[data-dpr="1"] .mui-bar-nav h1 {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .mui-bar-nav h1 {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .mui-bar-nav h1 {
+  font-size: 48px;
+}
+
+.mui-bar-nav~ .mui-content {
+  padding-top: 0;
+}
+
+/*
+ * 
+ */
+
+.chart-addon {
+  height: 0.533333rem;
+  padding-left: 0.4rem;
+  margin: 0;
+  color: #555555;
+  background: white;
+}
+
+[data-dpr="1"] .chart-addon {
+  font-size: 10px;
+}
+
+[data-dpr="2"] .chart-addon {
+  font-size: 20px;
+}
+
+[data-dpr="3"] .chart-addon {
+  font-size: 30px;
+}
+
+.networkuseless {
+  width: 100%;
+  height: 1.333333rem;
+  background-color: #000;
+  opacity: 0.5;
+  color: #998f8e;
+  line-height: 1.333333rem;
+}
+
+[data-dpr="1"] .networkuseless {
+  font-size: 14px;
+}
+
+[data-dpr="2"] .networkuseless {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .networkuseless {
+  font-size: 42px;
+}
+
+.networkuseless span.mui-icon {
+  color: #febf00;
+  margin: 0 0.266667rem;
+}
+
+/*
+ * 
+ */
+
+#slider,
+.mui-slider-item img {
+  height: 5.84rem;
+}
+
+/**
+    导航栏
+ */
+
+#mycard {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+  margin-top: 0.266667rem;
+  margin-bottom: 0.266667rem;
+  background: white;
+}
+
+ul#nav:after {
+  clear: both;
+  content: "";
+}
+
+ul#nav {
+  width: 100%;
+  margin: 0.24rem 0 0.133333rem;
+  padding: 0 0.413333rem;
+}
+
+/*
+     * li
+     */
+
+ul#nav li {
+  width: 25%;
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+
+/*
+         * a
+         */
+
+ul#nav li a {
+  display: block;
+}
+
+/*
+         * 
+         */
+
+ul#nav li div.hexagon {
+  position: relative;
+  display: inline-block;
+  width: 1.386667rem;
+  height: 1.28rem;
+  background-size: 1.386667rem 1.28rem;
+  background-repeat: no-repeat;
+}
+
+/*
+         * 
+         */
+
+ul#nav li div.hexagon1 {
+  background-image: url("../images/index/icon_home_bg1.svg");
+}
+
+ul#nav li div.hexagon2 {
+  background-image: url("../images/index/icon_home_bg2.svg");
+}
+
+ul#nav li div.hexagon3 {
+  background-image: url("../images/index/icon_home_bg3.svg");
+}
+
+ul#nav li div.hexagon4 {
+  background-image: url("../images/index/icon_home_bg4.svg");
+}
+
+/*
+         * 
+         */
+
+ul#nav li div.hexagon> i.yckfont {
+  display: block;
+  color: white;
+  width: 0.64rem;
+  height: 0.64rem;
+  font-size: 0.64rem;
+  line-height: 100%;
+  position: absolute;
+  top: 0.346667rem;
+  left: 0.373333rem;
+}
+
+ul#nav> li> a> span {
+  line-height: 100%;
+  display: block;
+  color: #333333;
+  height: 0.32rem;
+  margin: 0.133333rem 0;
+  text-align: center;
+}
+
+[data-dpr="1"] ul#nav> li> a> span {
+  font-size: 12px;
+}
+
+[data-dpr="2"] ul#nav> li> a> span {
+  font-size: 24px;
+}
+
+[data-dpr="3"] ul#nav> li> a> span {
+  font-size: 36px;
+}
+
+/*
+ * 今日指数－本周指数－本月指数
+ */
+
+.mui-segmented-control {
+  height: 1.306667rem;
+  border: 0;
+  box-shadow: 0 1px 6px #ccc;
+  border-radius: 0;
+}
+
+[data-dpr="1"] .mui-segmented-control {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .mui-segmented-control {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .mui-segmented-control {
+  font-size: 48px;
+}
+
+/*
+     * 
+     */
+
+.mui-segmented-control .mui-control-item {
+  color: #7ba3f6;
+  background: #ffffff;
+  padding-top: 0.133333rem;
+  border-left: 0;
+}
+
+/*
+     * 
+     */
+
+.mui-segmented-control .mui-control-item.mui-active {
+  background: #ffffff;
+  font-weight: 20;
+  color: #0066ff;
+  border-bottom: 0.106667rem solid #0066ff;
+}
+
+/*
+ * 
+ */
+
+.ct-chart {
+  height: 5.093333rem;
+  /* android browser 4.4+*/
+  border-bottom: solid 1px #e0e0e0;
+}
+
+.ct-chart svg {
+  background-image: -moz-linear-gradient(top, #2c52e9, #5639d8);
+  /* FF3.6 */
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #000000), color-stop(1, #5639d8));
+  /* Safari 4+, Chrome 2+ */
+  background-image: -webkit-linear-gradient(top, #2c52e9, #5639d8);
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -o-linear-gradient(top, #2c52e9, #5639d8);
+  /* Opera 11.1+ */
+  background-image: linear-gradient(to bottom, #2c52e9, #5639d8);
+}
+
+.ct-chart .ct-label {
+  color: white;
+}
+
+.ct-chart .ct-line {
+  stroke: #23cefe;
+}
+
+.ct-chart .ct-series-a .ct-point {
+  stroke: white;
+  stroke-width: 0.133333rem;
+}
+
+.chart-bottom {
+  height: 0.266667rem;
+  background-color: #F2F2F2;
+}
+
+#emailMsg {
+  position: absolute;
+  top: 0.266667rem;
+  right: 0;
+  border: 1px solid #ffffff;
+  background-color: #ffb400;
+  height: 0.213333rem;
+  width: 0.213333rem;
+  border-radius: 0.106667rem;
+  display: none;
+}
+
+.mui-slider-indicator .mui-indicator {
+  background: rgba(255,255,255,0.3);
+}
+
+[data-dpr="1"] .mui-slider-indicator .mui-indicator {
+  width: 7px;
+  height: 7px;
+}
+
+[data-dpr="2"] .mui-slider-indicator .mui-indicator {
+  width: 14px;
+  height: 14px;
+}
+
+[data-dpr="3"] .mui-slider-indicator .mui-indicator {
+  width: 21px;
+  height: 21px;
+}

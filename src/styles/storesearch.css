@@ -1,0 +1,182 @@
+.mui-bar {
+	background-color: #0066FF;
+}
+
+.mui-bar a,
+.mui-bar a > span {
+	color: #fff;
+	font-size: 16px;/*px*/
+}
+
+.mui-bar h1 {
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;/*px*/
+}
+
+.yck-content {
+	background-color: #fff;
+}
+
+.mui-table-view-chevron .mui-table-view-cell{
+	padding-right: 0;
+}
+
+.mui-card {
+	margin: 0px 8px;
+	box-shadow: none;
+	border-radius: 0;
+	border: solid 1px #CCCCCC;/*no*/
+}
+
+.mui-card div {
+	padding: 2px 5px;
+}
+
+.mui-card .list_div {
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: 7px 0px;
+	border-bottom: solid 1px #c8c7cc;/*no*/
+	padding-left: 42px;
+	padding-top: 3px;
+	padding-bottom: 5px;
+	white-space: normal;
+	content: 'xe605';
+}
+
+.mui-card div img,
+.mui-card div span {
+	/*float: left;*/
+}
+
+.mui-card .address_div_distance_left {
+	padding: 0px 8px;
+	float: left;
+	width: 50%;
+	border-right: 1px solid #E6E6E6;/*no*/
+	margin: 15px 0;
+	font-size: 14px;/*px*/
+}
+
+.mui-card .address_div_distance_right {
+	padding: 0px 8px;
+	float: right;
+	color: #9DC562;
+	width: 50%;
+	margin: 15px 0;
+	font-size: 16px;/*px*/
+	text-align: center;
+}
+
+.body_header_div {
+	text-align: left;
+	padding: 0;
+	padding-top: 5px;
+	height: 50px;
+}
+
+.body_header_div>span {
+	float: left;
+	font-size: 40px;/*px*/
+}
+
+.body_header_div>span {
+	float: left;
+}
+
+#gps1 {
+	font-size: 14px;
+}
+
+#gps1 .mui-spinner {
+	width: 20px;
+	height: 20px;
+}
+
+.mui-table-view-address {
+	position: relative;
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+	padding: 10px 0px;
+	background-color: #F2F2F2;
+	color: #757575;
+}
+
+.mui-input-group-address {
+	position: relative;
+	padding: 0;
+	border: 0;
+	margin-top: 14px;
+	font-size: 14px;/*px*/
+	color: #2D2D2D;
+}
+
+#ul_city {
+	font-size: 14px;/*px*/
+	color: #757575;
+}
+
+.distance-color {
+	color: #0066ff;
+}
+
+.yck-search-address {
+	padding: 12px 15px;
+	min-height: 52px;
+	color: #7E7E7E;
+	font-size: 14px;/*px*/
+	width: 100%;
+}
+
+.yck-search-gps {
+	padding-left: 15px;
+	color: #757575;
+}
+
+.yck-select-address {
+	padding: 12px 15px;
+	width: 100%;
+	color: #7E7E7E;
+	height: 50px;
+	font-size: 14px;/*px*/
+}
+
+.yck-select-address-div {
+	margin: 0;
+	width: 100%;
+	display: block;
+	padding: 0 0;
+}
+
+.yck-select-address-div-child {
+	float: left;
+	margin-right: 15px;
+}
+
+.yck-addressList {
+	padding: 15px 8px !important;
+}
+
+.yf-address {
+	font-size: 20px;/*px*/
+	float: left;
+	width: 10%;
+	font-weight: 200;
+}
+
+.yck-address {
+	font-size: 14px;/*px*/
+	padding-left: 8px;
+	float: right;
+	width: 90%;
+}
+
+.yf-phone {
+	margin-right: 10px;
+}
+
+.yck-first-adress {
+	color: #0066ff !important;
+}

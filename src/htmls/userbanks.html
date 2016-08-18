@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
+</head>
+<style>
+	.bank_list{
+		margin: 5px 5px;
+		height: 100px
+	}
+	.bank_list .bank_list_left{
+		background-color: aquamarine;
+		width: 50px;
+		height:100%;
+		float: left;
+	}
+	.bank_list .bank_list_right{
+		float: left;
+		height:100%;
+		padding: 10px;
+	}
+	.bank_list .bank_list_right .span_top{
+		display: block;
+	}
+	.bank_list .bank_list_right .span_top p{
+		font-size: 13px;
+		color: #8F8F94;
+	}
+	.bank_list .bank_list_right .span_bottom{
+		align-items: center;
+		float: left;
+		color: #999999;
+		font-size: 25px;
+		padding-top:5px;
+	
+	}
+	.bank_list .bank_list_right  .div{
+		color: black;
+		float: left;
+		line-height:21px;
+		padding-left: 10px;
+		font-size: 25px;
+		letter-spacing: 1px;
+	}
+</style>
+
+
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">收款账户选择</h1>
+	</header>
+	
+	<div class="mui-content">
+		<div class="mui-card bank_list" >
+			<div class="bank_list_left"></div>
+			<div class="bank_list_right">
+				<span class="span_top">
+					中国银行
+					<p>储蓄卡 (福州市五一路支行)</p>
+				</span>
+				<div class="span_bottom">
+					**** **** ****
+				</div>
+				<div class="div">5918</div>
+			</div>
+		</div>
+       
+    	<div class="mui-card bank_list" >
+			<div class="bank_list_left"></div>
+			<div class="bank_list_right">
+				<span class="span_top">
+					中国银行
+					<p>储蓄卡 (福州市五一路支行)</p>
+				</span>
+				<div class="span_bottom">
+					**** **** ****
+				</div>
+				<div class="div">5918</div>
+			</div>
+		</div>
+		
+		<div class="body_header_div" style="height:70px;padding: 10px;">
+			<a id="icon-plus">
+				<span class="mui-icon mui-icon-plus" style="color: #8F8F94;">
+					<p style="font-size: 18px;line-height: 30PX;">
+						添加銀行卡
+					</p>
+				</span>
+			</a>
+		</div>
+	</div>
+	
+</body>
+</html>

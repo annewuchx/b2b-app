@@ -1,0 +1,92 @@
+
+.price-item {
+	height: 160px;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+
+
+/*li部分*/
+
+.price-item ul {
+	width: 100%;
+	padding: 0;
+	height: 80px;
+}
+
+.price-item ul li {
+	list-style: none;
+	float: left;
+	width: 40%;
+	margin-top: 30px;
+	border-bottom: 1px solid rgb(204, 204, 204);
+	margin-left:15px;
+	margin-right:15px;
+	position: relative;
+}
+
+.price-item ul li.moneyMask {
+	width: 90%;
+}
+
+.price-item ul li input {
+	position: absolute;
+	border: none;
+	width: 90%;
+	font-size: 15px;
+	color: rgb(51, 51, 51);
+	margin: 0;
+	padding: 0 0 0 10px;
+	height: 20px;
+	line-height: 20px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.price-item li {
+	border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.price-item li span:nth-child(1) {
+	display: inline-block;
+	color: rgb(51, 51, 51);
+	font-size: 24px;
+	margin-bottom: 7.5px;
+}
+
+.price-item li .quote-tit {
+	position: absolute;
+	left: 40px;
+	top: -24px;
+	font-size: 10px;
+	height: 0px;
+	color: rgb(51, 51, 51);
+	font: 12px "细体";
+}
+
+.price-item li .quote-tit-display {
+	display: none;
+}
+
+.price-item li.quote-tit-active {
+	border-bottom: 1px solid rgb(0, 102, 255);
+}
+
+.price-item li.quote-tit-active span:nth-child(1) {
+	color: rgb(0, 102, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

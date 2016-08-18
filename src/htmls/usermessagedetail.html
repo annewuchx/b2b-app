@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>消息-详情</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.verify_header a {
+				color: #000000;
+			}
+			/*头部*/
+			
+			.mui-bar {
+				background-color: rgb(0, 102, 255);
+			}
+			
+			header .mui-title {
+				color: #fff;
+			}
+			
+			header .h-left {
+				color: #fff;
+			}
+			
+			header .h-left span {
+				font-size: 16px;
+			}
+			
+			.mui-bar .mui-btn-link {
+				color: #fff;
+			}
+			
+			.mui-bar {
+				padding: 0 15px 0 9px;
+			}
+			
+			.mui-title {
+				font-size: 16px;
+			}
+			h4{
+				position: relative;
+			}
+			h4:after {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #CCCCCC;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">消息</h1>
+		</header>
+		<div class="mui-content">
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="./usermessagedetail.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,374 @@
+.ui-page-login,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.mui-bar .mui-icon {
+	font-size: 24px;
+	/*px*/
+	position: relative;
+	z-index: 20;
+	padding-top: 10px;
+	/*px*/
+	padding-bottom: 10px;
+	/*px*/
+}
+
+
+/*header*/
+
+header.mui-bar {
+	background: rgba(255, 255, 255, 0);
+}
+
+.mui-bar-nav {
+	box-shadow: none;
+}
+
+.mui-bar-nav a {
+	color: #fff;
+}
+
+.mui-bar-nav a span {
+	font-size: 16px;
+	/*px*/
+}
+
+
+/*mui-content*/
+
+.backImg {
+	width: 100%;
+	height: 144px;
+	background: url(../images/pic_login.png) no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	margin-bottom: 60px;
+}
+
+.pic-logo img {
+	position: absolute;
+	display: block;
+	width: 30%;
+	top: 55px;
+	left: 35%;
+}
+
+
+/**/
+
+.mui-input-group:first-child {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.mui-segmented-control {
+	font-size: 17px;
+	/*px*/
+}
+
+.mui-slider-progress-bar {
+	height: 4px;
+}
+
+.mui-slider .mui-slider-group .mui-slider-item {}
+
+.hline {
+	box-sizing: border-box;
+	line-height: 0;
+	background-color: #06f;
+	width: 100%;
+	height: 4px;
+}
+
+.hline_2 {
+	box-sizing: border-box;
+	line-height: 0;
+	background-color: rgb(204, 204, 204);
+	width: 100%;
+	height: 1px;
+}
+
+.horizontal-view {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-moz-box-orient: horizontal;
+	-moz-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+
+.login-tap a {
+	padding-bottom: 13px;
+}
+
+.login-active {
+	color: #06f !important;
+}
+
+
+/*.mui-content*/
+
+.mui-bar-nav~.mui-content {
+	padding-top: 0;
+	height: 100%;
+	background: #FFFFFF;
+}
+
+.area {
+	margin: 20px auto 0;
+}
+
+.mui-input-group {
+	background: #FFFFFF;
+}
+
+.mui-input-group:before {
+	height: 0;
+}
+
+.mui-input-group label {
+	width: 23%;
+	padding: 25px 15px;
+	color: #06f;
+	font-size: 20px;
+	/*px*/
+}
+
+.mui-input-row label~ input {
+	width: 77%;
+}
+
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+	height: 65px;
+}
+
+.mui-input-row .mui-input-clear~.mui-icon-clear,
+.mui-input-row .mui-input-password~.mui-icon-eye,
+.mui-input-row .mui-input-speech~.mui-icon-speech {
+	top: 25px;
+}
+
+.mui-input-group .mui-input-row {
+	height: 65px;
+}
+
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+	top: 6px;
+}
+
+.mui-content-padded {
+	margin-top: 25px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.mui-btn {
+	padding: 10px;
+}
+
+.link-area {
+	display: block;
+	margin-top: 25px;
+	text-align: center;
+}
+
+.spliter {
+	color: #bbb;
+	padding: 0 8px;
+}
+
+.oauth-area {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.oauth-area .oauth-btn {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 0 20px;
+	border: solid 1px #ddd;
+	/*no*/
+	border-radius: 25px;
+}
+
+.oauth-area .oauth-btn:active {
+	border: solid 1px #aaa;
+	/*no*/
+}
+
+.oauth-area .oauth-btn.disabled {
+	background-color: #ddd;
+}
+
+.btn-check-code {
+	width: 30% !important;
+	height: 34px;
+	line-height: 8px !important;
+	margin-top: 15px !important;
+	padding: 10px 5px !important;
+	color: #fff !important;
+	background: #06f;
+	font-size: 14px;
+}
+
+.mui-active {
+	color: #0066FF;
+	font-size: 17px;
+	/*px*/
+	margin: 0;
+	padding: 0;
+	padding-bottom: 13px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+	color: rgb(123, 163, 246);
+	font-size: 17px;
+	/*px*/
+	border: 0;
+}
+
+.mui-segmented-control .mui-control-item {
+	line-height: normal;
+	display: table-cell;
+	overflow: hidden;
+	width: 1%;
+	-webkit-transition: background-color .1s linear;
+	transition: background-color .1s linear;
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: rgb(123, 163, 246);
+	font-size: 17px;
+	/*px*/
+	border-color: #06f;
+	border-left: 1px solid #06f;
+	/*no*/
+}
+
+.yf-eyeclose {
+	font-size: 16px;
+	/*px*/
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	width: 38px;
+	height: 45px;
+	top: 28px;
+	text-align: center;
+	color: rgb(204, 204, 204);
+}
+
+.yf-eyeopen {
+	font-size: 16px;
+	/*px*/
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	width: 38px;
+	height: 45px;
+	top: 28px;
+	text-align: center;
+	color: rgb(204, 204, 204);
+}
+
+.mui-input-group label {
+	width: auto;
+	padding: 0px;
+	color: #06f;
+	font-size: 20px;
+	height: 100%;
+	line-height: 65px;
+	margin-right: 20px;
+	margin-left: 10px;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	float: left;
+	width: 65%;
+	font-size: 15px;
+	/*px*/
+}
+
+.mui-input-group .mui-input-row:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0px;
+	height: 1px; /*no*/
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.yck-btn {
+	margin-top: 50px;
+	margin-bottom: 15px;
+}
+
+.login-form {
+	margin: 0 15px;
+	padding-top: 13px;
+}
+
+.login-checkcode {
+	width: 50% !important;
+}
+
+
+/**
+ * mui
+ */
+
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	border-radius: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	border-bottom: 0px;
+}

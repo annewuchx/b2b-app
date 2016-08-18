@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>智能报价</title>
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">-->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		
+		<script src="../libs/flexible/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../styleflex/mui.min.css">
+			
+		<!--<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>-->
+		
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.flexible.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../css/mui.picker.css"/>-->
+		
+		
+		<link rel="stylesheet" type="text/css" href="../styleflex/priceindex.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../styles/priceindex.css"/>-->
+		
+		<style type="text/css">
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+			
+			.mui-backdrop {
+				top: 44px;
+				background-color: rgba(0, 0, 0, 0);
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">智能报价</h1>
+			<a class="h-right mui-btn mui-btn-link" id="batch">批量报价</a>
+		</header>
+		<!--头部-->
+
+		<!--mui-content-->
+		<div class="mui-content">
+			<!--yck-quote-->
+			<div class="yck-quote">
+				<div class="yck-quote-top">
+					<p class="disscountMoney bShow"><i>¥</i>&nbsp;<span>0.</span>00</p>
+
+					<p class="disscountMoney aShow aNone" v-cloak>
+						<i>¥</i>&nbsp;<span id="disscountMoneyInteger">{{disscountMoneyInteger | rmb}}</span>.<i id="disscountMoneyDecimals">{{disscountMoneyDecimals}}</i>
+					</p>
+				</div>
+				<div class="yck-quote-bottom">
+					<ul>
+						<li class="yck-quote-bottom-left">
+							<p>利息</p>
+							<p class="interest bShow"><i>-</i>&nbsp;&nbsp;<span>0.</span><i>00</i></p>
+
+							<p class="interest aShow aNone" v-cloak>
+								<i>-</i>&nbsp;&nbsp;<span id="interestInteger">{{interestInteger | rmb}}</span>.<i id="interestDecimals">{{interestDecimals}}</i>
+							</p>
+						</li>
+
+						<li class="yck-quote-bottom-right">
+							<p>计息天数</p>
+							<p class="back-img bShow"><span>0</span>&nbsp;&nbsp;天</p>
+
+							<p class="back-img aShow aNone" v-cloak><span id="dayDuring">{{price_data1.dayDuring}}</span>&nbsp;&nbsp;天</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!--quote-center-->
+			<div class="quote-center">
+				<div class="financing-mode">
+					<p>融资模式</p>
+					<ul id="rzmscontainer" class="clearfix">
+						<li class="active" v-on:tap="changeRZMS($event,0)"><span class="rzms">实时<i>报价</i></span></li>
+						<li v-on:tap="changeRZMS($event,1)"><span class="rzms">T+0<i>报价</i></span></li>
+						<li v-on:tap="changeRZMS($event,2)"><span class="rzms">T+1<i>报价</i></span></li>
+						<li v-on:tap="changeRZMS($event,3)"><span class="rzms">T+2<i>报价</i></span></li>
+					</ul>
+				</div>
+				<!---->
+				<ul class="quote-center-area-sum">
+					<li id="locationContainer" class="location1" v-bind:class="{'quote-tit-active': locaActive}" v-cloak>
+						<div>
+							<span class="yckfont yf-location">{{el_location}}</span>
+							<span class="quote-tit" v-bind:class="{'quote-tit-display': locaDisplay}">所在地区</span>
+							<input type="text" id="locationText" placeholder="所在地区" class="location" readonly v-model="location" />
+						</div>
+					</li>
+					<li v-bind:class="{'quote-tit-active': parValue.length>0}" v-cloak>
+						<div>
+							<span class="yckfont yf-rmb"><!--{{el_money}}--></span>
+							<span class="quote-tit" v-bind:class="{'quote-tit-display': parValue.length<=0}">票面金额</span>
+							<input type="number" pattern="[0-9.]*" min="0" max="1000000000" step="0.01" id="par-value" placeholder="票面金额" v-model="parValue" />
+							
+						</div>
+					</li>
+				</ul>
+				<ul class="quote-center-area-sum">
+					<li id="bank-type1" class="bank-type1" v-bind:class="{'quote-tit-active': bankActive}" v-cloak>
+						<div>
+							<span class="yckfont yf-building">{{el_bank}}</span>
+							<span class="quote-tit" v-bind:class="{'quote-tit-display': bankDisplay}">承兑行类型</span>
+							<input type="text" placeholder="承兑行类型" class="bank-type" readonly v-model="bankType" />
+						</div>
+					</li>
+					<li id="due-date1" v-bind:class="{'quote-tit-active': endDateActive}" v-cloak>
+						<div>
+							<span class="yckfont yf-calendar">{{el_date}}</span>
+							<span class="quote-tit" v-bind:class="{'quote-tit-display': endDateDisplay}">到期日</span>
+							<input type="text" placeholder="到期日" readonly v-model="endDate" data-options='{"type":"date"}' />
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="quote-btn">
+				<input type="button" value="计算报价" class="quote-btn-q" id="bj" v-on:tap="handle_quote" v-bind:class="{ 'quote-btn-q-active': !btnStatus  }" disabled="{{btnStatus}}" v-cloak>
+
+				<div class="quote-btn-contact">
+					<a id="linkus"></a>
+				</div>
+			</div>
+		</div>
+		<!--mui-content-->
+		
+		
+		<div class="mui-loader" id="loadding" style="display: none;">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop" style="display: none;"></div>
+		
+		
+		
+		<script src="../js/mui.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="../libs/sea-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/seajs-text-debug.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="../mui/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../mui/mui.picker.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../mui/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/countUp.js" type="text/javascript" charset="utf-8"></script>
+		<script src="priceindex.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

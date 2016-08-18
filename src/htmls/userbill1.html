@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>资金流水</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../styles/userbill.css" />
+
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<template v-for="data in billData" track-by="$index">
+					
+					<div class="bill-container">
+						
+						<div class="body_div_header" v-show='group(data.tradeDate)'>{{data.tradeDate}}</div>
+						
+						<div class="bill-detail-container">
+							
+							<template v-for="list in data.notesList">
+
+								<div class="list_div {{list.borrowOrLoan=='C'?'collect':'pay'}}">
+									
+									<div class='money-list-content'>
+										
+										<div class='bill-tag' style="position: relative;">
+
+											<p><span class='yckfont yf-hexagon bill-tag-detail'></span></p>
+											<span class='bill-tag-txt fwbold' v-if="list.borrowOrLoan=='C'">收</span>
+											<span class='bill-tag-txt fwbold' v-else>支</span>
+
+										</div>
+										<div class="describe_div">
+											<span class='decribe-comment'>{{list.comment}}</span>
+											<br>
+											<span class='decribe-time'>
+												<span>{{list.tradeYm}}</span><span>&nbsp;{{list.tradeMs}}</span>
+											</span>
+										</div>
+										<div class="money_div">
+											{{list.borrowOrLoan=="C"?'+':'-'}}{{list.tradeMoney|currency '￥' }}
+										</div>
+									</div>
+								</div>
+								
+							</template>
+							
+						</div>
+					</div>
+
+				</template>
+				
+				<div class="clearfix" style="height: 1px;"></div>
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../libs/vue.min.js"></script>
+		
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		
+		<script type="text/javascript" src="userbill.js"></script>
+	</body>
+</html>

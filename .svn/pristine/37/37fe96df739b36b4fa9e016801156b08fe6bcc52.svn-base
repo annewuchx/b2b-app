@@ -1,0 +1,177 @@
+/*
+ * 票据融资－主
+ */
+(function($, doc, win) {
+
+	var subPage_List, subPage_None;
+	//
+	var subpages = [{
+		url: "financingindexsubpage.html",
+		id: "financingindexsubpage.html",
+		styles: {
+			top: '45px',
+			bottom: 0
+		}
+	}, {
+		url: "financingindex1subpage.html",
+		id: "financingindex1subpage.html",
+		styles: {
+			top: '45px',
+			bottom: 0
+		}
+	}];
+
+	/*
+	 * 
+	 */
+	$.init({
+		swipeBack: false
+	});
+
+	//
+	function preload_subpages() {
+
+		var self = plus.webview.currentWebview();
+
+		for(var i = 0; i < 2; i++) {
+
+			var temp = {};
+
+			if(plus.webview.getWebviewById(subpages[i]) == null) {
+
+				var sub = plus.webview.create(subpages[i].url, subpages[i].id, subpages[i].styles);
+
+				if(subpages[i].url == "financingindex1subpage.html") {
+					subPage_List = sub;
+				} else {
+					subPage_None = sub;
+				}
+
+				sub.hide();
+
+				self.append(sub);
+
+			}
+		}
+	}
+
+	function refreshTabs(islist) {
+
+		//console.error("refreshTabs =" + islist);
+		if(islist == null) {
+			document.querySelector(".mui-content").style.display = "none";
+
+			subPage_List.hide();
+			subPage_None.hide();
+
+		} else {
+
+			var isLogin = win.app.checkLogin();
+
+			if(isLogin && islist) {
+				subPage_List.show();
+				subPage_None.hide();
+			} else {
+				subPage_None.show();
+				subPage_List.hide();
+			}
+		}
+
+	}
+
+	/**
+	 * @description 确定显示融资的对应界面
+	 */
+	function handle_refresh() {
+
+		var userInfo = win.app.getState();
+		var isLogin = win.app.checkLogin();
+
+		if(!isLogin) {
+			subPage_None.show();
+			subPage_List.hide();
+
+		} else {
+			subPage_None.hide();
+			subPage_List.hide();
+
+		}
+
+	}
+
+	/*
+	 * 
+	 */
+	$.plusReady(function() {
+		//
+		preload_subpages();
+
+		//
+		handle_BackEvent();
+
+		//
+		handle_refresh();
+	});
+
+	/**
+	 * 
+	 */
+	$.ready(function() {
+
+		var timerId = null;
+		//
+		window.addEventListener("RefreshPage", function() {
+			//
+			document.querySelector(".mui-loader").style.display = 'block';
+
+			handle_refresh();
+
+//			document.getElementById("loadingPic").src = "../images/loading.gif?t=" + new Date().getTime();
+
+//			if(timerId != null) {
+//				clearTimeout(timerId);
+//			}
+
+//			timerId = setTimeout(function() {
+				$.RefreshPage("financingindex1subpage.html");
+				//
+//			}, 3000);
+
+		});
+
+		window.addEventListener('Page_ShowEvent', function(event) {
+
+			//console.error("financingindex.js == Page_ShowEvent")
+
+			var o = event.detail;
+
+			if(o.islist) {
+				refreshTabs(true);
+			} else {
+				refreshTabs(false);
+			}
+
+		});
+
+	});
+
+	/**
+	 * 处理回退事件
+	 */
+	function handle_BackEvent() {
+
+		var back = $.back;
+
+		$.back = function() {
+			document.querySelector(".mui-loader").style.display = 'none';
+
+			$.fire($.WVFooter(), 'gohome');
+
+			refreshTabs(null);
+
+			$.toMain();
+
+		};
+	}
+
+})(mui, document, window);

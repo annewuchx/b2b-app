@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>承信预约</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../styles/reserveamount.css" />
+		<style type="text/css">
+			.mui-navigate-right:after,
+			.mui-push-left:after,
+			.mui-push-right:after {
+				font-family: Muiicons;
+				font-size: inherit;
+				line-height: 1;
+				font-size: 17px;
+				position: absolute;
+				top: 50%;
+				display: inline-block;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
+				text-decoration: none;
+				color: #3380FF;
+				-webkit-font-smoothing: antialiased;
+			}
+			
+			header .mui-title {
+				font-size: 17px;
+				font-weight: 500;
+				line-height: 44px;
+				position: absolute;
+				display: block;
+				width: 100%;
+				margin: 0 -10px;
+				padding: 0;
+				text-align: center;
+				white-space: nowrap;
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back" style="color: #fff;"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title" style="color: #fff;font-weight: 800;font-size: 16px">承信预约</h1>
+			<a data-url="reserverecordsindex.html" class="h-right mui-btn mui-btn-link" style="margin-top: 10px;"><h5 style="color: #fff;clear: both;">预约记录</h5></a>
+		</header>
+		<div class="mui-content" id="reserveAmountId" style="background-color: #F3F3F3;">
+			<form class="mui-input-group" style="margin-top:14px;font-size: 14px;font-weight: 800;color: #2D2D2D;">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell" style="padding: 8px 15px;width: 100%;color:#787878;height: 50px;">
+						<a data-url="storelist.html" style="margin: 0;width: 100%;display:block;padding: 8px 0; ">
+							<div style="float: left;margin-right: 15px;">选择门店</div>
+							<textarea style="width: 60%;padding:0;margin-top:-10px;float:left;overflow-y: hidden;font-size: 14px;" id="address"></textarea> </a>
+						<div class="mui-navigate-right" style="float: right;">
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell" style="padding: 8px 15px;color:#787878;font-size: 14px;">
+						<label>票面总额</label>
+						<input type="text" id="billAmount" placeholder="请输入票面总额" style="width: 60%;font-size: 14px;padding-top: 8px;padding-bottom: 8px;">
+						<div style="float: right;padding-top: 8px;color: #3380FF;">万元</div>
+					</li>
+					<div style="clear: both;"></div>
+					<li class="mui-table-view-cell" style="padding: 8px 15px;display:table;min-height:52px;color:#787878;font-size: 14px;" v-cloak>
+						<label style="display: table-cell;padding-top: 8px;">报价时间</label>
+						<span style="padding-left: 15px;padding-top: 8px;" v-cloak v-if="reserveAmount.rule.protectionBeginTime">{{reserveAmount.rule.protectTime}}</span>
+					</li>
+				</ul>
+			</form>
+			<!--			<div class="fontcolor protectiontime"  v-cloak>
+				保价时间：<span v-cloak v-if="reserveAmount.rule.protectionBeginTime">{{reserveAmount.rule.protectTime}}</span>
+			</div>-->
+			<div class="bespeaktime" v-cloak>
+				<span v-if="reserveAmount.rule.confirmAmount<reserveAmount.rule.bespeakAmount">
+				预约时间：<span style="color: #3380FF;">{{reserveAmount.rule.bespeakTime}}</span>
+				</span>
+				<span v-if="reserveAmount.nextRule&&(!reserveAmount.rule||reserveAmount.rule.confirmAmount>=reserveAmount.rule.bespeakAmount)">
+				下一场预约时间：<span style="color: #3380FF;">{{reserveAmount.nextRule}}</span>
+				</span>
+				<span v-if="!reserveAmount.nextRule&&!reserveAmount.rule">
+				<span style="color: #3380FF;">额度被预约完了，下次早点来！</span>
+				</span>
+			</div>
+			<div class="mui-content-padded reserveafontdiv" v-cloak>
+				<button type="button" class="mui-btn mui-btn-primary buttonstylere" v-on:click="sumbit()" v-if="reserveAmount.rule.confirmAmount<reserveAmount.rule.bespeakAmount">提交申请</button>
+				<button type="button" class="mui-btn mui-btn-outlined buttonstylere" style="background-color: #CCCCCC;color: #fff;" v-else>
+				提交申请
+			</button>
+			</div>
+
+			<div style="clear: both;"></div>
+			<div style="margin-left: 15px;padding-right: 95px;">
+				<div v-cloak style="height:40px;border:solid #fff 1px;display:block;width:80px;background: #fff;border-radius: 10px;" v-bind:class="{'borderxy1':reserveAmount.number>2&&reserveAmount.number<=5,'borderxy2':reserveAmount.number>5&&reserveAmount.number<=8,'borderxy3':reserveAmount.number>8&&reserveAmount.number<=10}">
+					<span v-if="reserveAmount.number<=2">有待提升</span>
+					<span v-if="reserveAmount.number<=5&&reserveAmount.number>=3">信用良好</span>
+					<span v-if="reserveAmount.number<=8&&reserveAmount.number>=6">信用优秀</span>
+					<span v-if="reserveAmount.number<=10&&reserveAmount.number>=9">信用极好</span>
+				</div>
+			</div>
+			<div class="line">
+				<div class="loadline" style="width: {{reserveAmount.number*10}}%;">
+				</div>
+				<div style="text-align: center;margin-top: 8px;color: #D7E3B4;" v-cloak>诚信值:{{reserveAmount.number}}</div>
+			</div>
+			<div class="bespeakbottom" v-cloak>
+				<a class="bespeakbottomleft" data-url="reserverules.html">
+					<img src="../images/u128.png" class="boximg" /> 预约规则
+				</a>
+				<a class="bespeakbottomright" data-url="creditboost.html">
+					<img src="../images/u124.png" class="boximg" /> 信用提升
+				</a>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script src="reserveamount.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,265 @@
+.mui-bar {
+  background-color: #0066FF;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: none;
+}
+
+.mui-bar span,
+a {
+  color: #fff;
+}
+
+[data-dpr="1"] .mui-bar span,
+[data-dpr="1"] a {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .mui-bar span,
+[data-dpr="2"] a {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .mui-bar span,
+[data-dpr="3"] a {
+  font-size: 48px;
+}
+
+.mui-bar h1 {
+  color: #fff;
+  font-weight: bold;
+}
+
+[data-dpr="1"] .mui-bar h1 {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .mui-bar h1 {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .mui-bar h1 {
+  font-size: 48px;
+}
+
+.mui-content {
+  margin-bottom: 0.266667rem !important;
+  padding-top: 0 !important;
+}
+
+.body_header_div {
+  color: #FDFCF9;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#003CAD), to(#0164D1));
+  margin-top: 0;
+}
+
+.body_header_div h3 {
+  padding-top: 0.533333rem;
+  padding-bottom: 0.133333rem;
+}
+
+.mui-input-group {
+  margin-top: 0.266667rem;
+}
+
+.mui-input-group .mui-navigate-right {
+  margin-left: 0.4rem;
+  display: block;
+  width: 100%;
+}
+
+.mui-input-group .mui-input-row span {
+  color: red;
+}
+
+.img {
+  background: url(../images/useracconut.png);
+  background-size: 0.426667rem 0.426667rem;
+  width: 0.426667rem;
+  height: 0.426667rem;
+  margin-top: 1.066667rem;
+}
+
+.mui-btn-blue {
+  width: 5.333333rem;
+  height: 1.066667rem;
+}
+
+.rz_btn {
+  width: 2.666667rem;
+  padding-top: 0.08rem;
+  height: 0.666667rem;
+}
+
+.mui-loader {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: 60%;
+  color: #888;
+  text-align: center;
+}
+
+[data-dpr="1"] .mui-loader {
+  font-size: 14px;
+}
+
+[data-dpr="2"] .mui-loader {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .mui-loader {
+  font-size: 42px;
+}
+
+.mui-backdrop {
+  top: 1.173333rem;
+}
+
+.hearbackground {
+  height: 3.733333rem;
+  background: url(../images/bg_quote.png);
+  background-size: 100% 100%;
+}
+
+.company {
+  padding-top: 1.706667rem;
+  text-align: center;
+}
+
+[data-dpr="1"] .company {
+  font-size: 18px;
+}
+
+[data-dpr="2"] .company {
+  font-size: 36px;
+}
+
+[data-dpr="3"] .company {
+  font-size: 54px;
+}
+
+.companyimg {
+  display: none;
+  width: 0.426667rem;
+  height: 0.373333rem;
+  background-size: 100% 100%;
+}
+
+.rzdiv {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.266667rem;
+  display: none;
+}
+
+.rzbtn {
+  width: 1.733333rem;
+  padding: 0;
+  margin: 0 auto;
+  color: #fff;
+  border: 0.026667rem solid #ccc;
+}
+
+[data-dpr="1"] .rzbtn {
+  font-size: 12px;
+}
+
+[data-dpr="2"] .rzbtn {
+  font-size: 24px;
+}
+
+[data-dpr="3"] .rzbtn {
+  font-size: 36px;
+}
+
+.mui-navigate-right:after,
+.mui-push-left:after,
+.mui-push-right:after {
+  font-family: Muiicons;
+  font-size: inherit;
+  line-height: 1;
+  /*no*/
+  position: absolute;
+  top: 50%;
+  font-size: 0.666667rem;
+  display: inline-block;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-decoration: none;
+  color: #95B5F8;
+  -webkit-font-smoothing: antialiased;
+}
+
+#uCompany {
+  color: #fff;
+}
+
+#myimg {
+  color: #fff;
+  display: none;
+}
+
+.yck-contact {
+  color: rgb(51, 51, 51) !important;
+}
+
+#uemail {
+  float: right;
+  margin-right: 0.64rem;
+  color: rgb(204, 204, 204);
+}
+
+#uphone {
+  float: right;
+  margin-right: 0.64rem;
+  color: rgb(51, 51, 51);
+}
+
+#jymm {
+  display: none;
+}
+
+.yck-kefu {
+  color: rgb(51, 51, 51) !important;
+}
+
+.login-out {
+  width: 100%;
+  height: 1.2rem;
+  margin: 0 0;
+  border-left: 0;
+  border-right: 0;
+  color: #0066FF;
+}
+
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  border: none;
+}
+
+.mui-btn:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 0.026667rem;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #c8c7cc;
+}
+
+.mui-btn:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.026667rem;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #c8c7cc;
+}

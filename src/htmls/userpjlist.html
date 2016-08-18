@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>票据资产</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../styles/userpjlist.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav bank-back">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title" style="font-size: 16px;">票据资产</h1>
+			<span class='open-filter mui-btn mui-btn-link userpj-pro' style="text-align: right;" id="openPjFilter">
+				<a href="javascript:;">筛选票据</a>
+			</span>
+
+		</header>
+		<div class="mui-content"></div>
+
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script type="text/javascript">
+		
+			(function($, doc, win) {
+				mui.init({
+					subpages: [{
+						url: 'userpjlistsubpage.html',
+						id: 'userpjlistsubpage.html',
+						styles: {
+							top: '44px',
+							bottom: '0px',
+						}
+					}]
+				});
+				/**
+				 * 弹出筛选匡
+				 */
+				document.getElementById('openPjFilter').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'userpjlistsx.html',
+						id: 'userpjlistsx.html',
+						show: {
+							aniShow: 'slide-in-bottom'
+						}
+					});
+				});
+			})(mui, document, window);
+		</script>
+	</body>
+
+</html>

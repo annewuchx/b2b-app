@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>票据融资--帐户中没票/未登录</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script src="../libs/flexible/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../styleflex/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../styleflex/loadding.css"/>
+		<link rel="stylesheet" type="text/css" href="../styleflex/financingindexsubpage.css" />
+		<style type="text/css">
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--content-->
+		<div id="refreshContainer" class="content mui-scroll-wrapper mui-content">
+			<div class="mui-scroll">
+				<div class="financing-safe">
+					<img src="../images/pic_financing.png" alt="" />
+					<p>融资安全有保障</p>
+					<p>资金到账还准时</p>
+				</div>
+				
+				<div class="financing-btn">我有纸票&nbsp;&nbsp;&nbsp;报价融资</div>
+			</div>
+		</div>
+		<!--content-->
+		<div class="mui-loader" id="loadding" style="display: none;">
+			<div class="load" >
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop" style="display: none;"></div>
+		
+		<script src="../js/mui.min.js"></script>
+		
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		
+		<script src="financingindexsubpage.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+
+</html>

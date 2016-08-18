@@ -1,0 +1,53 @@
+html,
+body {
+	height: 100%;
+}
+
+.mui-loader {
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	height: 60%;
+	color: #888;
+	font-size: 14px;
+	/*px*/
+	text-align: center;
+}
+
+.mui-backdrop {
+	top: 44px;
+}
+
+.bank-back {
+	background: #0066ff;
+}
+
+.bank-back a,
+.bank-back h1,
+.bank-back span {
+	color: #FFFFFF;
+}
+
+.userpj-pro {
+	float: right;
+	font-size: 14px;
+	/*px*/
+	display: inline-block;
+}
+
+.mui-input-group .mui-input-row {
+	font-size: 14px;
+	/*px*/
+	height: 45px;
+}
+
+.mui-input-group .mui-input-row label {
+	line-height: 45px;
+	padding: 0px 15px;
+	width: 28%;
+}
+
+
+
+
+

@@ -1,0 +1,352 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+}
+
+img {
+	display: block;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+
+
+/*头部*/
+
+.mui-bar {
+	background-color: rgb(0, 102, 255);
+}
+
+header .h-right {
+	display: block;
+	height: 100%;
+	float: right;
+	color: #fff;
+	font-size: 16px;/*px*/
+}
+
+header .mui-title {
+	color: #fff;
+}
+
+header .h-left {
+	color: #fff;
+}
+
+header .h-left span {
+	font-size: 16px;/*px*/
+}
+
+.mui-bar .mui-btn-link {
+	color: #fff;
+}
+
+.mui-bar {
+	padding: 0 15px 0 9px;
+}
+
+.mui-title {
+	font-size: 16px;/*px*/
+}
+
+
+/*mui-content*/
+
+.order {
+	background: #fff;
+	border-bottom: 1px solid rgb(204, 204, 204);/*no*/
+}
+
+
+/*order-number*/
+
+.order-number {
+	height: 30px;
+	line-height: 30px;
+	width: 100%;
+	font-size: 15px;/*px*/
+	color: #fff;
+	margin-top: 10px;
+}
+
+.order-number span {
+	display: inline-block;
+	float: left;
+}
+
+.order-number span:nth-child(1) {
+	background: rgb(111, 168, 255);
+	text-indent: 4%;
+	width: 84%;
+}
+
+.order-number span:nth-child(2) {
+	text-align: center;
+	width: 16%;
+}
+
+
+/*融资中*/
+
+.finacing-pro-color {
+	background: rgb(98, 204, 51);
+}
+
+
+/*驳回*/
+
+.reject-color {
+	background: rgb(255, 167, 14);
+}
+
+
+/*已融资*/
+
+.finacing-color {
+	background: rgb(237, 96, 96);
+}
+
+
+/*已撤销 已退票*/
+
+.revocation-color {
+	background: rgb(153, 153, 153);
+}
+
+
+/*退票中*/
+
+.refund-color {
+	background: rgb(0, 102, 255);
+}
+
+
+/*order-con*/
+
+.order-con ul li {
+	position: relative;
+	height: 45px;
+	line-height: 45px;
+	width: 96%;
+	margin-left: 4%;
+}
+
+.order-con ul li:after{
+	position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top:0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+
+.order-con ul li:last-child {
+	border: none;
+}
+
+.order-con ul li span {
+	display: inline-block;
+	font-size: 15px;/*px*/
+}
+
+@media screen and (max-width:320px) {
+	.order-con ul li span:nth-child(1) {
+		color: rgb(109, 109, 109);
+		width: 30%;
+		margin-right: 10%;
+		text-align: right;
+	}
+}
+@media screen and (min-width: 330px) and (max-width: 375px){
+	.order-con ul li span:nth-child(1) {
+		color: rgb(109, 109, 109);
+		width: 27%;
+		margin-right: 10%;
+		text-align: right;
+	}
+}
+@media screen and (min-width: 376px){
+	.order-con ul li span:nth-child(1) {
+		color: rgb(109, 109, 109);
+		width: 23.5%;
+		margin-right: 10%;
+		text-align: right;
+	}
+}
+
+.order-con ul li span:nth-child(2) {
+	color: rgb(51, 51, 51);
+}
+
+.order-con ul li span:nth-child(2) a {
+	color: rgb(51, 51, 51);
+}
+
+.order-con ul li span.paymentMoney {
+	color: rgb(255, 180, 0);
+}
+
+
+/*提现*/
+
+#withdraw {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 20%;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 15px;/*px*/
+	color: #fff;
+	background: rgb(0, 102, 255);
+}
+
+
+/*详情列表mui-card*/
+
+.mui-card {
+	box-shadow: none;
+	background: #efeff4;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+}
+
+.mui-card1 {}
+
+.mui-table-view {
+	background: #efeff4;
+}
+
+.mui-table-view-cell {
+	padding: 0;
+	background: #efeff4;
+}
+
+li.bgColor {
+	background-color: #fff;
+}
+
+
+/*融资内容整体部分*/
+
+.pj-con {
+	width: 95.2%;
+	height: 84px;
+	margin: 10px auto 10px auto;
+	border: 1px solid rgb(204, 204, 204);/*no*/
+	border-top: none;
+	background: #fff;
+}
+.mui-ios .pj-con {
+	border: 0.5px solid rgb(204, 204, 204);/*no*/
+}
+.mui-checkbox1 input[type=checkbox] {
+	top: 18px;
+	margin-top: -13px;
+}
+
+
+/*mui-collapse-content-right*/
+
+.mui-collapse-content-right {
+	float: left;
+	width: 100%;
+	height: 100%;
+	color: #646464;
+}
+
+
+/*.con-right-top*/
+
+.con-right-top {
+	height: 24px;
+}
+
+.con-right-top {
+	background: rgb(111, 168, 255);
+}
+
+.con-right-top li {
+	height: 14px;
+	font-size: 12px;/*px*/
+	display: inline-block;
+	color: #fff;
+	margin: 5px auto;
+	line-height: 15px;
+}
+
+.con-right-top li:nth-child(1) {
+	width: 60%;
+	margin-left: 3.75%;
+	border-right: 1px solid #fff;/*no*/
+}
+
+.con-right-top li:nth-child(2) {
+	margin-left: 15px;
+}
+
+
+/*.dz-money*/
+
+.dz-money {
+	text-align: center;
+	height: 60px;
+}
+
+.dz-money .mui-checkbox input.bill {
+	z-index: 999;
+	left: 6px;
+	top: 30px;
+	margin-top: -9.5px;
+}
+
+.dz-money ul {
+	position: relative;
+}
+
+.dz-money ul li a {
+	color: rgb(51, 51, 51);
+	font-size: 12px;/*px*/
+}
+
+.dz-money ul li:nth-child(1) {
+	color: rgb(51, 51, 51);
+	font-size: 12px;/*px*/
+	line-height: 28px;
+}
+
+.dz-money ul li:nth-child(2) {
+	color: rgb(255, 180, 0);
+	font-size: 18px;/*px*/
+}
+
+.dz-money ul li:nth-child(2) span {
+	font-size: 24px;/*px*/
+}
+
+.dz-money ul li:nth-child(3) {
+	position: absolute;
+	width: 8px;
+	height: 16px;
+	right: 22px;
+	top: 30px;
+	margin-top: -8px;
+	color: rgb(111, 168, 255);
+}

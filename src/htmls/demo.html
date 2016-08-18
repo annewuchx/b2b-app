@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		
+		<div class="mui-content">
+		   <div style="height: 300px;width: 400px;">
+		   	
+		   	<img src="http://www.qiwen007.com/images/image/2016/0729/6360539994077340343334231.jpg" alt="" width="100%"/>
+		   	
+		   </div>
+		   
+		   
+		   
+		   
+		   
+		   <button type="button" class="mui-btn mui-btn-blue" id='dd'>按钮</button>
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			document.getElementById('dd').addEventListener('tap',function(){
+				path = 'http://www.qiwen007.com/images/image/2016/0729/6360539994077340343334231.jpg';
+				 clipImage(path)
+				
+			})
+			
+
+			//裁剪图片
+			function clipImage(path) {
+
+				var index = path.lastIndexOf('.');
+				var newPath = path.substr(0, index) + '_clip' + path.substr(index);
+
+				plus.zip.compressImage({
+						src: path,
+						dst: newPath,
+						clip: {
+							top: "25%",
+							height: "50%"
+						} // 裁剪图片中心区域
+					},
+					function(event) {
+						console.log(event)
+					},
+					function(error) {
+						alert("Compress error!");
+					});
+			}
+
+			/**
+			 * 缩放图片
+			 */
+
+			function zoomImage(path) {
+
+				//			containerSizeObj.height
+				//			containerSizeObj.width
+
+				//imgSizeObj
+
+				var ratio = (containerSizeObj.width / imgSizeObj.width).toFixed(2) * 100 + '%';
+
+				var index = path.lastIndexOf('.');
+				var newPath = path.substr(0, index) + '_zoom' + path.substr(index);
+
+				plus.zip.compressImage({
+						src: path,
+						dst: newPath,
+						width: ratio
+					},
+					function(event) {
+						clipImage(event.target);
+					},
+					function(error) {
+						alert("Compress error!");
+					});
+			}
+		</script>
+	</body>
+
+</html>

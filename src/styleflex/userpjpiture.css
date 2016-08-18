@@ -1,0 +1,122 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.verify_header {
+  background: rgba(51, 51, 51, 0.8);
+  box-shadow: none;
+}
+
+.verify_header a,
+.verify_header h1 {
+  color: #ffffff;
+}
+
+.pjpicure-detail {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.373333rem;
+  background: rgba(51, 51, 51, 0.8);
+  color: #ffffff;
+  height: 2.4rem;
+  width: 100%;
+}
+
+.mui-left-column {
+  float: left;
+  width: 55%;
+  position: relative;
+}
+
+.mui-right-column {
+  float: right;
+  width: 45%;
+}
+
+.mui-colum {
+  float: left;
+  width: 100%;
+}
+
+.pjpicure-detail .mui-row {
+  height: 33.33%;
+}
+
+.pjpicure-detail .mui-row .mui-left-column,
+.pjpicure-detail .mui-row .mui-right-column,
+.pjpicure-detail .mui-row .mui-colum {
+  /*height: 100%;
+				line-height: 200%;*/
+  height: 0.8rem;
+  line-height: 0.8rem;
+  padding-left: 4%;
+}
+
+.mui-left-column .hrline {
+  position: absolute;
+  margin: auto;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 66.67%;
+  width: 0.026667rem;
+  float: right;
+  border-right: 0.026667rem solid;
+}
+
+.mui-row .vtline {
+  clear: both;
+  position: absolute;
+  height: 0.026667rem;
+  width: 97.33%;
+  border-top: 0.026667rem solid;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mui-row {
+  position: relative;
+}
+
+.pj-pic {
+  padding-top: 0.266667rem;
+  padding-bottom: 0.266667rem;
+  width: 100%;
+}
+
+.mui-backdrop {
+  top: 1.173333rem;
+}
+
+.mui-loader {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: 60%;
+  color: #888;
+  font-size: 0.373333rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 320px) {
+  .pjpicure-detail {
+    font-size: 0.32rem;
+  }
+}
+
+.img-scroll {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.picure-detail {
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="display: none;">
+			<h1 class="mui-title">银承库</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a id="defaultTab" class="mui-tab-item mui-active" data-url="main.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="financeindex.html" data-url="financeindex.html">
+				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-tab-label">企业理财</span>
+			</a>
+			<a class="mui-tab-item" href="#" id="finance">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">票据融资</span>
+			</a>
+			<a class="mui-tab-item" href="userindex.html" id="allwebview" data-preurl="login.html">
+				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-tab-label">我的帐户</span>
+			</a>
+		</nav>
+		<script src="../js/mui.min.js"></script>
+		
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		
+		<script src="./main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

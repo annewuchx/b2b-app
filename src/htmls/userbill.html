@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>资金流水</title>
+
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.money-flow {
+				background: #0066ff;
+			}
+			
+			.money-flow a,
+			.money-flow h1 {
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav money-flow">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title">资金流水</h1>
+		</header>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" charset="UTF-8">
+			mui.init({
+				gestureConfig: {
+					doubletap: true
+				},
+				subpages: [{
+					url: 'userbill1.html',
+					id: 'userbill1.html',
+					styles: {
+						top: '45px',
+						bottom: '0px',
+					}
+				}]
+			});
+		</script>
+	</body>
+
+</html>

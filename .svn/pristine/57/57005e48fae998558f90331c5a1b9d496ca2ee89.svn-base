@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+}
+
+img {
+	display: block;
+}
+
+
+/*头部*/
+
+.mui-bar {
+	background-color: #fff;
+}
+
+header .h-right,
+header .h-left {
+	font-size: 26px;
+	/*px*/
+}
+
+header .h-right {
+	float: right;
+	color: #3FB2F4;
+	font-size: 16px;
+	/*no*/
+	margin-top: 10px;
+}
+
+header .mui-title {
+	color: #000;
+	font-size: 18px;
+	/*px*/
+	font-weight: 900;
+}
+
+header .h-left {
+	color: #000;
+}
+
+.headerTop {
+	width: 100%;
+	height: 3.7rem;
+}
+
+.title {
+	margin: 20px 15px 10px;
+	color: #6d6d72;
+	font-size: 15px;
+	/*px*/
+}
+
+.title1 {
+	margin: 20px 0px 10px;
+	color: #6d6d72;
+	font-size: 12px;
+	/*px*/
+	border-bottom: 1px solid #EFEFF4;
+	/*no*/
+}
+
+.listcenter {
+	margin: 20px 0px 10px;
+	color: #6d6d72;
+	font-size: 12px;
+	/*px*/
+}
+
+.listbottom {
+	margin: 20px 0px 10px;
+	color: #6d6d72;
+	font-size: 12px;
+	/*px*/
+	border-top: 1px solid #6C7B8B;
+	/*no*/
+}

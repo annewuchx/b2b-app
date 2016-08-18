@@ -1,0 +1,410 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+}
+
+img {
+	display: block;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+
+
+/*头部*/
+
+header.mui-bar {
+	background: rgba(255, 255, 255, 0);
+}
+
+header .h-right {
+	float: right;
+}
+
+header .mui-title {
+	color: #fff;
+}
+
+header .h-left {
+	color: #fff;
+}
+
+header .h-left span {
+	font-size: 16px;/*px*/
+}
+
+.mui-bar-nav {
+	box-shadow: none;
+}
+
+.mui-bar .mui-btn-link {
+	color: #fff;
+}
+
+header.moveColor {
+	background-color: rgb(0, 102, 255);
+}
+
+.mui-bar .mui-icon {
+    font-size: 24px;/*px*/
+    position: relative;
+    z-index: 20;
+    padding-top: 10px;/*px*/
+    padding-bottom: 10px;/*px*/
+}
+/*mui-content*/
+
+.mui-bar-nav~.mui-content {
+	padding-top: 0px;
+	padding-bottom: 5px;
+}
+
+.quote-center {
+	background: #fff;
+}
+
+.yck-quote {
+	height: 219px;
+	background: #5F16C4 url(../images/bg_quote.png);
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	margin-bottom: 10px;
+}
+
+
+/*yck-quote-top*/
+
+.yck-quote-top {
+	height: 150px;
+}
+
+.yck-quote-top .disscountMoney {
+	font-size: 28px;
+	/*px*/
+	line-height: 200px;
+	color: #FFFEF8;
+	text-align: center;
+	margin: 0;
+}
+
+.yck-quote-top .disscountMoney span {
+	font-size: 40px;
+	/*px*/
+	line-height: 110px;
+}
+
+.yck-quote-top .disscountMoney i {
+	font-style: normal;
+}
+
+
+/*yck-quote-bottom*/
+
+.yck-quote-bottom {
+	height: 65px;
+}
+
+.yck-quote-bottom ul {
+	height: 44px;
+	padding: 10px 0;
+}
+
+.yck-quote-bottom ul li {
+	width: 50%;
+	height: 44px;
+	float: left;
+	text-align: center;
+}
+
+.yck-quote-bottom ul li:nth-child(1) {
+	border-right: 1px solid #fff;
+	/*no*/
+}
+
+.yck-quote-bottom ul li p {
+	margin: 0;
+	font-size: 15px;
+	/*px*/
+	color: #fff;
+}
+.yck-quote-bottom ul li p:first-child{
+	margin-bottom: 5px;
+}
+.yck-quote-bottom ul li p span {
+	color: #fff;
+	font-size: 24px;
+	/*px*/
+}
+
+.yck-quote-bottom ul li p i {
+	font-size: 18px;
+	/*px*/
+	font-style: normal;
+}
+
+
+/*显示 隐藏*/
+
+.aShow {
+	display: none;
+}
+.bShow {
+	display: block;
+}
+
+
+/*融资模式*/
+
+.quote-center {
+	margin-bottom: 15px;
+}
+
+.financing-mode {
+	height: 80px;
+	clear: both;
+	margin-left: 30px;
+}
+
+.financing-mode p {
+	height: 30px;
+	overflow: hidden;
+	margin: 0;
+	padding: 9px 0;
+	font-size: 12px;
+	/*px*/
+	line-height: 12px;
+	color: rgb(51, 51, 51);
+}
+
+.financing-mode ul li {
+	width: 21%;
+	height: 35px;
+	float: left;
+	font-size: 14px;/*px*/
+	line-height: 35px;
+	font-weight: 300;
+	color: rgb(119, 119, 119);
+	border: 1px solid rgb(204, 204, 204);/*no*/
+	border-radius: 20px;
+	text-align: center;
+	margin-right: 4%;
+}
+.mui-ios .financing-mode ul li {
+	border: 2px solid rgb(204, 204, 204);/*no*/
+}
+.mui-ios .financing-mode ul li.active {
+	border: 2px solid rgb(204, 204, 204);/*no*/
+	box-shadow: 0px 6px 14px 0px rgba(0, 102, 255, 0.3);/*no*/
+}
+.financing-mode ul li span:hover {
+	cursor: text;
+}
+
+.financing-mode ul li.active {
+	font-size: 14px;
+	/*px*/
+	line-height: 35px;
+	color: #fff;
+	border: 1px solid rgb(0, 102, 255);/*no*/
+	background: rgb(0, 102, 255);
+	box-shadow: 0px 6px 14px 0px rgba(0, 102, 255, 0.3);/*no*/
+}
+
+.financing-mode span.rzms i {
+	font-size: 14px;
+	/*px*/
+	font-style: normal;
+}
+
+
+/*quote-center*/
+
+.quote-center .quote-center-area-sum {
+	height: 80px;
+	margin: 0 7.5px;
+}
+
+.quote-center .quote-center-area-sum li {
+	float: left;
+	width: 50%;
+	margin-top: 30px;
+	padding: 0 7.5px;
+}
+
+.quote-center .quote-center-area-sum li>div {
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid rgb(204, 204, 204);
+	/*no*/
+}
+
+.mui-ios .quote-center .quote-center-area-sum li>div {
+	position: relative;
+	width: 100%;
+	border-bottom: 2px solid rgb(204, 204, 204);
+	/*no*/
+}
+/*所在地区*/
+
+.quote-center .quote-center-area-sum li span:nth-child(1) {
+	color: rgb(51, 51, 51);
+	font-size: 24px;
+	/*px*/
+	display: inline-block;
+	margin-bottom: 7.5px;
+}
+
+.quote-center .quote-center-area-sum li .quote-tit {
+	position: absolute;
+	left: 40px;
+	top: -24px;
+	font-size: 10px;
+	/*px*/
+	height: 0px;
+	color: rgb(51, 51, 51);
+}
+
+.quote-center .quote-center-area-sum li .quote-tit-display {
+	display: none;
+}
+
+.quote-center .quote-center-area-sum li.quote-tit-active> div {
+	border-bottom: 1px solid rgb(0, 102, 255);
+	/*no*/
+}
+
+.quote-center .quote-center-area-sum li.quote-tit-active span:nth-child(1) {
+	color: rgb(0, 102, 255);
+}
+
+.quote-center .quote-center-area-sum li input {
+	position: absolute;
+	border: none;
+	width: 90%;
+	font-size: 15px;/*px*/
+	color: rgb(51, 51, 51);
+	margin: 0;
+	padding: 0 0 0 15px;
+	height: 20px;
+	line-height: 20px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/*input框的placehoder*/
+
+input::-webkit-input-placeholder {
+	color: rgb(170, 170, 170);
+}
+
+input:-moz-placeholder {
+	color: rgb(170, 170, 170);
+}
+
+input::-moz-placeholder {
+	color: rgb(170, 170, 170);
+}
+
+input:-ms-input-placeholder {
+	color: rgb(170, 170, 170);
+}
+
+.money {
+	position: absolute;
+	left: 88%;
+	top: 0;
+}
+
+
+/*quote-btn*/
+
+div.quote-btn {
+	margin: 30px 15px 15px 15px;
+}
+
+input.quote-btn-q {
+	width: 100%;
+	height: 45px;
+	font-size: 16px;
+	/*px*/
+	line-height: 45px;
+	text-align: center;
+	background: rgb(204, 204, 204);
+	border: none;
+	opacity: 1!important;
+	-webkit-border-radius: 8px;/*px*/
+	-moz-border-radius: 8px;/*px*/
+	border-radius: 8px;/*px*/
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	margin-bottom: 15px;
+}
+
+input.quote-btn-q-active {
+	border: 1px solid rgb(0, 102, 255);/*no*/
+	background: rgb(0, 102, 255);
+}
+
+.quote-btn-contact a {
+	display: block;
+	height: 45px;
+	font-size: 16px;
+	/*px*/
+	line-height: 45px;
+	text-align: center;
+	color: rgb(0, 102, 255);
+	border: 1px solid rgb(0, 102, 255);
+	/*no*/
+	-webkit-border-radius: 8px;/*px*/
+	-moz-border-radius: 8px;/*px*/
+	border-radius: 8px;/*px*/
+}
+.mui-ios .quote-btn-contact a{
+	border: 2px solid rgb(0, 102, 255);
+	/*no*/
+}
+.quote-btn-contact ul li:nth-child(1) {
+	margin-right: 10%;
+}
+
+.quote-btn-contact ul li:hover {
+	cursor: pointer;
+}
+
+
+/*票面金额*/
+
+#par-value {
+	padding: 0 0 0 15px;
+}
+/*重置picker*/
+
+
+
+.mui-poppicker-header .mui-btn{
+	font-size: 14px;/*px*/
+}
+.mui-pciker-list li{
+	font-size: 14px;/*px*/
+}
+.mui-pciker-list, .mui-pciker-rule{
+	height: 36px;/*px*/
+	line-height: 36px;/*px*/
+}
+
+.mui-dtpicker-header button{
+	font-size: 14px;/*px*/
+}

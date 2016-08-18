@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">标题</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="showPriceitemPicker">
+						添加报价
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="showProvinceCity">选择城市</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="showTransPwd">输入交易密码</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="showTransPwd2">输入校验码&交易密码</a>
+				</li>
+			</ul>
+
+			<div id='cityResult' class="ui-alert"></div>
+
+		</div>
+
+		<script src="../../js/mui.min.js"></script>
+
+		<!-- build:js ../../js/root.js -->
+		<script src="../../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script src="../../libs/sea-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../libs/seajs-text-debug.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			(function($, doc, win) {
+				mui.init();
+				mui.ready(function() {
+
+					seajs.config({
+						base: "../"
+					});
+
+					document.getElementById('showPriceitemPicker').addEventListener('tap', pricePicker, false);
+
+					document.getElementById('showProvinceCity').addEventListener('tap', city, false);
+
+					document.getElementById('showTransPwd').addEventListener('tap', function() {
+
+						seajs.use('./trans-pwd/main', function(model) {
+
+							model.show(function(v) {
+								console.log(v);
+							});
+
+						});
+
+					}, false);
+
+					document.getElementById('showTransPwd2').addEventListener('tap', function() {
+						seajs.use('./trans-pwdcomplex/main', function(model) {
+
+							model.show(function(v) {
+								console.log(v);
+							});
+
+						});
+					}, false);
+
+					/**
+					 * 
+					 */
+					function pricePicker() {
+						seajs.use('./price-item/main', function(model) {
+
+							model.append();
+
+							model.init(function() {
+
+							});
+
+						});
+					}
+
+					//加载模块 cityModel，并在加载完成时，执行指定回调
+					function city() {
+						seajs.use('./province-city/main', function(cityModel) {
+
+							cityModel.init(2);
+							//
+							cityModel.show(function(items) {
+								document.getElementById("cityResult").innerHTML = items[0].text + " " + items[1].text;
+							});
+
+						});
+					}
+
+				});
+			})(mui, document, window);
+		</script>
+	</body>
+
+</html>

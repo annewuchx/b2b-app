@@ -1,0 +1,96 @@
+html,
+body {
+  height: 100%;
+}
+
+.mui-segmented-control {
+  display: block;
+}
+
+.mui-segmented-control .mui-control-item {
+  line-height: 1.333333rem;
+  width: 100%;
+}
+
+.mui-col-xs-3,
+.mui-control-content {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.mui-loader {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: 60%;
+  color: #888;
+  text-align: center;
+}
+
+[data-dpr="1"] .mui-loader {
+  font-size: 14px;
+}
+
+[data-dpr="2"] .mui-loader {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .mui-loader {
+  font-size: 42px;
+}
+
+.mui-backdrop {
+  top: 1.173333rem;
+}
+
+.mui-table-view-cell:hover {
+  color: #0066FF;
+  border-bottom: 0.053333rem solid #06f;
+}
+
+.mui-table-view:after {
+  height: 0;
+}
+
+.mui-table-view-cell:last-child:after {
+  height: 0.026667rem;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item,
+.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item.mui-active {
+  border-bottom: 0.026667rem solid #c8c7cc;
+  border-right: 0.026667rem solid #c8c7cc;
+  color: #000000;
+  text-align: left;
+  padding-left: 1.066667rem;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+  color: #06f;
+  background: #ffffff;
+  border-right-color: #FFFFFF !important;
+  color: #000000;
+  border-left: solid 0.106667rem #0066ff;
+}
+
+.bank-back {
+  background: #0066ff;
+}
+
+.bank-back a,
+.bank-back h1 {
+  color: #FFFFFF;
+}
+
+.select-pro {
+  display: inline-block;
+  width: 0.133333rem;
+  height: 1.36rem;
+  background: #0066ff;
+  position: absolute;
+  left: 0;
+}
+
+.mui-table-view {
+  padding-left: 0.8rem;
+}

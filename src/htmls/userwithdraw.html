@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我要提现</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/password_unit.css" />
+		<link rel="stylesheet" href="../css/loadding.css" />
+		<!--<link rel="stylesheet" href="../css/app.css" />-->
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../styles/userwithdraw.css" />
+
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav money-withdraw">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title">提现</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<div class="bank-info" id='banks'>
+				<div class="bank-icon">
+					<p class='yckfont yf-cards bank-card'></p>
+				</div>
+				<div class='bank-detail'>
+
+					<div v-if='banks'>
+						<div class="bank-name" id='bankName' v-cloak>{{banks.payeeBankName}}</div>
+						<div class="bank-num" id='bankNum' v-cloak>尾号:{{banks.payeeAccount | formatBank}}</div>
+					</div>
+					<div v-else>
+						<div class="bank-name">银行账号</div>
+						<div class="bank-num">请添加银行卡</div>
+					</div>
+					<p class='yckfont yf-arrownext withdraw-arrow'></p>
+					<input type="hidden" id="bankId" value="{{banks.bindBankId}}" />
+				</div>
+			</div>
+
+			<div id="txxx" class="bill-withdraw-content">
+				<div class='bill-left'>
+					<p class='bill-left-title'>提现金额</p>
+					<p class='bill-left-withdraw'>
+						<span style="display: inline-block;margin-right: 10px;">￥</span><input type="text" id="txAmount" class="withdraw-input" placeholder="00.00" data-v='0.00'>
+						<span class='dispalyMoney' id="money1_text">
+							<span class="disscountMoney">
+								<span>0</span>
+								<span style="font-size:28px">.00</span>
+							</span>
+						</span>
+
+					</p> 
+
+				</div>
+
+				<div class="current-bill">
+					<span>当前账户金额为</span>
+					<span class="span user_amount" id="cashAmount" data-v="{{cashAccount.accountBalance}}" v-cloak>{{cashAccount.accountBalance | currency '￥' }}</span>
+					<a id="txBtn" style="float: right;font-size: 14px;">全部提现</a>
+				</div>
+
+			</div>
+
+			<div class="bill-withdraw-tip">
+				<p style="color: rgb(51,51,51);">提现费用:0.00元</p>
+				<p style="color: rgb(119,119,119);">(当前为优惠期，提现费用由银承库平台代缴)</p>
+
+			</div>
+			<div class="with-submit">
+				<button type="button" id="sendMail" class="mui-btn mui-btn-blue mui-btn-block" style="padding-bottom: 10px;padding-top: 10px;">提现</button>
+			</div>
+
+		</div>
+
+		<div class="mui-loader" id="loadding">
+			<div class="load" id='load'>
+				<div class="loader" id='loader'>Loading...</div>
+				<div class="loaderWord" id='loaderWord'>正在加载</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../libs/vue.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script src="../libs/sea-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/seajs-text-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="userwithdraw.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			html,
+			body,
+			.mui-content {
+				width: 100%;
+				height: 100%;
+				background-color: #D3D3D3;
+			}
+			
+			section {
+				height: 100%;
+				margin-bottom: -25%;
+				background: url(http://www.yinchengku.com/images/banner_img1.jpg);
+				background-size: 100% 100%;
+			}
+			
+			footer {
+				width: 100%;
+				height: 25%;
+				display: inline-block;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				text-align: center;
+				background-color: #FFFFFF;
+			}
+			
+			footer div.wrap {
+				display: table;
+				vertical-align: middle;
+				height: 100%;
+			}
+			
+			footer div.wrapsub {
+				vertical-align: middle;
+				display: table-cell;
+				height: 100%;
+			}
+		</style>
+		<style type="text/css">
+			.circle-bg {
+				position: relative;
+				width: 54px;
+				height: 54px;
+				float: right;
+			}
+			
+			.circle-num {
+				text-align: center;
+				color: #3ae0ab;
+				margin-top: 14px;
+			}
+			
+			.circle-num span.num {
+				font-size: 14px;
+				font-weight: 700;
+			}
+			
+			.circle-num span.per {
+				font-size: 12px;
+			}
+			
+			.circle-title {
+				font-size: 12px;
+				text-align: center;
+			}
+			
+			.circle-svg {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="mui-content">
+
+			<section>
+
+				<div style="width: 100%;" id="close">
+
+					<div class="circle-bg">
+						<p class="circle-num">
+							<span class="num">跳过</span>
+						</p>
+						<div class="circle-svg">
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<footer>
+				<div class="wrap">
+					<div class="wrapsub">@2014-2015 Yinchengku.com All Rights Reserved</div>
+				</div>
+
+			</footer>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" charset="UTF-8">
+			mui.init({
+				hardwareAccelerated: true
+			});
+			mui.back = function() {};
+			mui.ready(function() {
+				//立即体验按钮点击事件
+				document.getElementById("close").addEventListener('tap', function(event) {
+					if (window.plus) {
+						plus.navigator.setFullscreen(false);
+						plus.webview.currentWebview().close();
+					} else {
+						mui.openWindow('footer.html', 'footer.html');
+					}
+				}, false);
+			});
+			mui.plusReady(function() {
+				if (mui.os.ios) {
+					plus.navigator.setFullscreen(true);
+				}
+				plus.navigator.closeSplashscreen();
+			});
+		</script>
+		<script src="../libs/raphael.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+			 *  render circle - percent
+			 */
+			function renderCircle(el, percent) {
+				/*
+				 * http://dmitrybaranovskiy.github.io/raphael/reference.html#Raphael
+				 */
+				//container, width, height
+				var paper = Raphael(el, 54, 54);
+				/*
+				 * 
+				 */
+				paper.customAttributes.arc = function(t, i, e, c, n) {
+					var r, s = 360 / c * e,
+						a = (90 - s) * Math.PI / 180,
+						l = t + n * Math.cos(a),
+						o = i - n * Math.sin(a);
+					return r = c == e ? [
+						["M", t, i - n],
+						["A", n, n, 0, 1, 1, t - .01, i - n]
+					] : [
+						["M", t, i - n],
+						["A", n, n, 0, +(s > 180), 1, l, o]
+					], {
+						path: r
+					}
+				};
+				/*
+				 * 
+				 */
+				var c = (paper.path().attr({
+							stroke: "#c8c9ca",
+							"stroke-width": 2,
+							arc: [27, 27, 100, 100, 20]
+						}),
+						paper.path().attr({
+							stroke: "#35e9cb",
+							"stroke-width": 3,
+							arc: [27, 27, .01, 100, 20]
+						})),
+					n = percent;
+				/*
+				 * 
+				 * */
+				n >= 80 && (c = paper.path().attr({
+							stroke: "#fd30ae",
+							"stroke-width": 3,
+							arc: [27, 27, .01, 100, 20]
+						}),
+						el.parentNode.querySelector('.circle-num').style.color = "#fd30ae"
+					),
+					n >= 100 && (n = 100),
+					n > 0 ? c.animate({
+						arc: [27, 27, n, 100, 20]
+					}, 1000 * 2.5, "ease-in-out", function() {
+						if (window.plus) {
+							//2.5s后关闭加载页面
+							plus.navigator.setFullscreen(false);
+							plus.webview.currentWebview().close();
+						}
+					}) : c.hide();
+			}
+			/*
+			 * 
+			 */
+			mui.ready(function() {
+				var target = document.querySelector('.circle-svg');
+				renderCircle(target, 99.99);
+			});
+		</script>
+	</body>
+
+</html>

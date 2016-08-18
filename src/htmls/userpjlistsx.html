@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>票据资产--筛选</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../styles/userpjlistsx.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/iconfont.css">
+	</head>
+
+	<body>
+		<div class="mui-content">
+			
+			<!--modal-->
+			
+			<div id="filterPj" class="filter-pj filter-container" v-cloak>
+				<div class="condition-title" style="width: 100%;position: relative;">
+					<p class='filter-header'>筛选票据</p>
+					<span class="yckfont yf-close filter-cancle" style="font-size: 25px;" v-on:tap="cancle"></span>
+				</div>
+
+				<div class='condition-filter'>
+					<p>融资金额</p>
+					<ul class='bill-money'>
+						<li v-for="item in priceRanges" v-on:tap="multiSelectConditions($event)" data-value="{{item.value}}" class='filter-block'>
+							{{ item.text}}
+						</li>
+					</ul>
+				</div>
+
+				<div class='condition-filter'>
+					<p>承兑行类型</p>
+					<ul class=' bank-type '>
+						<li v-for="item in typeRanges" v-on:tap="multiSelectConditions($event)" data-value="{{item.value}}" class='filter-block '>
+							{{ item.text}}
+						</li>
+					</ul>
+				</div>
+				<div class='condition-filter'>
+					<p>到期时间</p>
+					<ul class='due-date'>
+						<li v-for="item in dateRages" v-on:tap="multiSelectConditions($event)" data-value="{{item.value}}" class='filter-block'>
+							{{ item.text}}
+						</li>
+					</ul>
+				</div>
+				<div class='condition-filter'>
+					<p>票据状态</p>
+					<ul class='order-status'>
+						<li v-for="item in statusRanges" v-on:tap="multiSelectConditions($event)" data-value="{{item.value}}" class='filter-block ' v-bind:class="{ 'active ': $index==0 }">
+							{{ item.text}}
+						</li>
+						</template>
+
+					</ul>
+				</div>
+
+				<div class="btn-wraper"><button type="button" v-on:tap='resetConditions ' class="mui-btn" style="color: #0066ff;">重置</button><button type="button" v-on:tap='ok ' class="mui-btn mui-btn-primary">确定</button></div>
+			</div>
+			
+			
+		</div>
+
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="userpjlistsx.js"></script>
+	</body>
+
+</html>

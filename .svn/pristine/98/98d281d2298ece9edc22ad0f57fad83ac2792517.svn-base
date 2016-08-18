@@ -1,0 +1,78 @@
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	outline: 0;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+	display: block;
+}
+
+.mui-bar {
+	position: fixed;
+	z-index: 10;
+	right: 0;
+	left: 0;
+	height: 44px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-bottom: 0;
+	background-color: #f7f7f7;
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .85);
+	box-shadow: 0 0 1px rgba(0, 0, 0, .85);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.mui-bar-nav {
+	top: 0;
+	-webkit-box-shadow: 0 1px 6px #ccc;
+	box-shadow: 0 1px 6px #ccc;
+}
+
+.mui-title {
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 44px;
+	position: absolute;
+	display: block;
+	width: 100%;
+	margin: 0 -10px;
+	padding: 0;
+	text-align: center;
+	white-space: nowrap;
+	color: #000;
+}
+
+.mui-bar .mui-title {
+	right: 40px;
+	left: 40px;
+	display: inline-block;
+	overflow: hidden;
+	width: auto;
+	margin: 0;
+	text-overflow: ellipsis;
+}
+
+.mui-content {
+	background-color: #efeff4;
+	-webkit-overflow-scrolling: touch;
+}
+
+.mui-bar-nav~.mui-content {
+	padding-top: 44px;
+}

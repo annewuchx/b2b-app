@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>客服中心</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+
+		<link rel="stylesheet" href="../css/app.css" />
+	</head>
+
+	<style type="text/css">
+		.phone {
+			color: #76AF1B;
+			float: right;
+			padding: 15px 13px;
+			font-size: 16px;
+		}
+		
+		.mui-input-row {}
+		
+		.mui-input-group .mui-input-row {
+			height: auto;
+		}
+		
+		.mui-input-row label {
+			font-weight: 400;
+			width: 50%;
+			padding: 15px 18px;
+			line-height: 1.4;
+			font-size: 15px;
+		}
+		
+		.qq-number {
+			color: #0066FF;
+			float: right;
+			padding: 15px 13px;
+			font-size: 16px;
+		}
+		
+		.wx-name {
+			color: #0066FF;
+			float: right;
+			padding: 15px 13px;
+			font-size: 15px;
+		}
+		/*.qq-number,
+		.wx-name {
+			-webkit-touch-callout: text !important;
+			-webkit-user-select: text !important;
+			-moz-user-select: text !important;
+			-ms-user-select: text !important;
+			user-select: text !important;
+		}*/
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #0066FF">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back" style="color: #fff;"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title" style="color: #fff;font-weight: bold;font-size: 16px">客服中心</h1>
+		</header>
+
+		<div class="mui-content" style="background-color: #F2F2F2;color: #333333;">
+			<div class="mui-input-group" style="margin-top: 10px;">
+				<div class="mui-input-row" style="height: auto;">
+					<label>客服热线</label>
+					<span id="phone" class="phone">400-006-8808</span>
+				</div>
+			</div>
+			<div class="mui-input-group" style="margin-top: 10px;">
+				<div class="mui-input-row" onclick="copytext('2306795323','1')">
+					<label>官方QQ账号</label>
+					<span class="qq-number">2306795323</span>
+				</div>
+				<div class="mui-input-row" onclick="copytext('yck-pj','2')">
+					<label>微信公众号</label>
+					<span class="wx-name">yck-pj</span>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+
+		<script type="text/javascript" charset="UTF-8">
+			mui.init();
+
+			mui.plusReady(function() {
+
+				document.getElementById("phone").addEventListener('tap', function(event) {
+
+					mui.confirm("拨打客服电话400-006-8808?", '银承库', ['取消', '拨打'], function(e) {
+						if(e.index == 1) {
+							plus.device.dial("4000068808", false);
+						}
+					});
+
+				});
+			});
+
+			function copytext(text, type) {
+				if(plus.os.name == 'Android') {
+					var Context = plus.android.importClass("android.content.Context");
+					var main = plus.android.runtimeMainActivity();
+					var clip = main.getSystemService(Context.CLIPBOARD_SERVICE);
+					plus.android.invoke(clip, "setText", text);
+				} else {
+					var UIPasteboard = plus.ios.importClass("UIPasteboard");
+					var generalPasteboard = UIPasteboard.generalPasteboard();
+					// 设置/获取文本内容:
+					generalPasteboard.setValueforPasteboardType(text, "public.utf8-plain-text");
+					//var value = generalPasteboard.valueForPasteboardType("public.utf8-plain-text");
+				}
+				if(type == 1) {
+					mui.toast("已复制官方QQ账号");
+				} else {
+					mui.toast("已复制微信公众号");
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

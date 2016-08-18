@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../libs/flexible/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../styleflex/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../styleflex/loadding.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link href="../styleflex/pjzs.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav yui-bar-noscroll" id="pzjsHead">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">票据指数</h1>
+		</header>
+
+		<nav class="yui-bar" id="pjzsBttom">
+
+			<div id="yui-chart-tips">*该指数样本为20万、90天的票据</div>
+
+			<div class="mui-segmented-control typeNum " id='btnmenu' v-cloak>
+				<a class="mui-control-item mui-active" v-bind:class="{ 'yui-indexup':pjzsmenu.subDay>=0,'yui-indexdown':pjzsmenu.subDay<0}" href="day">
+					<div class="yui-item-title">今日指数</div>
+
+					<div class="yui-item-indexbig">
+						<span class="yui-item-sign yckfont " v-bind:class="{'yf-arrowup':pjzsmenu.subDay>=0,'yf-arrowdown':pjzsmenu.subDay<0}"></span>
+						<span class="yui-item-num">{{parseFloat(pjzsmenu.dayIndex*100).toFixed(2)}}</span>
+						<span class="yui-item-mark">%</span>
+					</div>
+
+					<div class="yui-item-indexsmall">
+						<span class="yui-item-sign" v-if="pjzsmenu.subDay>0">+</span>
+						<span class="yui-item-sign" v-if="pjzsmenu.subDay<0">-</span>
+						<span class="yui-item-sign" v-if="pjzsmenu.subDay==0"></span>
+						<span class="yui-item-num">{{Math.abs(parseFloat(pjzsmenu.subDay*100).toFixed(2))}} </span>
+						<span class="yui-item-mark">%</span>
+					</div>
+
+				</a>
+				<a class="mui-control-item" v-bind:class="{ 'yui-indexup':pjzsmenu.subWeek>=0,'yui-indexdown':pjzsmenu.subWeek<0}" href="week">
+
+					<div class="yui-item-title">本周指数</div>
+
+					<div class="yui-item-indexbig">
+						<span class="yui-item-sign yckfont " v-bind:class="{'yf-arrowup':pjzsmenu.subWeek>=0,'yf-arrowdown':pjzsmenu.subWeek<0}"></span>
+						<span class="yui-item-num">{{parseFloat(pjzsmenu.weekIndex*100).toFixed(2)}}</span>
+						<span class="yui-item-mark">%</span>
+					</div>
+
+					<div class="yui-item-indexsmall">
+						<span class="yui-item-sign" v-if="pjzsmenu.subWeek>0">+</span>
+						<span class="yui-item-sign" v-if="pjzsmenu.subWeek<0">-</span>
+						<span class="yui-item-sign" v-if="pjzsmenu.subWeek==0"></span>
+						<span class="yui-item-num">{{Math.abs(parseFloat(pjzsmenu.subWeek*100).toFixed(2))}} </span>
+						<span class="yui-item-mark">%</span>
+					</div>
+
+				</a>
+				<a class="mui-control-item" v-bind:class="{ 'yui-indexup':pjzsmenu.subMonth>=0,'yui-indexdown':pjzsmenu.subMonth<0}" href="month">
+
+					<div class="yui-item-title">本月指数</div>
+
+					<div class="yui-item-indexbig">
+						<span class="yui-item-sign yckfont " v-bind:class="{ 'yf-arrowup':pjzsmenu.subMonth>=0,'yf-arrowdown':pjzsmenu.subMonth<0}"></span>
+						<span class="yui-item-num">{{parseFloat(pjzsmenu.monthIndex*100).toFixed(2)}}</span>
+						<span class="yui-item-mark">%</span>
+					</div>
+
+					<div class="yui-item-indexsmall">
+						<span class="yui-item-sign" v-if="pjzsmenu.subMonth>0">+</span>
+						<span class="yui-item-sign" v-if="pjzsmenu.subMonth<0">-</span>
+						<span class="yui-item-sign" v-if="pjzsmenu.subMonth==0"></span>
+						<span class="yui-item-num">{{Math.abs(parseFloat(pjzsmenu.subMonth*100).toFixed(2))}} </span>
+						<span class="yui-item-mark">%</span>
+					</div>
+
+				</a>
+			</div>
+		</nav>
+
+		<div style="clear: both;">
+
+		</div>
+		
+		<div class="mui-content">
+			<div id="yui-segmented-charttype" class="yck-segmented-control yui-segmented-charttype">
+				<a class="yck-control-item yck-active" href="pjzsChart.html">区域</a>
+				<a class="yck-control-item" href="pjzsline.html">时间</a>
+			</div>
+			<div id="chart" style="height: 100%;margin:0;font-weight: normal;">
+				<div class="github-line-chart">
+				</div>
+				<div id="maps1" style="height: 100%;"></div>
+			</div>
+		</div>
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/sea.js" type="text/javascript"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript"></script>
+		<script src="../js/resources.js" type="text/javascript"></script>
+		<script src="../js/app.js" type="text/javascript"></script>
+		<script src="../js/servicebus.js" type="text/javascript"></script>
+		<!-- endbuild -->
+
+		<script src="./pjzs.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			seajs.use('./pjzs');
+		</script>
+
+	</body>
+
+</html>

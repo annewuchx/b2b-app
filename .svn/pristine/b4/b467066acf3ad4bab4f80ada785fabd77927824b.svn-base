@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				font-size: 62.5%;
+				min-width: 320px;
+				background: #fff;
+			}
+			
+			img {
+				display: block;
+			}
+			/*头部*/
+			
+			.mui-bar {
+				background-color: #00418F;
+			}
+			
+			header .h-right,
+			header .h-left {
+				font-zize: 2.6rem;
+			}
+			
+			header .h-right {
+				float: right;
+				color: #fff;
+			}
+			
+			header .mui-title {
+				color: #fff;
+				font-size: 1.5rem;
+			}
+			
+			header .h-left {
+				color: #fff;
+			}
+			
+			.headerTop {
+				width: 100%;
+				height: 3.7rem;
+			}
+			
+			.mui-icon .mui-badge {
+				font-size: 10px;
+				line-height: 1.4;
+				position: absolute;
+				top: 7px;
+				left: 69%;
+				margin-left: -10px;
+				padding: 1px 5px;
+				color: #fff;
+				background: red;
+				display: block;
+				width: 12px;
+				height: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"></a>
+			<h1 class="mui-title">预约额度服务规则</h1>
+		</header>
+
+		</div>
+
+		<script type="text/javascript" charset="UTF-8">
+			mui.init({
+				subpages: [{
+					url: 'reserverulessub.html', //子页面HTML地址，支持本地地址和网络地址
+					id: 'contentBody', //子页面标志
+					styles: {
+						top: '45px', //mui标题栏默认高度为45px；
+						bottom: '0px' //默认为0px，可不定义；
+					},
+					extras: {} //额外扩展参数
+				}]
+			});
+		</script>
+	</body>
+
+</html>

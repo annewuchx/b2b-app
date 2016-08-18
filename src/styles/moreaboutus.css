@@ -1,0 +1,78 @@
+.mui-bar {
+	background-color: #0066FF;
+}
+
+.mui-bar span,
+a {
+	color: #fff;
+	font-size: 16px;/*px*/
+}
+
+.mui-bar h1 {
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;/*px*/
+}
+
+.copyright_msg {
+	position: fixed;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.mui-navigate-right {
+	display: block;
+	width: 100%;
+	margin-left: 15px;
+}
+
+.version-img {
+	margin-top: 30px;
+	padding: 0;
+	margin-bottom: 23px;
+	background-color: #F2F2F2;
+	text-align: center;
+}
+
+.version {
+	color: rgb(119, 119, 119);
+	font-size: 14px;/*px*/
+}
+
+.img {
+	width: 112px;
+	height: 105px;
+}
+
+.mui-navigate-right:after,
+.mui-push-left:after,
+.mui-push-right:after {
+	font-family: Muiicons;
+	line-height: 1;/*no*/
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	text-decoration: none;
+	color: #7BA3F6;
+	font-size: 20px;/*px*/
+	-webkit-font-smoothing: antialiased;
+}
+
+.copyright {
+	font-size: 12px;/*px*/
+	line-height: 16px;
+	margin-bottom: 15px;
+	color: rgb(119, 119, 119);
+}
+
+.mui-navigate-right {
+	color: #333333;
+	font-size: 15px;/*px*/
+}
+
+.yck-item {
+	margin-top: 10px;
+}

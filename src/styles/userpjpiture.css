@@ -1,0 +1,122 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.verify_header {
+	background: rgba(51, 51, 51, 0.8);
+	box-shadow: none;
+}
+
+.verify_header a,
+.verify_header h1 {
+	color: #ffffff;
+}
+
+.pjpicure-detail {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	font-size: 14px;
+	background: rgba(51, 51, 51, 0.8);
+	color: #ffffff;
+	height: 90px;
+	width: 100%;
+}
+
+.mui-left-column {
+	float: left;
+	width: 55%;
+	position: relative;
+}
+
+.mui-right-column {
+	float: right;
+	width: 45%;
+}
+
+.mui-colum {
+	float: left;
+	width: 100%;
+}
+
+.pjpicure-detail .mui-row {
+	height: 33.33%;
+}
+
+.pjpicure-detail .mui-row .mui-left-column,
+.pjpicure-detail .mui-row .mui-right-column,
+.pjpicure-detail .mui-row .mui-colum {
+	/*height: 100%;
+				line-height: 200%;*/
+	height: 30px;
+	line-height: 30px;
+	padding-left: 4%
+}
+
+.mui-left-column .hrline {
+	position: absolute;
+	margin: auto;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	height: 66.67%;
+	width: 1px;
+	float: right;
+	border-right: 1px solid;
+}
+
+.mui-row .vtline {
+	clear: both;
+	position: absolute;
+	height: 1px;
+	width: 97.33%;
+	border-top: 1px solid;
+	margin: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.mui-row {
+	position: relative;
+}
+
+.pj-pic {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+}
+
+.mui-backdrop {
+	top: 44px;
+}
+
+.mui-loader {
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	height: 60%;
+	color: #888;
+	font-size: 14px;
+	text-align: center;
+}
+
+@media only screen and (max-width: 320px) {
+	.pjpicure-detail {
+		font-size: 12px;
+	}
+}
+
+.img-scroll {
+	text-align: center;
+	height: 100%;
+	width: 100%;
+}
+
+.picure-detail {
+	height: 100%;
+	width: 100%;
+	background: rgb(0, 0, 0);
+}

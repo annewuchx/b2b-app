@@ -1,0 +1,22 @@
+{
+  "name": "yck.b2b.h5app.v1",
+  "version": "1.0.0",
+  "description": "这是银承库－b2b项目框架  > 参与人员：peter，吴春旭，戚红娣，王春霄，武刺辉，王凯，李星亮  > 开发日期：2016-05-04",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "px2rem": "^0.5.0",
+    "gulp-px3rem": "^0.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-px3rem": "^0.3.0",
+    "px2rem": "^0.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "peter",
+  "license": "ISC"
+}

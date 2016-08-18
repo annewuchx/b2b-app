@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<title>承兑行类型</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css"/>
+		<link rel="stylesheet" type="text/css" href="../styles/bankType.css" />
+		<style type="text/css">
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+			
+			.mui-backdrop {
+				top: 44px;
+				background-color: rgba(0, 0, 0, 0);
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--mui-content-->
+		<div class="mui-content" id="mui-content">
+
+			<div id='list' class="mui-indexed-list">
+				<div class="mui-indexed-list-search mui-input-row mui-search" id="searchcontainer">
+					<input type="search" id="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索承兑行名称或付款行行号">
+				</div>
+				<div class="cancel mui-action-back">取消</div>
+			</div>
+
+			<div class="bankListContainer-empty-alert" style="display: none;text-align: center;height: 30px;line-height: 30px;">没有数据</div>
+
+			<!--描述：几种银行的默认列表-->
+			<ul class="mui-table-view bank-type">
+				<li class="mui-table-view-cell mui-indexed-list-item" v-for="item in bank_data" v-on:tap="handle_bankType($event)" v-cloak><span style="display: none;">{{item.code}}</span><span class="bank">{{item.codeName}}</span></li>
+			</ul>
+
+				
+			<!--描述：搜索结果显示-->
+			<ul class="mui-table-view bank-type2">
+				<li class="mui-table-view-cell mui-indexed-list-item" v-for="item in bank_data2" v-on:tap="handle_bankType($event)" v-cloak>
+					<span style="display: none;">{{item.bankType}}</span>
+					<p class="bank1">{{{ item.shortName }}}</p>
+					<p v-if="item.bankType==1" class="bank1">(<span class="bank bank1">国股银行</span>)</p>
+					<p v-if="item.bankType==2" class="bank1">(<span class="bank bank1">城商银行</span>)</p>
+					<p v-if="item.bankType==3" class="bank1">(<span class="bank bank1">农商外资</span>)</p>
+					<p v-if="item.bankType==4" class="bank1">(<span class="bank bank1">农信农合</span>)</p>
+					<p v-if="item.bankType==5" class="bank1">(<span class="bank bank1">村镇银行</span>)</p>
+				</li>
+			</ul>
+
+		</div>
+		<!--mui-content-->
+		<!--loading-->
+		<div class="mui-loader" id="loadding" style="display: none;">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop" style="display: none;"></div>
+		
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script src="../libs/sea.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bankType.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

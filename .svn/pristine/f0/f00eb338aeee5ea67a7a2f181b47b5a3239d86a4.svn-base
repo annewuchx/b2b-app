@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>银行账户</title>
+		<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/userbanklist.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav bank-back">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title">银行账户</h1>
+			<span class='mui-btn mui-btn-link bank-new' style="text-align: right;">
+				<a href="javascript:;">新增账户</a>
+			</span>
+		</header>
+
+		<div class="mui-content">
+
+			<div id="banks">
+
+				<template v-for="bank in banks" track-by="$index">
+
+					<div class="mui-table-view-cell bank_list" bankId="{{bank.areaId}}" bankName="{{bank.bankSubName}}" bankNameMain="{{bank.bankName}}" bankNo="{{bank.bankNumber}}" bankCardId="{{bank.bankCardId}}" id="banklist-{{$index}}">
+
+						<div class=" mui-slider-right mui-disabled" id="{{bank.bankCardId}}">
+							<a class="mui-btn mui-btn-yellow bank-delete" v-on:tap="defaultCard($event)">设为默认</a>
+							<a class="mui-btn mui-btn-red" v-on:tap="deleteCard($index,$event)" >删除</a>
+						</div>
+
+						<div class="bank-left-container" id="leftCon-{{$index}}">
+
+							<div class="{{bank.flag==1?'':'mui-slider-handle'}}">
+								<div class='bank_list_right'>
+									<p class='bank-name'>{{bank.bankName}}</p>
+									<p class="bank-subname">{{bank.bankSubName}}</p>
+									<p class='span_bottom'>
+										{{bank.bankNumber | formatCard}}
+									</p>
+								</div>
+								<div class='bank-default'>
+									<div v-if="bank.flag==1" class="account-default">默认账户</div>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="bank-right-container {{bank.flag==1? 'bank-gray':'bank-blue'}}"></div>
+
+					</div>
+
+				</template>
+
+			</div>
+
+		</div>
+
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script type="text/javascript" src="../libs/vue.min.js"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script type="text/javascript" src="userbanklist.js"></script>
+
+	</body>
+
+</html>

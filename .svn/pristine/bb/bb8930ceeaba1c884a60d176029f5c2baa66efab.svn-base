@@ -1,0 +1,303 @@
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.mui-bar span,
+a {
+	color: #fff;
+	font-size: 16px;/*px*/
+}
+
+.mui-bar h1 {
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;/*px*/
+}
+.mui-bar .mui-icon {
+    font-size: 24px;/*px*/
+    position: relative;
+    z-index: 20;
+    padding-top: 10px;/*px*/
+    padding-bottom: 10px;/*px*/
+}
+.mui-content {
+	height: 90%;
+	padding-bottom: 180px;
+	background: url("../images/bg_pjzs@3x.png");
+}
+
+header.yui-bar-noscroll {
+	box-shadow: none;
+	background: rgba(255, 255, 255, 0);
+}
+
+
+/**
+         
+     */
+
+header.yui-bar-noscroll a,
+header.yui-bar-noscroll h1.mui-title {
+	color: #ffffff;
+}
+
+
+/**
+     * 
+ */
+
+nav.yui-bar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 170px;
+	width: 100%;
+}
+
+
+/*
+     
+     * */
+
+nav.yui-bar .mui-segmented-control {
+	background: #fff;
+	height: 130px;
+	border-radius: 0;
+	border: none;
+	/**
+             显示小箭头-
+         */
+	overflow: auto;
+}
+
+
+/*
+         * 
+         */
+
+nav.yui-bar .mui-segmented-control .mui-control-item {
+	position: relative;
+	overflow: visible;
+}
+
+
+/**
+             
+         */
+
+nav.yui-bar .mui-segmented-control a.mui-control-item {
+	height: 100%;
+	border-color: #dddddd;
+}
+
+
+/**
+             * 
+         */
+
+nav.yui-bar .mui-segmented-control .yui-item-title {
+	color: #333333;
+	font-size: 16px;/*px*/
+}
+
+
+/**
+       mui-active
+     */
+
+nav.yui-bar .mui-segmented-control .mui-control-item.mui-active .yui-item-title {
+	margin-top: -38px;
+}
+
+nav.yui-bar .mui-segmented-control .mui-control-item.mui-active:before {
+	content: "";
+	position: relative;
+	top: -40px;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-bottom-color: white;
+}
+
+
+/**
+             * 
+             * 
+             * 
+         */
+
+nav.yui-bar .mui-segmented-control .mui-control-item.mui-active {
+	background: #FFF;
+	font-size: 16px;/*px*/
+	
+	color: #333333;
+	border-bottom: solid 6px #0066ff;
+}
+
+nav.yui-bar .yui-item-indexbig {
+	font-weight: bold;
+}
+
+nav.yui-bar .yui-item-indexbig .yui-item-sign {
+	font-size: 20px;/*px*/
+}
+
+nav.yui-bar .yui-item-indexbig .yui-item-num {
+	font-size: 30px;/*px*/
+	font-weight: normal;
+}
+
+nav.yui-bar .yui-item-indexbig .yui-item-mark {
+	font-size: 15px;/*px*/
+}
+
+nav.yui-bar .yui-item-indexsmall {
+	font-size: 16px;/*px*/
+	font-weight: 200;
+}
+
+nav.yui-bar .yui-item-indexsmall .yui-item-sign {
+	font-size: 12px;/*px*/
+}
+
+nav.yui-bar .yui-item-indexsmall .yui-item-mark {
+	font-size: 12px;/*px*/
+}
+
+nav.yui-bar .yui-indexup .yui-item-indexbig,
+nav.yui-bar .yui-indexup .yui-item-indexsmall {
+	color: #4f6ee1;
+}
+
+
+/*
+        * */
+
+nav.yui-bar .yui-indexdown .yui-item-indexbig,
+nav.yui-bar .yui-indexdown .yui-item-indexsmall {
+	color: #ff8a00;
+}
+
+#yui-segmented-charttype {
+	width: 250px;
+	height: 40px;
+	margin: 20px auto 30px auto;
+	border-color: #46cdff;
+}
+
+
+/*
+     * 
+     */
+
+#yui-segmented-charttype .yck-control-item {
+	color: white;
+}
+
+
+/*
+     * 
+     */
+
+#yui-segmented-charttype .yck-control-item.yck-active {
+	background: rgba(70, 205, 255, 0.3);
+	border-color: #46cdff;
+}
+
+
+/*
+     * 
+     */
+
+
+.yck-segmented-control .yck-control-item.yck-active {
+    color: #fff;
+   background: rgba(70, 205, 255, 0.3);
+}
+.yck-segmented-control .yck-control-item:first-child {
+    border-left-width: 0;
+}
+.yck-segmented-control .yck-control-item {
+    line-height: 38px;
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    -webkit-transition: background-color .1s linear;
+    transition: background-color .1s linear;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+    border-color: #46cdff;
+    border-left: 2px solid #46cdff;/*no*/
+}
+.yck-segmented-control {
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    display: table;
+    overflow: hidden;
+    width: 100%;
+    table-layout: fixed;
+    border: 2px solid #46cdff;/*no*/
+    border-radius: 3px;
+    background-color: transparent;
+    -webkit-touch-callout: none;
+}
+#yui-chart-tips {
+	width: 100%;
+	font-size: 10px;
+	/*px*/
+	color: #a3a4bc;
+	margin: 10px 20px;
+}
+
+#chartContainer {
+	width: 100%;
+	height: 360px;
+	height: -webkit-calc(100% - 145px);
+	height: calc(100% - 145px);
+}
+
+.highcharts-series-group path {
+	fill-opacity: 0.6;
+}
+
+.highcharts-button {
+	fill-opacity: 0.6;
+}
+
+.lineTop {
+	border-top: solid 1px #1B60A5;
+	/*no*/
+	position: absolute;
+}
+
+.github-line-chart {
+	margin: 30px 0;
+	width: 100%;
+	border-top: solid 1px #1B60A5;/*no*/
+	position: absolute;
+	display: none;
+}
+
+.mui-loader {
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	height: 60%;
+	color: #888;
+	font-size: 14px;/*no*/
+	text-align: center;
+}
+
+.mui-backdrop {
+	top: 44px;
+	background-color: rgba(0, 0, 0, 0);
+}

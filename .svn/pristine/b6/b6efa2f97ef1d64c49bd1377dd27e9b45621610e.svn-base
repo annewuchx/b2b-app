@@ -1,0 +1,28 @@
+/*导航栏背景*/
+.mui-bar {
+  background-color: #EE4B62;
+}
+.mui-bar a {
+  color: #FFFFFF;
+}
+.mui-bar button {
+  color: #FFFFFF !important;
+}
+.mui-bar .mui-title {
+  color: #FFFFFF;
+  left: 50px;
+  right: 50px;
+  font-size: 19px;
+}
+.mui-bar .mui-icon {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 30px;
+}
+.mui-bar-nav.mui-bar .mui-icon {
+  padding-left: 0;
+}
+.mui-bar.mui-bar-nav {
+  box-shadow: none;
+}
+/*# sourceMappingURL=header.css.map */

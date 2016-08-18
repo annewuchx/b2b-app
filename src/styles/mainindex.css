@@ -1,0 +1,313 @@
+.mui-content {
+	width: 100%;
+	height: 100%;
+}
+
+.github-line-chart {
+	margin: 20px 0;
+	width: 100%;
+	height: 191px;
+	border-bottom: solid 1px #e0e0e0;/*no*/
+	border-top: solid 1px #e0e0e0;/*no*/
+	-webkit-box-shadow: 1px 1px 5px #CCCCCC inset;/*no*/
+	box-shadow: 1px 1px 5px #CCCCCC inset;/*no*/
+}
+
+.mui-bar {
+	background: rgba(255, 255, 255, 0);
+}
+
+
+/**
+         * 
+     */
+
+.mui-bar .mui-icon {
+	right: 15px;
+	color: #ffffff;
+	font-size: 24px;/*px*/
+	float: right;
+    position: relative;
+    z-index: 20;
+    padding-top: 10px;/*px*/
+    padding-bottom: 10px;/*px*/
+}
+
+
+/**
+             * span
+         */
+
+.mui-bar .mui-icon span {
+	position: absolute;
+	display: inline-block;
+	background: #ffb400;
+	width: 8px;
+	height: 8px;
+	top: 10px;
+	right: 1px;
+	border-radius: 25px;
+	border: 1px solid #ffffff;/*no*/
+	opacity: 0;
+}
+
+.mui-bar-nav {
+	padding: 0;
+	box-shadow: 0 0;
+}
+
+
+/*
+     * 
+     */
+
+.mui-bar-nav h1 {
+	font-size: 16px;/*px*/
+	color: #ffffff;
+}
+
+.mui-bar-nav~ .mui-content {
+	padding-top: 0;
+}
+
+
+/*
+ * 
+ */
+
+.chart-addon {
+	height: 20px;
+	padding-left: 15px;
+	font-size: 10px;/*px*/
+	margin: 0;
+	color: #555555;
+	background: white;
+}
+
+.networkuseless {
+	width: 100%;
+	height: 50px;
+	background-color: #000;
+	opacity: 0.5;
+	color: #998f8e;
+	font-size: 14px;/*px*/
+	line-height: 50px;
+}
+
+.networkuseless span.mui-icon {
+	color: #febf00;
+	margin: 0 10px;
+}
+
+
+/*
+ * 
+ */
+
+#slider,
+.mui-slider-item img {
+	height: 219px;
+}
+
+
+/**
+    导航栏
+ */
+
+#mycard {
+	width: 100%;
+	overflow-x: auto;
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: white;
+}
+
+ul#nav:after {
+	clear: both;
+	content: "";
+}
+
+ul#nav {
+	width: 100%;
+	margin: 9px 0 5px;
+	padding: 0 15.5px;
+}
+
+
+/*
+     * li
+     */
+
+ul#nav li {
+	width: 25%;
+	list-style: none;
+	float: left;
+	text-align: center;
+}
+
+
+/*
+         * a
+         */
+
+ul#nav li a {
+	display: block;
+}
+
+
+/*
+         * 
+         */
+
+ul#nav li div.hexagon {
+	position: relative;
+	display: inline-block;
+	width: 52px;
+	height: 48px;
+	background-size: 52px 48px;
+	background-repeat: no-repeat;
+}
+
+
+/*
+         * 
+         */
+
+ul#nav li div.hexagon1 {
+	background-image: url("../images/index/icon_home_bg1.svg");
+}
+
+ul#nav li div.hexagon2 {
+	background-image: url("../images/index/icon_home_bg2.svg");
+}
+
+ul#nav li div.hexagon3 {
+	background-image: url("../images/index/icon_home_bg3.svg");
+}
+
+ul#nav li div.hexagon4 {
+	background-image: url("../images/index/icon_home_bg4.svg");
+}
+
+
+/*
+         * 
+         */
+
+ul#nav li div.hexagon> i.yckfont {
+	display: block;
+	color: white;
+	width: 24px;
+	height: 24px;
+	font-size: 24px;
+	line-height: 100%;
+	position: absolute;
+	top: 13px;
+	left: 14px;
+}
+
+ul#nav> li> a> span {
+	font-size: 12px;/*px*/
+	line-height: 100%;
+	display: block;
+	color: #333333;
+	height: 12px;
+	margin: 5px 0;
+	text-align: center;
+}
+
+
+/*
+ * 今日指数－本周指数－本月指数
+ */
+
+.mui-segmented-control {
+	height: 49px;
+	border: 0;
+	font-size: 16px;/*px*/
+	box-shadow: 0 1px 6px #ccc;/*no*/
+	border-radius: 0;
+}
+
+
+/*
+     * 
+     */
+
+.mui-segmented-control .mui-control-item {
+	color: #7ba3f6;
+	background: #ffffff;
+	padding-top: 5px;
+	border-left: 0;
+}
+
+
+/*
+     * 
+     */
+
+.mui-segmented-control .mui-control-item.mui-active {
+	background: #ffffff;
+	font-weight: 20;
+	color: #0066ff;
+	border-bottom: 4px solid #0066ff;
+}
+
+
+/*
+ * 
+ */
+
+.ct-chart {
+	height: 191px;
+	/* android browser 4.4+*/
+	border-bottom: solid 1px #e0e0e0;/*no*/
+}
+
+.ct-chart svg {
+	background-image: -moz-linear-gradient(top, #2c52e9, #5639d8);
+	/* FF3.6 */
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #000000), color-stop(1, #5639d8));
+	/* Safari 4+, Chrome 2+ */
+	background-image: -webkit-linear-gradient(top, #2c52e9, #5639d8);
+	/* Safari 5.1+, Chrome 10+ */
+	background-image: -o-linear-gradient(top, #2c52e9, #5639d8);
+	/* Opera 11.1+ */
+	background-image: linear-gradient(to bottom, #2c52e9, #5639d8);
+}
+
+.ct-chart .ct-label {
+	color: white;
+}
+
+.ct-chart .ct-line {
+	stroke: #23cefe;
+}
+
+.ct-chart .ct-series-a .ct-point {
+	stroke: white;
+	stroke-width: 5px;
+}
+
+.chart-bottom {
+	height: 10px;
+	background-color: #F2F2F2;
+}
+
+#emailMsg {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	border: 1px solid #ffffff;/*no*/
+	background-color: #ffb400;
+	height: 8px;
+	width: 8px;
+	border-radius: 4px;
+	display: none;
+}
+.mui-slider-indicator .mui-indicator {
+	width: 7px;/*px*/
+    height: 7px;/*px*/
+	background: rgba(255,255,255,0.3);
+}

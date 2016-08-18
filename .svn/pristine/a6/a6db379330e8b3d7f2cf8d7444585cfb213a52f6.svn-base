@@ -1,0 +1,239 @@
+html,
+body,
+.mui-content {
+	width: 100%;
+	height: 100%;
+}
+
+.verify_header a,
+.verify_header h1 {
+	color: #FFFFFF;
+}
+
+.verify_header {
+	background: #06f;
+	height: 44px;
+	/*px*/
+}
+
+.mui-bar-nav~.mui-content {
+	padding-top: 44px;
+	/*px*/
+}
+
+.verify_header h1 {
+	line-height: 44px;
+	/*px*/
+}
+
+.verify_header span,
+.verify_header h1 {
+	font-size: 16px;
+	/*px*/
+}
+
+.verified-company,
+.verified-manager,
+.verified-bank {
+	margin-top: 10px;
+}
+
+.mui-branch label {
+	line-height: 35px !important;
+}
+
+.mui-branch a {
+	padding: 0px;
+}
+
+.mui-branch {
+	/*height: 60px !important;*/
+	height: auto !important;
+}
+
+.mui-manager label {
+	padding: 7px 15px !important;
+}
+
+.btn-wraper button {
+	width: 50%;
+	border-right-width: 0px;
+	height: 50px;
+	padding: 0px;
+	border-radius: 0;
+	margin-top: 5px;
+	border-top: none;
+	border-bottom: none;
+}
+
+#notSubmit {
+	position: relative;
+}
+
+#notSubmit:before {
+	position: absolute;
+	right: 0;
+	left: 0;
+	height: 1px;
+	/*no*/
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+	top: 0px;
+}
+
+textarea::-webkit-input-placeholder {
+	line-height: 42px;
+}
+
+textarea:-moz-placeholder {
+	line-height: 42px;
+}
+
+textarea::-moz-placeholder {
+	line-height: 42px;
+}
+
+textarea:-ms-input-placeholder {
+	line-height: 42px;
+}
+
+.mui-input-group .mui-input-row {
+	position: relative;
+}
+
+.yck-eye {
+	font-size: 16px;
+	color: #cccccc;
+	display: inline-block;
+	width: 13%;
+	float: right;
+	height: 100%;
+	line-height: 45px;
+	box-sizing: border-box;
+	padding-right: 4%;
+	text-align: right;
+}
+
+.assist-agree {
+	text-align: center;
+	font-size: 12px !important;
+}
+
+.submit-btn {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
+
+.assist-agree a {
+	color: rgb(0, 102, 255);
+}
+
+.bank-tip {
+	margin-top: 15px;
+	font-size: 12px !important;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.mui-input-row label {
+	width: 27%;
+	text-align: right;
+	padding: 13.5px 15px;
+	height: 45px;
+	font-size: 16px;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	width: 73%;
+	padding-left: 25px;
+	padding-right: 30px;
+}
+
+.mui-navigate-right:after,
+.mui-push-left:after,
+.mui-push-right:after {
+	color: #0066FF;
+	font-size: 16px;
+}
+
+
+/**
+ * yck-font
+ */
+
+.yckfont {
+	font-size: 16px;
+}
+
+
+/**
+ * mui
+ */
+
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	font-size: 14px;
+}
+
+.input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+	height: 45px;
+	line-height: 21px;
+	padding: 10px 15px;
+}
+
+.mui-input-group .mui-input-row {
+	height: 45px;
+}
+
+input,
+select,
+textarea {
+	font-size: 16px;
+}
+
+.mui-bar .mui-icon {
+	font-size: 24px;
+	/*no*/
+	position: relative;
+	z-index: 20;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mui-navigate-right:after,
+.mui-push-right:after {
+	font-size: 26px;
+	/*px*/
+}
+
+.mui-input-group:before {
+	top: -1px; /*px*/
+	background-color: #CCCCCC;
+}
+
+.mui-input-row:last-child:after {
+	height: 0px;
+}

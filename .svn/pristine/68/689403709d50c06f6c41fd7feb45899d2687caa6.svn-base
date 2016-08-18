@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>开户银行</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<style>
+			.bank-list {
+				border: 0px;
+			}
+			
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+			
+			.mui-backdrop {
+				top: 44px;
+			}
+			
+			.cancel {
+				width: 15%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				position: absolute;
+				right: 0;
+				top: 0;
+				color: #0066FF;
+			}
+			
+			.mui-search .mui-placeholder {
+				text-align: left;
+			}
+			
+			.mui-search .mui-placeholder .mui-icon {
+				padding: 0 10px;
+			}
+			
+			.bank-search {
+				height: 44px;
+				padding: 5px;
+				background: #FFFFFF;
+				position: relative;
+			}
+			
+			.mui-table-view-cell:after {
+				height: 0px;
+			}
+			
+			.bankListContainer-empty-alert {
+				display: none;
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+			}
+			
+			.money-account {
+				background: #0066ff;
+			}
+			
+			.money-account a,
+			.money-account h1,
+			.money-account span {
+				color: #FFFFFF;
+			}
+			
+			.mui-table-view:before {
+				height: 0px;
+				
+			}
+			.mui-table-view:first-child:before {
+				height: 1px;
+				background-color: #CCCCCC;
+			}
+			/*.mui-table-view-cell {
+				border-top: 1px solid #cccccc;
+			}
+			
+			.mui-table-view-cell:last-child {
+				border-bottom: 1px solid #cccccc;
+				margin-bottom: 10px;
+			}*/
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav money-account">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title">开户银行</h1>
+		</header>
+		<div class="mui-content">
+			<div class='search bank-search'>
+
+				<div class="mui-input-row mui-search search-container" id="searchcontainer" style="width: 85%;">
+					<input type="search" class="mui-input-clear" placeholder="银行名称" id='muiSearchBank'>
+
+				</div>
+				<div class="cancel mui-action-back">取消</div>
+
+			</div>
+
+			<div class="bankListContainer-empty-alert">没有数据</div>
+			<div class="bank-list" id='bankListContainer' v-cloak>
+				<template v-for='item in banklist'>
+					<ul class="mui-table-view">
+
+						<li class="mui-table-view-cell" style="text-align: center;">
+							<a href="javascript:;" data-id="{{item.id}}">{{item.value}}</a>
+						</li>
+
+					</ul>
+				</template>
+			</div>
+		</div>
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="openBank.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,738 @@
+{
+	"htmls/userindex_sub.html": {
+		"resources": [
+			"htmls/userindex.js",
+			"fonts/mui.ttf",
+			"libs/vue.min.js",
+			"styleflex/userindex.css",
+			"images/bg_quote.png",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"libs/flexible/flexible.js",
+			"css/iconfont.css",
+			"styleflex/mui.min.css",
+			"js/resources.js",
+			"js/config.js",
+			"fonts/iconfont.woff"
+		],
+		"refer": [
+			"htmls/userpjlist.html",
+			"htmls/userpjlistDemo.html",
+			"htmls/userotherinfo.html",
+			"htmls/verifiedstep1.html",
+			"htmls/userbanklist.html"
+		]
+	},
+	"htmls/mainindex.html": {
+		"resources": [
+			"images/index/icon_home_bg3.svg",
+			"libs/flexible/flexible.js",
+			"mui/mui.lazyload.img.js",
+			"libs/echart2/echarts.line.js",
+			"mui/mui.lazyload.js",
+			"htmls/mainindex.banner.js",
+			"styleflex/mainindex.css",
+			"htmls/mainindex.js",
+			"libs/sea.js",
+			"htmls/mainindex.charting.js",
+			"images/index/icon_home_bg4.svg",
+			"styleflex/mui.min.css",
+			"images/index/icon_home_bg2.svg",
+			"images/index/icon_home_bg1.svg",
+			"images/bannerdefault.png",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/resources.js",
+			"fonts/iconfont.woff",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"js/config.js"
+		],
+		"refer": [
+			"htmls/priceindex.html",
+			"htmls/login.html",
+			"htmls/reserveamount_introduce.html",
+			"htmls/storesearch.html"
+		]
+	},
+	"htmls/userindex.html": {
+		"resources": [
+			"htmls/userindex_sub.html",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"htmls/userindex_sub.html"
+		]
+	},
+	"htmls/footer.html": {
+		"resources": [
+			"js/app.js",
+			"js/servicebus.js",
+			"htmls/mainindex.html",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"js/resources.js",
+			"htmls/footer.js",
+			"js/config.js",
+			"fonts/iconfont.woff"
+		],
+		"refer": [
+			"htmls/mainindex.html",
+			"htmls/userindex.html",
+			"htmls/login.html",
+			"htmls/financingindex.html",
+			"htmls/financeindex.html"
+		]
+	},
+	"htmls/login.html": {
+		"resources": [
+			"js/app.js",
+			"js/servicebus.js",
+			"libs/flexible/flexible.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"images/pic_logo.png",
+			"mui/mui.enterfocus.js",
+			"images/pic_login.png",
+			"fonts/iconfont.woff",
+			"js/mui.min.js",
+			"styleflex/mui.min.css",
+			"css/iconfont.css",
+			"styleflex/login.css",
+			"htmls/login.js",
+			"js/config.js",
+			"css/mui.min.css",
+			"styles/login.css"
+		],
+		"refer": [
+			"htmls/reg.html"
+		]
+	},
+	"htmls/priceindex.html": {
+		"resources": [
+			"css/mui.picker.flexible.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"libs/flexible/flexible.js",
+			"fonts/mui.ttf",
+			"mui/mui.picker.flexible.js",
+			"js/resources.js",
+			"libs/sea-debug.js",
+			"libs/seajs-text-debug.js",
+			"styleflex/loadding.css",
+			"images/bg_quote.png",
+			"fonts/iconfont.woff",
+			"mui/mui.poppicker.js",
+			"js/countUp.js",
+			"js/mui.min.js",
+			"styleflex/mui.min.css",
+			"css/iconfont.css",
+			"libs/vue.min.js",
+			"styleflex/priceindex.css",
+			"mui/mui.picker.min.js",
+			"htmls/priceindex.js",
+			"js/config.js",
+			"htmls/controllers/province-city-flexible/main.js",
+			"css/mui.min.css",
+			"styles/priceindex.css",
+			"css/mui.picker.css"
+		],
+		"refer": [
+			"htmls/bankType.html",
+			"htmls/pricebatch.html"
+		]
+	},
+	"htmls/userpjlist.html": {
+		"resources": [
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.picker.min.js",
+			"libs/vue.js",
+			"js/resources.js",
+			"css/loadding.css",
+			"htmls/userpjlist.js",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"styles/userpjlist.css",
+			"css/mui.picker.min.css",
+			"js/config.js",
+			"fonts/mui.ttf",
+			"fonts/iconfont.woff",
+			"htmls/userpjlistsubpage.html"
+		],
+		"refer": [
+			"htmls/userpjlistsubpage.html",
+			"htmls/userpjlistsx.html"
+		]
+	},
+	"htmls/financingindex1subpage.html": {
+		"resources": [
+			"styles/financingindex1subpage.css",
+			"css/loadding.css",
+			"htmls/financingindex1subpage.js",
+			"libs/vue.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"js/config.js"
+		],
+		"refer": [
+			"htmls/financingbasket.html",
+			"htmls/userpjpicture.html"
+		]
+	},
+	"htmls/financingindex.html": {
+		"resources": [
+			"styles/financingindex.css",
+			"images/loading.gif",
+			"htmls/financingindex.js",
+			"css/mui.min.css",
+			"htmls/financingindexsubpage.html",
+			"fonts/mui.ttf",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"js/resources.js",
+			"js/config.js"
+		],
+		"refer": [
+			"htmls/financingindex1subpage.html",
+			"htmls/financingindexsubpage.html",
+			"htmls/login.html",
+			"htmls/financingorders.html"
+		]
+	},
+	"htmls/financingindexsubpage.html": {
+		"resources": [
+			"htmls/financingindexsubpage.js",
+			"styleflex/financingindexsubpage.css",
+			"images/pic_financing.png",
+			"styleflex/loadding.css",
+			"libs/flexible/flexible.js",
+			"styleflex/mui.min.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/resources.js",
+			"js/config.js",
+			"js/mui.min.js"
+		]
+	},
+	"htmls/userpjlistDemo.html": {
+		"resources": [
+			"libs/vue.js",
+			"css/mui.picker.min.css",
+			"styles/userpjlist.css",
+			"js/mui.picker.min.js",
+			"js/app.js",
+			"js/servicebus.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"css/loadding.css",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"js/config.js",
+			"styles/userpjlistDemo.css",
+			"htmls/userpjlistDemosubpage.html"
+		],
+		"refer": [
+			"htmls/userpjlistDemosubpage.html",
+			"htmls/userpjlistDemosx.html"
+		]
+	},
+	"htmls/userpjlistDemosubpage.html": {
+		"resources": [
+			"htmls/userpjlist.js",
+			"styles/userpjlist.css",
+			"fonts/iconfont.woff",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.picker.min.js",
+			"libs/vue.js",
+			"js/resources.js",
+			"css/loadding.css",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"styles/userpjlistDemosubpage.css",
+			"css/mui.picker.min.css",
+			"js/config.js",
+			"htmls/userpjlistDemosubpage.js"
+		],
+		"refer": [
+			"htmls/userpjpicture.html",
+			"htmls/financingindex.html"
+		]
+	},
+	"htmls/userpjlistDemosx.html": {
+		"resources": [
+			"htmls/userpjlist.js",
+			"js/mui.picker.min.js",
+			"styles/userpjlist.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"libs/vue.js",
+			"js/resources.js",
+			"css/loadding.css",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/mui.picker.min.css",
+			"js/config.js",
+			"htmls/userpjlistsx.js",
+			"styles/userpjlistsx.css",
+			"fonts/iconfont.woff"
+		]
+	},
+	"htmls/userpjpicture.html": {
+		"resources": [
+			"js/app.js",
+			"js/servicebus.js",
+			"mui/mui.zoom.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"css/mui.min.css",
+			"libs/vue.min.js",
+			"css/loadding.css",
+			"htmls/userpjpicture.js",
+			"styles/userpjpiture.css",
+			"js/config.js"
+		]
+	},
+	"htmls/userpjlistsubpage.html": {
+		"resources": [
+			"styles/userpjlistsubpage.css",
+			"css/iconfont.css",
+			"htmls/userpjlistsubpage.js",
+			"fonts/iconfont.woff",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"libs/vue.js",
+			"js/resources.js",
+			"css/mui.min.css",
+			"js/config.js"
+		],
+		"refer": [
+			"htmls/userpjpicture.html",
+			"htmls/financingindex.html",
+			"htmls/login.html"
+		]
+	},
+	"htmls/userpjlistsx.html": {
+		"resources": [
+			"styles/userpjlistsx.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"htmls/userpjlistsx.js",
+			"js/mui.min.js",
+			"libs/vue.js",
+			"css/iconfont.css",
+			"js/resources.js",
+			"css/mui.min.css",
+			"js/config.js",
+			"fonts/iconfont.woff"
+		]
+	},
+	"htmls/reg.html": {
+		"resources": [
+			"styles/reg.css",
+			"htmls/reg.js",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"js/resources.js",
+			"css/mui.min.css",
+			"images/pic_logo.png",
+			"images/pic_login.png",
+			"js/config.js",
+			"fonts/iconfont.woff",
+			"libs/flexible/flexible.js",
+			"styleflex/reg.css",
+			"styleflex/mui.min.css"
+		],
+		"refer": [
+			"htmls/zijinaccount.html",
+			"htmls/xieyi.html"
+		]
+	},
+	"htmls/bankType.html": {
+		"resources": [
+			"libs/sea.js",
+			"styles/bankType.css",
+			"htmls/bankType.js",
+			"css/mui.min.css",
+			"css/loadding.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"libs/vue.min.js",
+			"js/config.js"
+		]
+	},
+	"htmls/userotherinfo.html": {
+		"resources": [
+			"htmls/userotherinfo.js",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"js/resources.js",
+			"css/mui.min.css",
+			"styles/userotherinfo.css",
+			"css/loadding.css",
+			"images/bg_quote.png",
+			"js/config.js",
+			"fonts/iconfont.woff"
+		],
+		"refer": [
+			"htmls/morecustomer.html",
+			"htmls/moreaboutus.html",
+			"htmls/userfogotpwd.html"
+		]
+	},
+	"htmls/verifiedstep1.html": {
+		"resources": [
+			"js/camera_common.js",
+			"styleflex/verifiedstep1.css",
+			"images/imgadd.png",
+			"htmls/verifiedstep1.js",
+			"js/immersed.js",
+			"fonts/mui.ttf",
+			"css/loadding.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"libs/flexible/flexible.js",
+			"js/resources.js",
+			"js/mui.min.js",
+			"styleflex/mui.min.css",
+			"js/config.js",
+			"styles/verifiedstep1.css",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"htmls/verifiedstep2.html"
+		]
+	},
+	"htmls/verifiedstep2.html": {
+		"resources": [
+			"libs/vue.js",
+			"css/iconfont.css",
+			"htmls/verifiedstep2.js",
+			"libs/sea-debug.js",
+			"styleflex/verifiedstep2.css",
+			"libs/seajs-text-debug.js",
+			"fonts/iconfont.woff",
+			"fonts/mui.ttf",
+			"js/app.js",
+			"js/servicebus.js",
+			"libs/flexible/flexible.js",
+			"js/resources.js",
+			"js/mui.min.js",
+			"styleflex/mui.min.css",
+			"js/config.js"
+		],
+		"refer": [
+			"htmls/openProvince.html",
+			"htmls/openBranch.html",
+			"htmls/openBank.html"
+		]
+	},
+	"htmls/openProvince.html": {
+		"resources": [
+			"htmls/openProvince.js",
+			"css/mui.min.css",
+			"styles/openProvince.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"libs/vue.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"css/loadding.css",
+			"js/config.js"
+		]
+	},
+	"htmls/openBranch.html": {
+		"resources": [
+			"htmls/openBranch.js",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"libs/vue.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"css/mui.min.css",
+			"css/loadding.css",
+			"js/config.js"
+		]
+	},
+	"htmls/openBank.html": {
+		"resources": [
+			"js/app.js",
+			"js/servicebus.js",
+			"htmls/openBank.js",
+			"js/mui.min.js",
+			"libs/vue.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"css/mui.min.css",
+			"css/loadding.css",
+			"js/config.js"
+		]
+	},
+	"htmls/moreaboutus.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"js/updateonline.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/pic_logo.png",
+			"styles/moreaboutus.css",
+			"js/config.js",
+			"htmls/userItem.html"
+		],
+		"refer": [
+			"htmls/userItem.html"
+		]
+	},
+	"htmls/userItem.html": {
+		"resources": [
+			"htmls/moreaboutus.html"
+		],
+		"refer": [
+			"htmls/moreaboutus.html"
+		]
+	},
+	"htmls/zijinaccount.html": {
+		"resources": [
+			"images/zijin1.png",
+			"images/zijin3.png",
+			"images/zijin5.png",
+			"images/zijin4.png",
+			"images/zijin2.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"htmls/xieyi.html": {
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf"
+		]
+	},
+	"htmls/pricebatch.html": {
+		"resources": [
+			"htmls/pricebatch.js",
+			"styles/pricebatch.css",
+			"css/mui.min.css",
+			"css/loadding.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"libs/sea-debug.js",
+			"libs/seajs-text-debug.js",
+			"images/bg_quote.png",
+			"fonts/iconfont.woff",
+			"js/countUp.js",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"libs/vue.min.js",
+			"js/config.js"
+		],
+		"refer": [
+			"htmls/addnotes.html"
+		]
+	},
+	"htmls/addnotes.html": {
+		"resources": [
+			"styles/addnotes.css",
+			"libs/sea.js",
+			"htmls/controllers/price-item/ui.html",
+			"mui/mui.poppicker.js",
+			"htmls/addnotes.js",
+			"htmls/controllers/price-item/style.css",
+			"libs/seajs-text.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.min.css",
+			"mui/mui.picker.min.js",
+			"htmls/controllers/price-item/main.js",
+			"js/app.js",
+			"js/servicebus.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"fonts/iconfont.woff",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"libs/vue.min.js",
+			"js/config.js"
+		],
+		"refer": [
+			"htmls/bankType.html"
+		]
+	},
+	"htmls/financingbasket.html": {
+		"resources": [
+			"js/app.js",
+			"js/servicebus.js",
+			"htmls/controllers/trans-pwd/main.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"libs/sea-debug.js",
+			"htmls/controllers/trans-pwd/ui.html",
+			"css/loadding.css",
+			"libs/seajs-text-debug.js",
+			"htmls/financingbasket.js",
+			"styles/financingbasket.css",
+			"htmls/controllers/trans-pwd/style.css",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"libs/vue.min.js",
+			"css/mui.poppicker.css",
+			"js/config.js",
+			"fonts/iconfont.woff"
+		],
+		"refer": [
+			"htmls/userpjpicture.html",
+			"htmls/userbanklist.html",
+			"htmls/financingordersdetail.html"
+		]
+	},
+	"htmls/financingorderssubpage.html": {
+		"resources": [
+			"styles/financingorderssubpage.css",
+			"htmls/financingorderssubpage.js",
+			"images/u24_line.png",
+			"libs/vue.min.js"
+		],
+		"refer": [
+			"htmls/financingordersdetail.html"
+		]
+	},
+	"htmls/financingordersdetail.html": {
+		"resources": [
+			"htmls/financingordersdetail.js",
+			"styles/financingordersdetail.css",
+			"css/loadding.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"css/mui.min.css",
+			"libs/vue.min.js",
+			"js/config.js"
+		]
+	},
+	"htmls/financingorders.html": {
+		"resources": [
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"styles/financingorders.css",
+			"js/resources.js",
+			"css/mui.min.css",
+			"htmls/financingorderssubpage.html",
+			"js/config.js"
+		],
+		"refer": [
+			"htmls/financingorderssubpage.html"
+		]
+	},
+	"htmls/userbanklist.html": {
+		"resources": [
+			"styles/userbanklist.css",
+			"js/app.js",
+			"js/servicebus.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"css/mui.min.css",
+			"htmls/userbanklist.js",
+			"libs/vue.min.js",
+			"css/loadding.css",
+			"js/config.js"
+		]
+	},
+	"htmls/morecustomer.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"htmls/reserveamount_introduce.html": {
+		"resources": [
+			"js/mui.min.js",
+			"images/reserve_introduce.png",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"htmls/storesearch.html": {
+		"resources": [
+			"js/app.js",
+			"js/servicebus.js",
+			"fonts/mui.ttf",
+			"js/resources.js",
+			"libs/sea-debug.js",
+			"libs/seajs-text-debug.js",
+			"fonts/iconfont.woff",
+			"css/app.css",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"styles/storesearch.css",
+			"libs/vue.min.js",
+			"js/config.js",
+			"htmls/storesearch.js",
+			"htmls/controllers/province-city/main.js",
+			"css/mui.picker.min.css",
+			"mui/mui.picker.min.js"
+		]
+	},
+	"htmls/financeindex.html": {
+		"resources": [
+			"js/mui.min.js",
+			"images/loading.gif",
+			"libs/flexible/flexible.js",
+			"styleflex/mui.min.css",
+			"styleflex/financeindex.css",
+			"htmls/financeindex-sub.html"
+		],
+		"refer": [
+			"htmls/financeindex-sub.html"
+		]
+	},
+	"htmls/financeindex-sub.html": {
+		"resources": [
+			"styleflex/financeindex-sub.css",
+			"images/pic_investment_1.png",
+			"images/pic_investment_2.png",
+			"images/pic_investment_3.png"
+		]
+	}
+}

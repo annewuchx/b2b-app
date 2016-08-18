@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>添加图片</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<style>
+			/*.verify_header {
+				background: #00418F;
+			}*/
+			
+			.verify_header h1,
+			.verify_header a {
+				color: #000000;
+			}
+			
+			.mui-content li {
+				position: relative;
+			}
+			
+			.mui-content li #icon-plus {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			
+			.mui-content a.active {
+				color: #007aff;
+			}
+			
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+			
+			.mui-backdrop {
+				top: 44px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav verify_header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">选择图片</h1>
+		</header>
+		<div class="mui-content mui-content-padded">
+			<div style="height: 250px;width: 100%;">
+				<img data-lazyload="" width="100%" id='demoImg' />
+			</div>
+
+			<p class="mui-content-padded"><span class="mui-badge mui-badge-danger" style='margin: 0px 10px;' ;>1</span>请按照示例图提交汇票</p>
+			<p class="mui-content-padded"><span class="mui-badge mui-badge-danger" style='margin: 0px 10px;' ;>2</span>照片要四角对齐，如有模糊、反光、太暗、有遮挡，则不予认证</p>
+			<div class="img-get" style="width: 100%;text-align: center;">
+				<a href="#picture" id='pictureGet' class="mui-btn mui-btn-primary mui-btn-block" style="padding: 5px 20px;">知道了,我要上传图片</a>
+				<!--<button type="button" class="mui-btn mui-btn-blue" id='pictureGet' style="width: 50%;">知道了,我要上传图片</button>-->
+			</div>
+			<div class="mui-loader" id="loadding">
+				<div class="load">
+					<div class="loader">Loading...</div>
+					<div class="loaderWord">正在上传...</div>
+				</div>
+			</div>
+			<div class="mui-backdrop" id="backdrop"></div>
+
+		</div>
+
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#" data-index='1'>拍照</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#" data-index='2'>从相册选择</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture" data-index='0'><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../mui/mui.lazyload.js"></script>
+		<script src="../mui/mui.lazyload.img.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="./verifiedaddimg.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

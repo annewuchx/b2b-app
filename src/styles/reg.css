@@ -1,0 +1,227 @@
+.mui-content,
+body,
+html {
+	background-color: #ffffff;
+	height: 100%;
+}
+
+.btn-check-code {
+	position: absolute;
+	margin: auto;
+	height: 35px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border: 0px;
+}
+
+.mui-input-group {
+	padding: 0 15px;
+}
+
+.mui-input-group label {
+	width: 15%;
+	padding: 0px;
+	color: #06f;
+	font-size: 20px;
+	height: 100%;
+	line-height: 65px;
+	padding-left: 10px;
+	padding-right: 20px;
+}
+
+.mui-input-row label~input {
+	float: left;
+}
+
+
+.mui-input-group:after {
+	height: 0px;
+}
+
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+	height: 65px;
+}
+
+.mui-input-group .mui-input-row {
+	height: 65px;
+	position: relative;
+}
+
+.yck-eye {
+    width: 20%;
+    color: rgb(204, 204, 204);
+    display: inline-block;
+    height: 100%;
+    line-height: 65px;
+    text-align: right;
+}
+
+.mui-input-row .mui-btn {
+	width: 110px;
+}
+
+.mui-content-padded {
+	margin: 70px 15px;
+}
+
+.mui-btn-block {
+	padding: 10px 0px;
+}
+
+
+/*header*/
+
+header.mui-bar {
+	background: rgba(255, 255, 255, 0);
+}
+
+.mui-bar-nav {
+	box-shadow: none;
+}
+
+.mui-bar-nav a {
+	color: #fff;
+}
+
+.mui-bar-nav a span {
+	font-size: 16px;
+	/*px*/
+}
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	font-size: 15px;
+	/*px*/
+}
+
+
+/*mui-content*/
+
+.backImg {
+	width: 100%;
+	height: 144px;
+	background: url(../images/pic_login.png) no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	margin-bottom: 50px;
+}
+
+.pic-logo img {
+	position: absolute;
+	display: block;
+	width: 30%;
+	top: 55px;
+	left: 35%;
+}
+
+.mui-bar-nav~.mui-content {
+	padding-top: 0px;
+}
+
+.reg-title {
+	font-size: 17px !important;
+	color: rgb(0, 102, 225);
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.assist {
+	text-align: center;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+.reg-btn {
+	height: 45px;
+	font-size: 18px !important;
+}
+
+.hline {
+	box-sizing: border-box;
+	padding: 0 15px;
+	line-height: 0;
+	background-color: rgb(0, 102, 255);
+	margin: 0 15px;
+	height: 1px;
+
+}
+
+
+
+/**
+ * mui
+ */
+
+input,
+select,
+textarea {
+	font-size: 17px;
+}
+
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	font-size: 14px;
+	border-radius: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.yckfont {
+	font-size: 16px;
+}
+
+#regFrom {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.mui-bar .mui-icon {
+	font-size: 24px;
+	position: relative;
+	z-index: 20;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.mui-input-group:before {
+    height: 0px;
+}
+.mui-input-group .mui-input-row:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15px;
+    height: 1px;  /*no*/
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #CCCCCC;
+}
+.mui-input-row .mui-input-clear~.mui-icon-clear, .mui-input-row .mui-input-password~.mui-icon-eye, .mui-input-row .mui-input-speech~.mui-icon-speech{
+	height: 65px;
+	line-height: 65px;
+	top: 0px;
+}

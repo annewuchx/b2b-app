@@ -1,0 +1,85 @@
+html,
+body {
+	height: 100%;
+}
+
+.mui-segmented-control {
+	display: block;
+}
+
+.mui-segmented-control .mui-control-item {
+	line-height: 50px;
+	width: 100%;
+}
+
+.mui-col-xs-3,
+.mui-control-content {
+	overflow-y: auto;
+	height: 100%;
+}
+
+.mui-loader {
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	height: 60%;
+	color: #888;
+	font-size: 14px;/*px*/
+	text-align: center;
+}
+
+.mui-backdrop {
+	top: 44px;
+}
+
+.mui-table-view-cell:hover {
+	color: #0066FF;
+	border-bottom: 2px solid #06f;
+}
+
+.mui-table-view:after {
+	height: 0px;
+}
+
+.mui-table-view-cell:last-child:after {
+	height: 1px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item,
+.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item.mui-active {
+	border-bottom: 1px solid #c8c7cc;
+	border-right: 1px solid #c8c7cc;
+	color: #000000;
+	text-align: left;
+	padding-left: 40px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #06f;
+	background: #ffffff;
+	border-right-color: #FFFFFF !important;
+	color: #000000;
+	border-left: solid 4px #0066ff;
+}
+
+.bank-back {
+	background: #0066ff;
+}
+
+.bank-back a,
+.bank-back h1 {
+	color: #FFFFFF;
+}
+
+.select-pro {
+	display: inline-block;
+	width: 5px;
+	height: 51px;
+	background: #0066ff;
+	position: absolute;
+	left: 0;
+}
+
+.mui-table-view {
+	padding-left: 30px;
+}

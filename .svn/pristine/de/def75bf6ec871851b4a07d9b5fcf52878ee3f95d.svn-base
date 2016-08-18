@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>票据资产--子页面</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../styles/userpjlistsubpage.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/iconfont.css">
+		<style type="text/css">
+			.pj-total-container{
+				top: 10px;
+				position:fixed;
+				left: 0;
+				right: 0;
+				z-index: 12;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<!--footer-->
+		<div class="footer">
+			<button type="button" id="wantFinance" class="mui-btn mui-btn-block want-finance">我要融资</button>
+		</div>
+		
+		<!--pj-total-container-->
+		<div class='pj-total-container'>
+			<form class="mui-input-group mui-input-group1" v-if="!pjdata.billDetailInfo">
+				<div class="mui-input-row">
+					<label>票面总额</label>
+					<span class='bill-amount'>¥0.00</span>
+
+				</div>
+				<div class="mui-input-row">
+					<label>票据张数</label>
+					<span class='bill-amount'>0 张</span>
+
+				</div>
+
+			</form>
+
+			<form class="mui-input-group mui-input-group1" v-cloak v-else>
+				<div class="mui-input-row">
+					<label>票面总额</label>
+					<span class='bill-amount'>{{pjdata.totalAmount | currency '￥'}}</span>
+
+				</div>
+				<div class="mui-input-row">
+					<label>票据张数</label>
+					<span class='bill-amount'>{{pjdata.totalCount}} 张</span>
+
+				</div>
+
+			</form>
+		</div>
+		
+		
+		<!--content-->
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+
+			<div class="mui-scroll" >
+
+					<div id="pjcard" v-cloak>
+
+						<ul class="mui-table-view pj_content mui-card" style="margin-top: 10px;" v-for="item in pjdata.billDetailInfo" track-by="$index">
+							<template v-if="item">
+								<li class="mui-table-view-cell" style="padding: 0;">
+									<div class="mui-row code-day-row">
+										<span class="mui-col-sm-7 mui-col-xs-7 bill-left">
+										<span>票号:</span>
+										<span style="padding-left: 5px;">{{item.billcode}}</span>
+										</span>
+
+										<span class="mui-col-sm-5 mui-col-xs-5 bill-right">
+										<span>到期天数:</span>
+										<span style="padding-left: 5px;">{{item.dayAmount}}天</span>
+
+										</span>
+										<span class='bar'></span>
+									</div>
+
+									<div class='border-container'>
+										<div class="mui-row" style="padding:0 2.8%;height: 60px;" v-on:tap="openPjList($index)">
+											<div class='bill-detail'>
+
+												<p style="font-size: 12px;">
+													<span>票面金额</span>
+													<span class="phnum" v-if='item.bankType==1'>（国股银行）</span>
+													<span class="phnum" v-if='item.bankType==2'>（城商银行）</span>
+													<span class="phnum" v-if='item.bankType==3'>（农商外资）</span>
+													<span class="phnum" v-if='item.bankType==4'>（农合农信）</span>
+													<span class="phnum" v-if='item.bankType==5'>（村镇银行）</span>
+												</p>
+
+												<p style="font-size: 20px;color: #ffb400;">
+													<span style="font-size: 15px;">￥</span> {{item.billMoney | financeInteger | rmb}}
+													<span style="font-size: 15px;">.{{item.billMoney | financeDecimals}}</span>
+												</p>
+
+												<span class="right-next yckfont yf-arrownext" style="font-size: 25px;"></span>
+											</div>
+
+										</div>
+
+										<div class="mui-row code-day-row" style="background: transparent;color: #000000;">
+											<span class="mui-col-sm-7 mui-col-xs-7 bill-left">
+										<span>调整价:</span>
+											<span style="padding-left: 5px;">{{item.adjustment}}元</span>
+											</span>
+
+											<span class="mui-col-sm-5 mui-col-xs-5 bill-right">
+										<span>状态:</span>
+											<span v-if='item.orderStatus==1' style="padding-left: 5px;">融资中</span>
+											<span v-if='item.orderStatus==0' style="padding-left: 5px;">可用</span>
+											<span v-if='item.orderStatus==2' style="padding-left: 5px;">托收中</span>
+											</span>
+											<span class='bar' style="background: #CCCCCC;"></span>
+										</div>
+									</div>
+
+								</li>
+							</template>
+						</ul>
+
+						<p class='no-resulte mui-content-padded' id='noResult' style="text-align: center;display: none;">没有满足条件的数据</p>
+
+					</div>
+
+				</div>
+
+		</div>
+
+		
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="userpjlistsubpage.js"></script>
+	</body>
+
+</html>

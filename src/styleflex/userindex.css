@@ -1,0 +1,258 @@
+.body_div_head_bg {
+  width: 100%;
+  padding-top: 1.866667rem;
+  text-align: center;
+  background: url(../images/bg_quote.png);
+  background-size: 100% 100%;
+  height: 6.133333rem;
+}
+
+.mui-bar {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: none;
+}
+
+.user-header h1,
+.user-header a {
+  color: #FFFFFF !important;
+}
+
+[data-dpr="1"] .user-header {
+  height: 44px;
+  line-height: 44px;
+}
+
+[data-dpr="2"] .user-header {
+  height: 88px;
+  line-height: 88px;
+}
+
+[data-dpr="3"] .user-header {
+  height: 132px;
+  line-height: 132px;
+}
+
+[data-dpr="1"] .user-header h1,
+[data-dpr="1"] .mui-bar .mui-btn-link {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .user-header h1,
+[data-dpr="2"] .mui-bar .mui-btn-link {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .user-header h1,
+[data-dpr="3"] .mui-bar .mui-btn-link {
+  font-size: 48px;
+}
+
+.company-name {
+  font-size: 0.533333rem !important;
+  color: #FFFFFF;
+  margin-bottom: 0;
+}
+
+.verified-btn {
+  height: 1.066667rem;
+  width: 100%;
+}
+
+.total-bill-desp {
+  color: #FFFFFF;
+}
+
+[data-dpr="1"] .total-bill-desp {
+  font-size: 15px;
+}
+
+[data-dpr="2"] .total-bill-desp {
+  font-size: 30px;
+}
+
+[data-dpr="3"] .total-bill-desp {
+  font-size: 45px;
+}
+
+.total-bill {
+  color: #FFFFFF;
+  line-height: 1.066667rem;
+  margin-bottom: 0.8rem;
+}
+
+[data-dpr="1"] .total-bill {
+  font-size: 40px;
+}
+
+[data-dpr="2"] .total-bill {
+  font-size: 80px;
+}
+
+[data-dpr="3"] .total-bill {
+  font-size: 120px;
+}
+
+[data-dpr="1"] .total-bill span {
+  font-size: 28px;
+}
+
+[data-dpr="2"] .total-bill span {
+  font-size: 56px;
+}
+
+[data-dpr="3"] .total-bill span {
+  font-size: 84px;
+}
+
+.hline {
+  box-sizing: border-box;
+  line-height: 0;
+  background-color: #cccccc;
+  width: 100%;
+  height: 1px;
+}
+
+.verified-btn button {
+  margin-bottom: 0.4rem;
+  margin-top: 0.266667rem;
+  color: #FFFFFF;
+  padding: 0;
+  width: 2rem;
+}
+
+[data-dpr="1"] .verified-btn button {
+  font-size: 15px;
+}
+
+[data-dpr="2"] .verified-btn button {
+  font-size: 30px;
+}
+
+[data-dpr="3"] .verified-btn button {
+  font-size: 45px;
+}
+
+.mui-table-view-cell span {
+  margin-left: 8.7%;
+}
+
+[data-dpr="1"] .mui-table-view a {
+  font-size: 16px;
+}
+
+[data-dpr="2"] .mui-table-view a {
+  font-size: 32px;
+}
+
+[data-dpr="3"] .mui-table-view a {
+  font-size: 48px;
+}
+
+.manage-info span {
+  color: rgb(118, 175, 27);
+}
+
+.mui-navigate-right:after,
+.mui-push-right:after {
+  color: #85aaf7;
+}
+
+[data-dpr="1"] .mui-navigate-right:after,
+[data-dpr="1"] .mui-push-right:after {
+  font-size: 18px;
+}
+
+[data-dpr="2"] .mui-navigate-right:after,
+[data-dpr="2"] .mui-push-right:after {
+  font-size: 36px;
+}
+
+[data-dpr="3"] .mui-navigate-right:after,
+[data-dpr="3"] .mui-push-right:after {
+  font-size: 54px;
+}
+
+.account-user {
+  width: 52%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.body_div_content {
+  margin-top: 0.266667rem;
+}
+
+.body_div_content ul li {
+  height: 1.2rem;
+}
+
+.userindex-font {
+  font-size: 0.533333rem !important;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.mui-table-view .mui-table-view-cell:last-child:after {
+  height: 0;
+}
+
+/**
+ * mui
+ */
+
+.mui-table-view-cell:after {
+  background-color: #cccccc;
+}
+
+.mui-table-view:before {
+  background-color: #cccccc;
+}
+
+.mui-table-view:after {
+  background-color: #cccccc;
+}
+
+.mui-table-view-cell>a:not(.mui-btn) {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: -0.293333rem -0.4rem;
+  padding: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: inherit;
+}
+
+.mui-table-view-cell {
+  position: relative;
+  overflow: hidden;
+  padding: 0.293333rem 0.4rem;
+  -webkit-touch-callout: none;
+}
+
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  border-radius: 0.08rem;
+  border-top-left-radius: 0.08rem;
+  border-top-right-radius: 0.08rem;
+  border-bottom-right-radius: 0.08rem;
+  border-bottom-left-radius: 0.08rem;
+}
+
+/**
+ * yckfont
+ */
+
+.yckfont {
+  font-family: "yckfont" !important;
+  font-size: 0.426667rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.005333rem;
+  -moz-osx-font-smoothing: grayscale;
+}

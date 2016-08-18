@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<script src="../libs/flexible/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../styleflex/mui.min.css" rel="stylesheet" />
+		<title>企业实名认证2</title>
+		<!--<link href="../css/mui.min.css" rel="stylesheet" />-->
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../styles/verifiedstep2.css">-->
+		<link rel="stylesheet" type="text/css" href="../styleflex/verifiedstep2.css">
+		<style>
+
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav 	verify_header">
+			<a class="mui-icon mui-icon-arrowleft mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">企业实名认证（2/2）</h1>
+		</header>
+		<div class="mui-content">
+
+			<form class="mui-input-group verified-company">
+				<div class="mui-input-row mui-openname">
+					<label>开户名</label>
+					<input type="text" placeholder="请输入开户名称" class="mui-input-clear" id='opnerName' style="text-overflow:ellipsis; white-space: nowrap;">
+				</div>
+				<div class="mui-input-row mui-province">
+					<label>开户省市</label>
+					<input type="text" name="opnerCity" placeholder="请选择开户省市" readonly="readonly" id='opnerCity' />
+					<a class='mui-navigate-right'></a>
+
+				</div>
+				<div class="mui-input-row mui-bank">
+					<label>开户银行</label>
+					<input type="text" name="selectBank" placeholder="请选择开户银行" readonly="readonly" id='selectBank' />
+					<a class='mui-navigate-right'></a>
+				</div>
+				<div class="mui-input-row mui-branch">
+					<label>开户支行</label>
+					<textarea name="selectBranch" placeholder="请选择开户支行" readonly="readonly" id='selectBranch' style="height: auto;"></textarea>
+					<a class='mui-navigate-right'></a>
+				</div>
+				<div class="mui-input-row mui-cardnum">
+					<label>银行账号</label>
+					<input type="text" placeholder="请输入银行账号" id='bankNum' class="mui-input-clear">
+				</div>
+			</form>
+
+			<form class="mui-input-group verified-bank">
+				<div class="mui-input-row mui-password" id='passwordContainer'>
+					<label>交易密码</label>
+					<input type="password" id='getPW' class="mui-input-password transword" data-input-password="6" pattern="[0-9]*" placeholder="为6位数字且与登录密码不同" style="width: 60%;float: left;padding-right: 0px;">
+					<span statu="0" id="yck-eye" class="yckfont yf-eyeclose yck-eye"></span>
+				</div>
+
+			</form>
+
+			<form class="mui-input-group verified-manager">
+				<div class="mui-input-row mui-manager">
+					<label>业务经理<br/>（选填）</label>
+					<input id='managerName' type="text" class="mui-input-clear" placeholder="请输入银承库业务经理姓名">
+				</div>
+			</form>
+			<!--<p class='bank-tip fw300'>
+				<span style="color: rgb(51,51,51);">* 通过审核即可开通中信银行独立资金账户。</span>
+				<span style="display:block;text-align: center;"><a href="#" id="acountDetail" style="color: rgb(0,102,255);">了解独立资金账户</a></span>
+			</p>-->
+			<div class='submit-btn'>
+				<p class="fw300 assist-agree">
+					<span style="color: rgb(51,51,51);">点击提交按钮表示您已阅读并同意</span>
+					<span><a href="#" id='xieyi' style="color: rgb(0,102,255);">委托票据托管协议</a></span>
+				</p>
+				<div class="btn-wraper"><button type="button" id="notSubmit" class="mui-btn" style="color: #0066ff;">暂不认证</button><button id="subform" type="button" class="mui-btn mui-btn-primary">提交申请</button></div>
+
+			</div>
+
+		</div>
+
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../libs/vue.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- build:js ../js/root.js -->
+	<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+	<!-- endbuild -->
+
+	<script src="../libs/sea-debug.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../libs/seajs-text-debug.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./verifiedstep2.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

@@ -1,0 +1,59 @@
+
+@font-face {font-family: "yckfont";
+  src: url('../fonts/iconfont.eot?t=1466761990'); /* IE9*/
+  src: url('../fonts/iconfont.eot?t=1466761990#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff?t=1466761990') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf?t=1466761990') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg?t=1466761990#yckfont') format('svg'); /* iOS 4.1- */
+}
+
+.yckfont {
+  font-family:"yckfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.yf-download:before { content: "\e600"; }
+.yf-arrowback:before { content: "\e601"; }
+.yf-arrownext:before { content: "\e602"; }
+.yf-price:before { content: "\e603"; }
+.yf-diamond:before { content: "\e604"; }
+.yf-maplocation:before { content: "\e605"; }
+.yf-linechart:before { content: "\e606"; }
+.yf-hexagon:before { content: "\e607"; }
+.yf-house:before { content: "\e608"; }
+.yf-pig:before { content: "\e609"; }
+.yf-book:before { content: "\e60a"; }
+.yf-contacts:before { content: "\e60b"; }
+.yf-message:before { content: "\e60c"; }
+.yf-location:before { content: "\e60d"; }
+.yf-rmb:before { content: "\e60e"; }
+.yf-building:before { content: "\e60f"; }
+.yf-calendar:before { content: "\e610"; }
+.yf-arrowup:before { content: "\e611"; }
+.yf-check:before { content: "\e612"; }
+.yf-arrowdown:before { content: "\e613"; }
+.yf-phone:before { content: "\e614"; }
+.yf-address:before { content: "\e615"; }
+.yf-cancle:before { content: "\e616"; }
+.yf-certification:before { content: "\e617"; }
+.yf-credit1:before { content: "\e618"; }
+.yf-credit2:before { content: "\e619"; }
+.yf-credit3:before { content: "\e61a"; }
+.yf-credit4:before { content: "\e61b"; }
+.yf-delete:before { content: "\e61c"; }
+.yf-keyboard:before { content: "\e61d"; }
+.yf-search:before { content: "\e61e"; }
+.yf-deletekeyboradl:before { content: "\e61f"; }
+.yf-deletekeyborad:before { content: "\e620"; }
+.yf-cards:before { content: "\e621"; }
+.yf-hexagonline:before { content: "\e622"; }
+.yf-human:before { content: "\e623"; }
+.yf-unlock:before { content: "\e624"; }
+.yf-mobile:before { content: "\e625"; }
+.yf-shield:before { content: "\e626"; }
+.yf-eyeclose:before { content: "\e627"; }
+.yf-eyeopen:before { content: "\e628"; }
+.yf-close:before { content: "\e629"; }

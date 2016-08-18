@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/iconfont.css">
+	</head>
+	<style>
+		.mui-bar {
+			background-color: #0066FF;
+		}
+		
+		.mui-bar span,
+		a {
+			color: #fff;
+			font-size: 16px;
+			/*px*/
+		}
+		
+		.mui-bar h1 {
+			color: #fff;
+			font-weight: bold;
+			font-size: 16px;
+			/*px*/
+		}
+		
+		.problem_div {
+			border-bottom: #ddd solid 1px;
+			margin-left: 15px;
+			height: 60px;
+		}
+		
+		.mui-collapse {
+			font-size: 14px;
+		}
+		
+		.mui-content {
+			background: white;
+		}
+		
+		.mui-content h1 {
+			font-size: 15px;
+			color: #004187;
+			border: 1px solid #F2F2F2;
+			background-color: #F2F2F2;
+			height: 45px;
+			color: rgb(119, 119, 119);
+			font-weight: lighter;
+		}
+		
+		.mui-content h1 span {
+			display: block;
+			width: 100%;
+			padding: 20px 15px 10px 15px;
+			font-size: 15px;
+		}
+		
+		.mui-content .helplist {
+			padding: 0;
+			padding-left: 15px;
+		}
+		
+		.mui-content .helplist dl {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.mui-content .helplist dt {
+			cursor: pointer;
+			font-size: 15px;
+			border-bottom: 1px solid #CCCCCC;
+			color: rgb(51, 51, 51);
+			margin: 0;
+			padding: 15px 0;
+			font-weight: lighter;
+		}
+		
+		.mui-content .helplist dd {
+			padding: 0;
+			margin: 0;
+		}
+		
+		.mui-content .helplist dd h3,
+		.mui-content .helplist dd h2 {
+			font-size: 15px;
+			font-weight: normal;
+		}
+		
+		.helpothter dl {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.mui-search.mui-active:before {
+			padding-top: 10px;
+			margin-left: 8px;
+		}
+		
+		.right-next {
+			float: right;
+			margin-right: 15px;
+			color: #7CA3F6;
+			font-size: 25px;
+		}
+		
+		.right-next:after {
+			font-family: Muiicons;
+			line-height: 1;
+			position: absolute;
+			display: inline-block;
+			padding-top: 16px;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			text-decoration: none;
+			color: #7CA3F6;
+			-webkit-font-smoothing: antialiased;
+		}
+		
+		.right-next:after {
+			right: 15px;
+			content: '\e583';
+		}
+		
+		.hepl-title {
+			padding-right: 30px;
+			display: block;
+		}
+		
+		.mui-search {
+			padding: 0px 9px;
+			margin: 10px 0;
+			overflow: initial;
+			height: 30px;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">帮助中心</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-input-row mui-search">
+				<input type="search" id="search" class="mui-input-clear" placeholder="搜索" style="background-color: #F2F2F2;color: rgb(119,119,119);">
+			</div>
+
+			<div class="helpinfo" id="mui-content">
+				<h1>
+						<span class="fw300">热门问题</span>
+					</h1>
+				<div class="helplist">
+					<dl>
+						<dt id="help_0" statu="0" class="dt_back">
+									
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								1、银承库介绍？
+							</span>
+						</dt>
+						<dd style="display:none;margin: 0;">
+							<p>银承库是由北京巨品力能销售有限公司倾力打造的创新型互联网金融平台,针对企业存量票据的问题，推出了票据支付和票据融资的服务,为企业票据的流转提供了全新的途径。 银承库的服务优势：</p>
+							<p>优势一：网上支付票据，打破票据支付的地域限制。</p>
+							<p>优势二：银行负责保管票据，企业可电子化管理票据。</p>
+							<p>优势三：银行负责票据保真托管以及到期的托收解付。</p>
+							<p>优势四：票据融资回款时间自定义，自主缓解企业资金压力。</p>
+						</dd>
+						<dt statu="0" class="dt_back">
+								<span class="right-next">
+								</span>
+								<span class="hepl-title fw300">
+									2、一直收不到短信验证码怎么办？
+								</span>
+							</dt>
+						<dd style="display:none">
+							<p>短信验证码一般在几分钟内可以收到，如果长时间未收到，请确认是否被手机安全软件拦截。如未拦截，请再次确认手机号是否输入正确，如正确，可在60秒后，点击重新发送验证码。</p>
+						</dd>
+						<dt statu="0" class="dt_back">
+								<span class="right-next">
+								</span>
+								<span class="hepl-title fw300">
+									3、我的密码忘记了怎么办？
+								</span>
+							</dt>
+						<dd style="display:none">
+							<p>在登录页面点击“忘记密码”按钮。根据页面提示输入相关信息，完成后，系统将会发送重置密码的链接到您的邮箱，点击链接按提示重置密码即可。</p>
+						</dd>
+						<dt statu="0" class="dt_back" style="border: 0;">
+								<span class="right-next">
+								</span>
+								<span class=" hepl-title fw300">
+									4、登录过程中密码多次输错,账户被锁定怎么办？
+								</span>
+								
+							</dt>
+						<dd style="display:none;">
+							<p>系统会在您输错密码五次后直接锁定账户，锁定时间为24个小时。 锁定后建议您通过平台重置密码，重置密码后可以再次登录。</p>
+						</dd>
+
+					</dl>
+				</div>
+				<!--<h1>
+					<span>
+						我要注册
+					</span>
+				</h1>
+				<div class="helplist">
+
+					<dl>
+						<dt id="help_1" statu="0" class="dt_back" style="border: 0;">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title">
+								银承库注册认证流程图文介绍。
+							</span>
+						</dt>
+						<dd style="display:none">
+							<h3>
+									1、注册用户</h3>
+							<div class="helpimg">
+								<img src="/images/help_img01.jpg" />
+							</div>
+							<h3>开通融资理财</h3>
+							<div class="helpimg">
+								<img src="/images/help_img05.jpg" />
+							</div>
+						</dd>
+					</dl>
+				</div>
+				-->
+				<h1>
+						<span class="fw300">票据融资</span>
+					</h1>
+				<div class="helplist">
+
+					<dl>
+						<dt id="help_2_0" statu="0" class="dt_back">
+							<span class="right-next">
+							</span>
+							<span class=" hepl-title fw300">
+								1、什么是票据融资?
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>票据融资是企业以票据作为质押，通过平台进行融资到相应额度的现金。</p>
+						</dd>
+						<dt id="help_2_1" statu="0" class="dt_back">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								2、为什么会审核不成功？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>当票据无法满足募集条件时将无法通过审核（比如需要补全证明等）。融资审核在2小时内完成。</p>
+						</dd>
+						<dt id="help_2_2" statu="0" class="dt_back">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								3、融资金额什么时候能够到账？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>客户在选择票据融资时，可以根据自己的需求自定义票据融资款的回款时间。</p>
+						</dd>
+						<dt id="help_2_3" statu="0" class="dt_back" style="border: 0;">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								4、票据资产中哪些可以融资？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>在平台的合作银行托管的票据，只要企业是票据收益权的所属人，即票据状态在平台中显示为可用的票据均可融资。</p>
+						</dd>
+
+					</dl>
+
+				</div>
+				<h1>
+						<span class="fw300">其他问题</span>
+					</h1>
+
+				<div class="helplist">
+
+					<dl>
+						<dt id="help_5" statu="0" class="dt_back">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								1、如何添加多个企业银行账户？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>登陆后通过点击左侧“银行账户”菜单， 在右侧可以添加或解绑银行账户。</p>
+						</dd>
+						<dt statu="0" class="dt_back">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								2、有合同吗?法律效力如何？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>平台会根据不同类型的产品服务需签署不同的电子协议。电子协议均遵从《合同法》及《电子签名法》的相关条例。</p>
+						</dd>
+						<dt statu="0" class="dt_back">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								3、平台服务是否合法？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>根据《合同法》，银承库作为一家金融信息服务平台，向融资方、投资方双方提供信息服务完全合法。</p>
+						</dd>
+						<dt statu="0" class="dt_back">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								4、在平台上交易安全吗？平台如何保证交易的安全？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>平台引用银行级软、硬件系统安全机制。系统由管理员实时监控；服务采用国际认证的安全证书服务加密数据传输和身份验证，在客户信息上采用安全证书和数据加密方式，最大程度保障用户的账户不受安全危害。全部的交易流水信息均实时同步备份，应用、数据、服务功能隔离。即使遭受攻击，系统也可以恢复至受攻击前的状态，保证信息不会丢失。所有交易链路全程加密。同时，平台的交易由第三方平台进行托管，实行严格的资金转入转出流程管控，最大限度保障资金的安全。</p>
+						</dd><dt statu="0" class="dt_back">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								5、为什么要实名认证？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>实名认证的目的是为了验证绑定的账户是否属于贵公司。为了确保账户安全需要填写手机号码，以便在票据支付时校验操作者的身份。 为用户资金和交易安全考虑，平台需要检查用户资料是否填写完全，填写是否正确，是否存在虚假信息，资料图片文档是否清晰等等，在最大程度上保障用户的账户资金安全。
+							</p>
+						</dd>
+						<dt statu="0" class="dt_back" style="border: 0;">
+							<span class="right-next">
+							</span>
+							<span class="hepl-title fw300">
+								6、我的票据到期后怎么办？
+							</span>
+						</dt>
+						<dd style="display:none">
+							<p>不用担心， 票据到期后自动由银承库完成托收， 托收款自动汇到您的企业对公账号。托收费在网站推广期间全免。</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/sea.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="UTF-8">
+			mui.ready(function() {
+				mui(".helpinfo").on('tap', 'dt', function(event) {
+					var obj = event.target;
+					if(obj.nodeName == 'SPAN') {
+						obj = obj.parentNode;
+					}
+					var webtitle = obj.innerText;
+					var webtext = obj.nextElementSibling.innerHTML;
+					//					var statu = obj.getAttribute("statu");
+					//					if(statu == 0) {
+					//						obj.setAttribute('statu', '1');
+					//
+					//						obj.nextElementSibling.style.display = "block";
+					//					} else {
+					//						obj.setAttribute('statu', '0');
+					//						obj.nextElementSibling.style.display = "none";
+					//
+					//					}
+					mui.openWindow({
+						url: 'morefaqsub.html',
+						id: 'morefaqsub.html',
+						show: {
+							autoShow: true,
+							duration: 200,
+							aniShow: "pop-in"
+						},
+						waiting: {
+							autoShow: true
+						},
+						extras: {
+							webtext: webtext,
+							webtitle: webtitle
+						}
+					});
+				});
+
+				document.getElementById("search").addEventListener("input", function() {
+					var key = document.getElementById("search").value;
+
+					seajs.use('../js/highlight.js', function(module) {
+						var highlight = new module.highlight("mui-content"); //container of id
+						highlight.apply(key); //highlight words
+					});
+				})
+			});
+		</script>
+
+	</body>
+
+</html>

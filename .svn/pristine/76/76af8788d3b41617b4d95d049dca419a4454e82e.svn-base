@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>选择办理业务地点</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../styles/businesslocation.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-closeempty mui-pull-left"></a>
+			<h1 class="mui-title">选择办理业务地点</h1>
+		</header>
+		<div class="mui-content">
+
+			<div id='list' class="mui-indexed-list" style="background:#f2f2f2">
+
+				<div id='staticLocation' class='static-location'>
+					<div class='mui-location'>
+
+						<div style="margin-left: 4%;margin-right: 8%;">定位地点</div>
+						<div class="location-des" id="locationDes" v-on:tap="locationArea2($event)">定位中...
+						</div>
+						<div class="location-des" id="locationDes2" style="display: none;">无法定位当前城市，点击进行 <span style="color: #0066FF;" id='gpsLocate'>GPS定位</span></div>
+					</div>
+					<div class="mui-indexed-list-search">
+						<div class='mui-indexed-list-group'>历史选择：</div>
+
+						<template v-for="hl in historyLocation">
+							<div class="history-location mui-indexed-list-item" v-on:tap="locationArea1($event)">
+								<span style="display: none;">{{hl.history | province}}</span>
+								<span>{{hl.history | city}}</span>
+								<span style="display: none;">{{hl.id}}</span>
+							</div>
+						</template>
+					</div>
+				</div>
+
+				<div class="mui-indexed-list-inner" id="locationListContainer" v-cloak>
+
+					<div class="mui-indexed-list-empty-alert">没有数据</div>
+
+					<div class="location-list" style="position: relative;" id='provinceList'>
+
+						<div class="mui-province-group" v-for="item in location" v-cloak>
+							<div class="mui-indexed-list-group province-name">{{item.province}}</div>
+							<template v-for="i in item.cityList">
+								<div class="mui-indexed-list-item" v-on:tap="locationArea($event)">
+									<span style="display: none;">{{i.provinceName}}</span>
+									<span>{{i.cityName}}</span>
+									<span style="display: none;">{{i.id}}</span>
+								</div>
+							</template>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="businesslocation.js"></script>
+	</body>
+
+</html>

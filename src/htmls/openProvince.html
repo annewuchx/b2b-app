@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/openProvince.css" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav bank-back">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title">开户省市</h1>
+		</header>
+
+		<div class="mui-content mui-row mui-fullscreen" id='provinceListContainer'>
+
+			<div class="mui-col-xs-6" id='pro-content' style="overflow-y: auto;">
+				<div id="provinceControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<template v-for="item in provinceData" track-by="$index">
+						<template v-if="item">
+							<a v-if=$index==0 class="mui-control-item mui-active" province-id="{{item.a}}" provinceDataId="{{$index}}">{{item.b}}</a>
+							<a v-else class="mui-control-item" province-id="{{item.a}}" provinceDataId="{{$index}}" >{{item.b}}</a>
+						</template>
+
+					</template>
+				</div>
+			</div>
+			<div id="pronviceControlContents" class="mui-col-xs-6" style="overflow-y: auto;background: #FFFFFF;">
+					<template v-if="cityData">
+						<div id="province-{{provinceId}}" class="mui-control-content mui-active">
+							<ul class="mui-table-view">
+								<template v-for="list in cityData.c" track-by="$index">
+									<template v-if="list">
+										<li class="mui-table-view-cell">
+											<a href="#" city-id="{{list.a}}">{{list.b}}</a>
+
+										</li>
+									</template>
+								</template>
+							</ul>
+						</div>
+					</template>
+			</div>
+		</div>
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在 加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="./openProvince.js"></script>
+	</body>
+
+</html>

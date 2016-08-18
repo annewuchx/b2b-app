@@ -1,0 +1,24 @@
+<div id="price-item" class="price-item">
+	<!---->
+	<ul class="quote-center-area-sum">
+		<li v-bind:class="{'quote-tit-active': moneyActive}" class="moneyMask">
+			<span class="yckfont yf-rmb">{{el_money}}</span>
+			<span class="quote-tit" v-bind:class="{'quote-tit-display': moneyDisplay}">票面金额</span>
+			<input type="number" id="par-value" placeholder="票面金额" v-model="parValue" />
+		</li>
+	</ul>
+	<ul class="quote-center-area-sum">
+		<li class="bank-type1" v-bind:class="{'quote-tit-active': bankActive}" v-on:tap="showBanktype" >
+			<span class="yckfont yf-building">{{el_bank}}</span>
+			<span class="quote-tit" v-bind:class="{'quote-tit-display': bankDisplay}">承兑行类型</span>
+			<input type="text" placeholder="承兑行类型" class="bank-type" readonly v-model="bankTypeValue" />
+		</li>
+		<li id="due-date1" v-bind:class="{'quote-tit-active': endDateActive}" v-on:tap="showDatePicker">
+			<span class="yckfont yf-calendar">{{el_date}}</span>
+			<span class="quote-tit" v-bind:class="{'quote-tit-display': endDateDisplay}">到期日</span>
+			<input type="text" placeholder="到期日"  readonly v-model="endDate" data-options='{"type":"date"}' />
+		</li>
+	</ul>
+	
+	
+</div>

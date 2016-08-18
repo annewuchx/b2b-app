@@ -1,0 +1,128 @@
+.body_header_div {
+	height: 165px;
+	width: 100%;
+	margin: 10px 0px;
+	background: #FFFFFF;
+	padding: 15px;
+	position: relative;
+}
+
+.money-left-title {
+	font-size: 15px;
+	/*px*/
+	margin-bottom: 0px;
+}
+
+.money-left {
+	font-size: 40px;
+	/*px*/
+	padding: 20px 0px;
+	color: #0066ff;
+	margin-bottom: 0px;
+}
+
+.money-btn {
+	margin-bottom: 0px;
+}
+
+.bank-acount {
+	padding: 0px 15px;
+	background: #FFFFFF;
+	position: relative;
+}
+
+.duli-account-href {
+	font-size: 14px;
+	/*px*/
+	float: right;
+}
+
+.duli-account {
+	height: 45px;
+	line-height: 45px;
+	color: rgb(51, 51, 51);
+	font-size: 16px;
+	/*px*/
+}
+
+.money_bank_msg {
+	padding: 15px 0px;
+	position: relative;
+	font-weight: 300;
+	width: 100%;
+}
+
+.mui-input-row label {
+	padding: 11px 0px;
+	width: 20%;
+	font-size: 14px;
+	/*px*/
+	color: rgb(119, 119, 119);
+}
+
+@media only screen and (max-width:380px) {
+	.mui-input-row label {
+		width: 25%;
+	}
+	.money_bank_msg .mui-input-row span {
+		width: 75% !important;
+	}
+}
+
+.money_bank_msg .mui-input-row span {
+	padding: 11px 0px;
+	display: inline-block;
+	text-align: left;
+	/*			padding-right: 15px;*/
+	float: left;
+	line-height: 1.1;
+	width: 80%;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	/*px*/
+	color: rgb(51, 51, 51);
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.usermoney_page_msg {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 12px;
+	/*px*/
+	font-weight: 300;
+	color: rgb(119, 119, 119);
+}
+
+.usermoney_page_msg p {
+	font-size: 12px;
+	/*px*/
+	color: rgb(119, 119, 119);
+}
+
+.body_header_div:before,
+.bank-acount:before,
+.money_bank_msg:before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 1px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #cccccc;
+}
+
+.body_header_div:after,
+.bank-acount:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 1px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #cccccc;
+}

@@ -1,0 +1,95 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*承兑行*/
+
+.mui-indexed-list {
+	height: 50px;
+	background: #0066FF;
+}
+
+.mui-table-view-cell {
+	position: relative;
+	overflow: hidden;
+	padding: 11px 15px;
+	-webkit-touch-callout: none;
+	text-align: center;
+}
+
+.mui-table-view-cell .bank {
+	color: rgb(51, 51, 51);
+	font-size: 18px;/*px*/
+}
+
+.mui-table-view-cell .bank1 {
+	text-align: left;
+	color: rgb(51, 51, 51);
+	font-size: 14px;/*px*/
+}
+
+.toggle {
+	display: none;
+}
+
+.mui-bar-nav {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+/*搜索区域*/
+
+.mui-table-view-cell:after {
+	left: 0px;
+}
+
+.mui-search .mui-placeholder {
+	font-size: 14px;/*px*/
+	height: 30px;
+	text-align: left;
+	margin: 10px 0;
+}
+
+.mui-search .mui-placeholder .mui-icon {
+	padding: 0 10px;
+}
+.mui-search .mui-placeholder span:nth-child(2) {
+	margin-left: 10px;
+}
+
+.mui-search input[type=search] {
+	background: #fff;
+	margin-top: 8px;
+}
+
+#searchcontainer {
+	width: 83%;
+	margin-left: 2%;
+}
+
+.mui-search.mui-active:before {
+	margin-top: -13px;
+}
+
+.mui-input-row.mui-search .mui-icon-clear {
+	top: 16px;
+}
+
+#list {
+	position: relative;
+}
+
+.cancel {
+	width: 15%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #fff;
+}

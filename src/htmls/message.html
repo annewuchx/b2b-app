@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>消息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../styles/message.css">
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">消息</h1>
+			<span class='mui-btn mui-btn-link userpj-pro' style="text-align: right;" id="allRead">
+				<a href="javascript:;">全部已读</a>
+			</span>
+		</header>
+
+		<div class="mui-content">
+
+			<div class="mui-loader">加载中...</div>
+
+			<div id="slider" class="mui-slider mui-fullscreen">
+
+				<!--sliderSegmentedControl-->
+				<div id="sliderSegmentedControl" class="mui-segmented-control mui-segmented-control-inverted" style="height: 49px;">
+					<div class="mui-scroll" style="width: 100%;color: #06f;">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							全部
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							系统消息
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							活动消息
+						</a>
+					</div>
+				</div>
+
+				<div class="mui-slider-group mui-slider-item-yck" id="refreshContainer" style="display: none;">
+
+					<div id="item1mobile" class="mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<template v-for="item in messagedata" track-by="$index">
+									<template v-if="item">
+										<h5 v-if="group(time(item.createTime))">{{time(item.createTime)}}</h5>
+										<ul class="mui-table-view">
+											<!--<div class="msg-container">-->
+												<li class="mui-table-view-cell" id="liALL{{$index}}">
+													<div class="mui-slider-right mui-disabled">
+														<a class="mui-btn mui-btn-red" v-on:tap="deleteMsg(item.messageId,$index,item.messageType,'liALL')">删除</a>
+													</div>
+													<div class="horizontal-view">
+														<div class="message_content message-list mui-content-padded mui-slider-handle" v-on:tap="getMessageDetal(messagedata,$index)" style="margin: 0;">
+															<h6 v-bind:class="{'yck-msg-color1':item.readFlag==0,'yck-msg-color2':item.readFlag==1}">
+														<template v-if=item.readFlag==0>
+															<span class="mui-badge mui-badge-danger message-badge"></span>
+														</template>
+														<span>{{item.title}}</span>
+															
+													</h6>
+															<div class='message-content' id="msgcontent{{$index}}">
+																<p>{{item.message}}</p>
+															</div>
+
+														</div>
+														<div class="mui-icon mui-icon-arrowright mui-content-arrow">
+
+														</div>
+
+													</div>
+
+												</li>
+												<!--<div class="hline"></div>-->
+											<!--</div>-->
+										</ul>
+
+									</template>
+								</template>
+							</div>
+						</div>
+					</div>
+
+					<div id="item2mobile" class="mui-control-content">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div>
+									<template v-for="item in messageSys" track-by="$index">
+										<template v-if="item">
+											<h5 v-if="group1(time(item.createTime))">{{time(item.createTime)}}</h5>
+
+											<ul class="mui-table-view">
+												<!--<div class="msg-container">-->
+													<li class="mui-table-view-cell" id="liAct{{$index}}">
+														<div class="mui-slider-right mui-disabled">
+															<a class="mui-btn mui-btn-red" v-on:tap="deleteMsg(item.messageId,$index,item.messageType,'liAct')">删除</a>
+														</div>
+														<div class="horizontal-view">
+															<div class="message_content message-list mui-content-padded mui-slider-handle" v-on:tap="getMessageDetal(messageSys,$index)" style="margin: 0;">
+																<h6 v-bind:class="{'yck-msg-color1':item.readFlag==0,'yck-msg-color2':item.readFlag==1}">
+																		<template v-if=item.readFlag==0>
+																	<span class="mui-badge mui-badge-danger message-badge"></span>
+																</template>
+																<span>{{item.title}}</span>
+													
+															</h6>
+																<div class='message-content' id="msgcontent{{$index}}">
+																	<p>{{item.message}}</p>
+																</div>
+															</div>
+															<div class="mui-icon mui-icon-arrowright mui-content-arrow">
+
+															</div>
+
+														</div>
+													</li>
+												<!--</div>-->
+												<!--<div class="hline"></div>-->
+
+											</ul>
+										
+										</template>
+									</template>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="item3mobile" class="mui-control-content">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div>
+									<template v-for="item in messageAct" track-by="$index">
+										<template v-if="item">
+											<h5 v-if="group2(time(item.createTime))">{{time(item.createTime)}}</h5>
+
+											<ul class="mui-table-view">
+												<!--<div class="msg-container">-->
+													<li class="mui-table-view-cell" id="liSys{{$index}}">
+														<div class="mui-slider-right mui-disabled">
+															<a class="mui-btn mui-btn-red" v-on:tap="deleteMsg(item.messageId,$index,item.messageType,'liSys')">删除</a>
+														</div>
+														<div class="horizontal-view">
+															<div class="message_content message-list mui-content-padded mui-slider-handle" v-on:tap="getMessageDetal(messageAct,$index)" style="margin: 0;">
+																<h6 v-bind:class="{'yck-msg-color1':item.readFlag==0,''yck-msg-color2':item.readFlag==1}">
+																<template v-if=item.readFlag==0>
+																	<span class="mui-badge mui-badge-danger message-badge"></span>
+																</template>
+																<span>{{item.title}}</span>
+															
+														</h6>
+																<div class='message-content' id="msgcontent{{$index}}">
+																	<p>{{item.message}}</p>
+																</div>
+															</div>
+															<div class="mui-icon mui-icon-arrowright mui-content-arrow">
+
+															</div>
+														</div>
+													</li>
+												<!--</div>-->
+												<!--<div class="hline"></div>-->
+											</ul>
+											
+										</template>
+									</template>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="../mui/mui.pullToRefresh.js"></script>
+		<script src="../mui/mui.pullToRefresh.material.js"></script>
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/html5sql.js" type="text/javascript" charset="utf-8"></script>
+		<script src="message.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

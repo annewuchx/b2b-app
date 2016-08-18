@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>批量报价</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css"/>
+		<link rel="stylesheet" type="text/css" href="../styles/pricebatch.css" />
+		<style type="text/css">
+			.mui-loader {
+				position: absolute;
+				top: 30%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+			
+			.mui-backdrop {
+				top: 44px;
+				background-color: rgba(0, 0, 0, 0);
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span>返回</span></a>
+			<h1 class="mui-title">批量报价</h1>
+		</header>
+		<!--头部-->
+
+		<!--mui-content-->
+		<div class="mui-content" id="piliang-price">
+
+			<!--yck-quote-->
+			<div class="yck-quote">
+				<div class="yck-quote-top">
+					<p class="disscountMoney" v-bind:class="{'bShow': bShow}"><i>¥</i>&nbsp;<span>0.</span>00</p>
+					<p class="disscountMoney" v-bind:class="{'aShow': aShow}" v-cloak>{{showNone}}
+						<i>¥</i>&nbsp;<span id="rjtotalInteger">{{rjtotalInteger | rmb}}</span>.<i>{{rjtotalDecimals}}</i>
+					</p>
+				</div>
+				<div class="yck-quote-bottom">
+					<ul>
+						<li class="yck-quote-bottom-left">
+							<p>票面总额</p>
+							<p class="interest" v-bind:class="{'bShow': bShow}"><i>¥</i>&nbsp;&nbsp;<span>0.</span><i>00</i></p>
+							<p class="interest" v-bind:class="{'aShow': aShow}" v-cloak>
+								<i>¥</i>&nbsp;&nbsp;<span id="pjtotalInteger">{{pjtotalInteger | rmb}}</span>.<i>{{pjtotalDecimals}}</i>
+							</p>
+						</li>
+
+						<li class="yck-quote-bottom-right">
+							<p>票据张数</p>
+							<p class="back-img" v-bind:class="{'bShow': bShow}"><span>0</span>&nbsp;&nbsp;张</p>
+							<p class="back-img" v-bind:class="{'aShow': aShow}" v-cloak><span id="pjtotalnum">{{pjtotalnum}}</span>&nbsp;&nbsp;张</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--quote-center-->
+
+			<div class="quote-center">
+				<div class="financing-mode">
+					<p>融资模式</p>
+					<ul id="rzmscontainer">
+						<li class="active" v-on:tap="changeRZMS($event,0)"><span>实时报价</span></li>
+						<li v-on:tap="changeRZMS($event,1)"><span>T+0报价</span></li>
+						<li v-on:tap="changeRZMS($event,2)"><span>T+1报价</span></li>
+						<li v-on:tap="changeRZMS($event,3)"><span>T+2报价</span></li>
+					</ul>
+				</div>
+				<ul class="quote-area" v-cloak>
+					<li v-bind:class="{'quote-tit-active': locaActive}">
+						<span class="yckfont yf-location">{{el_location}}</span>
+						<span class="quote-tit" v-bind:class="{'quote-tit-display': locaDisplay}">所在地区</span>
+						<input type="text" placeholder="所在地区" class="location" readonly v-model="location" />
+					</li>
+				</ul>
+			</div>
+			<!--quote-list-->
+			
+			<div class="quote-list">
+				<template v-for='item in pricelist'>
+					<div id="mui-card-{{$index}}" class="mui-card" v-cloak>
+						<ul class="mui-table-view">
+							<li>
+								<p class="confirmBtn" v-on:tap='handle_delNotes($index)'><span class="yckfont yf-delete" ></span></p>
+								<div class="bjList-index" v-cloak><p class="yckfont yf-hexagonline"><span>{{$index + 1}}<!--111--></span></p></div>
+
+								<div class="bjList-con" v-on:tap="updateNotes($index)">
+									<div class="bj-price">
+										<p>银承库今日报价</p>
+										<p class="quote" v-cloak>¥&nbsp;&nbsp;<span>{{item.disscountMoney | disscountMoneyInteger | rmb}}</span>.{{item.disscountMoney | disscountMoneyDecimals}}</p>
+									</div>
+
+									<ul>
+										<li v-cloak>票面金额:{{item.billAmount |currency '￥'}}</li>
+										<li v-if="item.bankType==1" class="bank">承兑行类型:国股银行</li>
+										<li v-if="item.bankType==2" class="bank">承兑行类型:城商银行</li>
+										<li v-if="item.bankType==3" class="bank">承兑行类型:农商外资</li>
+										<li v-if="item.bankType==4" class="bank">承兑行类型:农信农合</li>
+										<li v-if="item.bankType==5" class="bank">承兑行类型:村镇银行</li>
+										<li v-if="item.bankType!=1 && item.bankType!=2  && item.bankType!=3 && item.bankType!=4 && item.bankType!=5" class="bank">承兑行类型:国股银行</li>
+									</ul>
+									<ul>
+										<li v-cloak>利息：-{{item.interest|currency '￥'}}</li>
+										<li>计息天数：{{item.dayDuring}}天</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</template>
+			</div>
+
+			<!--footer-->
+			<footer>
+				<div class="quote-btn-contact">
+					<ul>
+						<li id="link"></li>
+						<li class="add-notes" v-on:tap="addNotes">添加票据</li>
+					</ul>
+				</div>
+			</footer>
+			<!--footer-->
+
+		</div>
+		<!--mui-loader-->
+		<div class="mui-loader" id="loadding" style="display: none;">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop" style="display: none;"></div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		
+		<script src="../libs/sea-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/seajs-text-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/countUp.js" type="text/javascript" charset="utf-8"></script>
+		<script src="pricebatch.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

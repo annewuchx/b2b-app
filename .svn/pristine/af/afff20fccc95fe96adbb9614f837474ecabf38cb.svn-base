@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>新增银行账户</title>
+		<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/loadding.css" />
+		<link rel="stylesheet" href="../css/app.css" />
+		<link rel="stylesheet" href="../styles/userbanknew.css" />
+		<style type="text/css">
+			.mui-input-group div.yck-rowautoheight {
+				min-height: 45px;
+				height: auto;
+			}
+			.yck-rowautoheight label{
+				line-height:35px;
+				
+			}
+			textarea::-webkit-input-placeholder {
+				/* WebKit browsers */
+				line-height: 42px;
+			}			
+			textarea:-moz-placeholder {
+				/* Mozilla Firefox 4 to 18 */
+				line-height: 42px;
+			}			
+			textarea::-moz-placeholder {
+				/* Mozilla Firefox 19+ */
+				line-height: 42px;
+			}			
+			textarea:-ms-input-placeholder {
+				/* Internet Explorer 10+ */
+				line-height: 42px;
+			}
+			
+			.mui-input-group div.yck-rowautoheight textarea {
+				padding-right: 20px;
+			}
+			
+			.mui-input-group div.yck-rowautoheight a {
+				padding: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav bank-back">
+			<a class="mui-icon mui-icon-arrowleft h-left mui-action-back"><span style="font-size: 16px;">返回</span></a>
+			<h1 class="mui-title">新增银行账户</h1>
+		</header>
+
+		<div class="mui-content">
+			<form class="mui-input-group" style="margin-top: 10px;">
+				<div class="mui-input-row">
+					<label>开户名</label>
+					<input type="text" readonly="readonly" id="payeeAccountName" style=" text-overflow:ellipsis; white-space: nowrap;">
+					<!--<a class='mui-navigate-right'>
+					</a>-->
+				</div>
+				<div class="mui-input-row mui-province">
+					<label>开户省市</label>
+					<input type="text" name="opnerCity" placeholder="请输入开户省市" readonly="readonly" id='opnerCity' />
+					<a class='mui-navigate-right'>
+					</a>
+				</div>
+				<div class="mui-input-row mui-bank">
+					<label>开户银行</label>
+					<input type="text" name="selectBank" placeholder="请输入开户银行" readonly="readonly" id='selectBank' />
+					<a class='mui-navigate-right'></a>
+				</div>
+				<div class="mui-input-row mui-branch yck-rowautoheight">
+					<label>开户支行</label>
+					<textarea name="selectBranch" placeholder="请输入开户支行" readonly="readonly" id='selectBranch'></textarea>
+					<a class='mui-navigate-right'></a>
+				</div>
+				<div class="mui-input-row">
+					<label>银行账号</label>
+					<input type="text" class="mui-input-clear" id="payeeAccount" placeholder="请输入银行账号">
+				</div>
+
+			</form>
+
+			<ul class="mui-table-view" style="margin-top: 10px;">
+				<li class="mui-table-view-cell verified-collapse">
+
+					<span style="float: left;padding: 5px 0 0 0px;">设为默认账户</span>
+
+					<div class="mui-switch mui-switch-blue mui-switch-mini verified-switch" id="flag">
+						<div class="mui-switch-handle"></div>
+					</div>
+
+					<!--<div class="mui-switch verified-switch" id="flag" style="float: right;padding-top: 3px;margin-right: 5px;">
+						<div class="mui-switch-handle"></div>
+					</div>-->
+				</li>
+			</ul>
+
+			<p class='tip'>* 请仔细填写并核对您的账户信息，以免影响您的资金到账时间</p>
+			<div style="margin-top: 25px;padding:50px 15px">
+
+				<button id='sendMail' class="mui-btn mui-btn-block mui-btn-primary">确认</button>
+			</div>
+
+		</div>
+
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在 加载...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script src="../libs/sea-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../libs/seajs-text-debug.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="userbanknew.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<title>企业实名认证1</title>
+		<script src="../libs/flexible/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../styleflex/mui.min.css" rel="stylesheet" />
+		<!--<link href="../css/mui.min.css" rel="stylesheet" />-->
+
+		<!--<link rel="stylesheet" type="text/css" href="../styles/verifiedstep1.css" />-->
+		<link rel="stylesheet" type="text/css" href="../styleflex/verifiedstep1.css" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav verify_header">
+			<a class="mui-icon mui-icon-arrowleft mui-action-back mui-verified-back"><span>返回</span></a>
+			<h1 class="mui-title">企业实名认证（1/2）</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<div class='legal-container'>
+				<div class='hline'></div>
+				<div class='horizontal-view'>
+					<div class='vline'></div>
+					<div class='img-continer company-img'>
+						<a href="javascript:;" id="certificates" class='yck-event-addimg'>
+							<div class='tip-container'>
+								<img src="../images/imgadd.png" alt="添加图片" class='img-guide' />
+								<p class='img-tip'>添加营业执照照片</p>
+							</div>
+
+						</a>
+					</div>
+					<div class='vline'></div>
+				</div>
+				<div class='hline'></div>
+
+				<div class="img-group">
+					<div class='horizontal-view'>
+						<div class='img-continer legal-card'>
+							<div class='hline'></div>
+							<div class='horizontal-view' style="height: 100%;">
+								<div class='vline'></div>
+								<a href="javascript:;" id="juristicRight" class='yck-event-addimg'>
+									<img src="../images/imgadd.png" alt="添加图片" class='img-guide img-single' />
+									<p class='img-tip'>法人身份证(选填)</p>
+									<p class='img-tip'>正面</p>
+								</a>
+								<div class='vline'></div>
+							</div>
+							<div class='hline'></div>
+						</div>
+						<div class='img-continer legal-card'>
+							<div class='hline'></div>
+							<div class='horizontal-view' style="height: 100%;">
+								<div class='vline'></div>
+								<a href="javascript:;" id="juristicLeft" class='yck-event-addimg'>
+									<img src="../images/imgadd.png" alt="添加图片" class='img-guide img-single' />
+									<p class='img-tip'>法人身份证(选填)</p>
+									<p class='img-tip'>反面</p>
+								</a>
+								<div class='vline'></div>
+							</div>
+							<div class='hline'></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="card-self-container">
+				<ul class="mui-table-view is-legal">
+					<div class='hline'></div>
+					<li class="mui-table-view-cell verified-collapse">
+						<label>我不是企业法人</label>
+
+						<div class="mui-switch verified-switch mui-switch-blue mui-switch-mini">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+				<div class='self-container'>
+					<div class='hline'></div>
+					<div class="img-group">
+						<div class='horizontal-view'>
+							<div class='img-continer legal-card'>
+
+								<div class='hline'></div>
+								<div class='horizontal-view' style="height: 100%;">
+									<div class='vline'></div>
+									<a href="javascript:;" id="cardRight" class='yck-event-addimg'>
+										<img src="../images/imgadd.png" alt="添加图片" class='img-guide img-single' />
+										<p class='img-tip'>本人身份证(选填)</p>
+										<p class='img-tip'>正面</p>
+									</a>
+									<div class='vline'></div>
+								</div>
+								<div class='hline'></div>
+							</div>
+							<div class='img-continer legal-card'>
+
+								<div class='hline'></div>
+								<div class='horizontal-view' style="height: 100%;">
+									<div class='vline'></div>
+									<a href="javascript:;" id="cardLeft" class='yck-event-addimg'>
+										<img src="../images/imgadd.png" alt="添加图片" class='img-guide img-single' />
+										<p class='img-tip'>本人身份证(选填)</p>
+										<p class='img-tip'>反面</p>
+									</a>
+									<div class='vline'></div>
+
+								</div>
+								<div class='hline'></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='hline'></div>
+
+			<div class="btn-wraper mt_115" id='btn-wrap'><button type="button" class="mui-btn" id='notReg' style="color: #0066ff;">暂不认证</button><button type="button" class="mui-btn mui-btn-primary" id="nextStep">下一步</button></div>
+
+		</div>
+		<!--actionsheet-->
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom picture-popoover">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#" data-index='1'>拍照</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#" data-index='2'>从相册选择</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture" data-index='0'><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<!--loading-->
+		<div class="mui-loader" id="loadding">
+			<div class="load">
+				<div class="loader">Loading...</div>
+				<div class="loaderWord">正在上传...</div>
+			</div>
+		</div>
+		<div class="mui-backdrop" id="backdrop"></div>
+
+		<script src="../js/mui.min.js"></script>
+
+		<!-- build:js ../js/root.js -->
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/resources.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/servicebus.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+
+		<script type="text/javascript" src="../js/camera_common.js"></script>
+		<script type="text/javascript" src="../js/immersed.js"></script>
+		<script src="./verifiedstep1.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>
